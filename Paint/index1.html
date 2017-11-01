@@ -1,0 +1,184 @@
+<!DOCTYPE html PUBLIC "-//WAPFORUM//DTD XHTML Mobile 1.2//EN" "http://www.openmobilealliance.org/tech/DTD/xhtml-mobile12.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="he">
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+
+
+		<meta name="robots" content="INDEX, FOLLOW">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+		<meta id="viewport" name="viewport"
+			content="width=device-width, height=device-height user-scalable=yes, minimum-scale=1.0, maximum-scale=4.0">
+
+		<meta name="theme-color" content="#125688">
+
+		<link rel="icon" type="image/x-icon" sizes="any" mask="" href="http://www.w3.org/Icons/W3C/Beveled-Logo.gif" />
+		<link rel="shortcut icon" type="image/x-icon"  sizes="any" mask="" href="http://www.w3.org/Icons/W3C/Beveled-Logo.gif" />
+		<link rel="apple-touch-icon" type="image/x-icon"  sizes="any" mask="" href="http://www.w3.org/Icons/W3C/Beveled-Logo.gif" />
+
+		<meta property="fb:app_id" content="1616981855234875"/>
+		<meta property="og:type" content="app"/>
+		<meta property="og:image" content="http://www.w3.org/Icons/W3C/Beveled-Logo.gif"/>
+		<meta property="og:site_name" content="Paint" />
+		<meta property="og:locale" content="en_US" />
+		<meta property="og:title" content="Paint" />
+		<meta property="og:url" content="http://romanbr.github.io/Paint/" />
+		<meta property="og:description" content="Simple Html5 Facebook application for creating beautifull pictures with HTML5 canvas by using mathematics"/>
+
+		<meta name="description" content="Simple Html5 Facebook application for creating beautifull pictures with HTML5 canvas by using mathematics">
+		<meta name="keywords" content="HTML,CSS,XML,JavaScript,Canvas">
+		<meta name="author" content="Roman Braverman">
+
+		<meta name="HandheldFriendly" content="True">
+		<meta name="MobileOptimized" content="320">
+		<meta name="google" content="notranslate">
+		<meta name="google-site-verification" content="">
+		<meta name="format-detection" content="telephone=yes">
+		<meta http-equiv="cleartype" content="on">
+
+
+		<title>Paint</title>
+		<style type="text/css">
+		html, body,  tr {
+			width: 100%;
+			height: 100%;
+			margin: 0;
+			padding: 0;
+			border: 0;
+		}
+		
+		</style>
+		<script type="text/javascript" src="imgProcessing.js"></script>
+		<script type="text/javascript" src="imgProcessing0.js"></script>
+		<script type="text/javascript" src="imgProcessing1.js"></script>
+		<script type="text/javascript" src="imgProcessing2.js"></script>
+		<script type="text/javascript" src="imgProcessing3.js"></script>
+		<script type="text/javascript" src="imgProcessing4.js"></script>
+		<script type="text/javascript" src="Filters.js"></script>
+		<script type="text/javascript" src="Filters1.js"></script>
+		<script type="text/javascript" src="Filters2.js"></script>
+		<script type="text/javascript" src="Filters2.js"></script>
+	</head>
+	<body>
+		<script type="text/javascript" src="fun.js"></script>
+		<script type="text/javascript" src="Fun1.js"></script>
+		<table border = "1">
+			<tr>
+				<th rowspan = "2">
+					<canvas id="imageView" name="imageView"> </canvas>
+				</th>
+				<th>
+					<form name = "imgForm" action = "/send" method = "post" onsubmit = "return DATA()">
+						<input type="radio" name="imgType" value="Default"> Default
+						<input type="radio" name="imgType" value="Current" checked> Current<br>
+				  Dist: <select id = "dVal" name = "dVal">
+							<option value = "-3">-3</option>
+							<option value = "-2">-2</option>
+							<option value = "-1">-1</option>
+							<option value = "1">1</option>
+							<option value = "2">2</option>
+							<option value = "3">3</option>
+						<select>
+				  Func: <select id = "fVal" name = "fVal">
+							<option value = "0">0</option>
+							<option value = "1">1</option>
+							<option value = "2">2</option>
+							<option value = "3">3</option>
+							<option value = "4">4</option>
+							<option value = "5">5</option>
+							<option value = "6">6</option>
+							<option value = "7">7</option>
+							<option value = "8">8</option>
+							<option value = "9">9</option>
+							<option value = "10">10</option>
+							<option value = "11">11</option>
+							<option value = "12">12</option>
+							<option value = "13">13</option>
+							<option value = "14">14</option>
+							<option value = "15">15</option>
+							<option value = "16">16</option>
+							<option value = "17">17</option>
+						<select>
+						<input type = "hidden" id = "data" name = "data" value = "12"/>
+						<input type="submit" value="Submit">
+					</form>
+					<hr/>
+					<div id="log">Processing...</div>
+					<hr/>
+					<input type = "button" onclick = "DATA();" value = "Without"/>
+					<input type = "button" onclick = "execAlg({effect : 'Inverse', options : null });" value = "Inverse"/>
+					<input type = "button" onclick = "execAlg({effect : 'Inverse1', options : null });" value = "Inverse1"/>
+					<input type = "button" onclick = "execAlg({effect : 'grayScale', options : null });" value = "Greyscale">
+					<input type = "button" onclick = "execAlg({effect : 'BW', options : null });" value = "Black & White">
+					<input type = "button" onclick = "execAlg({effect : 'Sepia', options : null });" value = "Sepia tones">
+					<input type = "button" onclick = "execAlg({effect : 'Cyan', options : null });" value = "Cyan tones">
+					<hr/>
+					<input type = "button" onclick = "execAlg({effect : 'Shift', options : 1 });" value = "Shift Right">
+					<input type = "button" onclick = "execAlg({effect : 'Shift', options : 2 });" value = "Shift Left">
+					<hr style = "width: 95%;"/>
+
+					<input type = "button" onclick = "execAlg({effect : 'Color_threshold', options : 128 });" value = "Threshold">
+					<input type = "button" onclick = "execAlg({effect : 'LowPFilter', options : 128 });" value = "Low pass">
+					<input type = "button" onclick = "execAlg({effect : 'HighPFilter', options : 128 });" value = "High pass">
+					<hr style = "width: 95%;"/>
+					<input type = "button" onclick = "execAlg({effect : 'Color_threshold1', options : null });" value = "Threshold1">
+					<input type = "button" onclick = "execAlg({effect : 'LowPFilter1', options : null });" value = "Low pass1">
+					<input type = "button" onclick = "execAlg({effect : 'HighPFilter1', options : null });" value = "High pass1">
+					<hr/>
+					<input type = "button" onclick = "execAlg({effect : 'greyCodeFilter', options : null });" value = "Grey code">
+					<input type = "button" onclick = "execAlg({effect : 'revGreyCodeFilter', options : null });" value = "Rev. grey code">
+					<hr/>
+					<!--<input type = "button" onclick = "Otsu();" value = "Grey code111">-->
+
+					<input type = "button" onclick = "Neighbours(HMDistMax);" value = "Neighbours">
+					<input type = "button" onclick = "Neighbours1(or1);" value = "Neighbours1">
+					<input type = "button" onclick = "Neighbours2(or1);" value = "Neighbours2">
+					<hr style = "width: 95%;"/>					
+					<input type = "button" onclick = "Neighbours31(Xor01);" value = "Neighbours31">
+					<input type = "button" onclick = "Neighbours32(Or1);" value = "Neighbours32">
+					<input type = "button" onclick = "Neighbours41(Max);" value = "Neighbours41">
+					<input type = "button" onclick = "Neighbours42(MaxMax);" value = "Neighbours42">
+					<input type = "button" onclick = "Neighbours5(or1);" value = "Neighbours5">
+					<hr style = "width: 95%;"/>					
+					<input type = "button" onclick = "Neighbours6(Max);" value = "Neighbours6">
+					<input type = "button" onclick = "Neighbours7(Distance1);" value = "Neighbours7">
+					<input type = "button" onclick = "Neighbours61(Distance1);" value = "Neighbours61">
+					<input type = "button" onclick = "Neighbours62(Max);" value = "Neighbours6.2">
+					<input type = "button" onclick = "Morph_Grad();" value = "Morph_Grad">
+					<hr/>
+					<input type = "button" onclick = "black_white();" value = "black_white">
+					<input type = "button" onclick = "DerivativeEdgeDetector();" value = "DerivativeEdgeDetector">
+					<input type = "button" onclick = "F9();" value = "F9">
+					<input type = "button" onclick = "Roberts();" value = "Roberts">
+					<input type = "button" onclick = "Prewitt();" value = "Prewitt">
+					<input type = "button" onclick = "Ian();" value = "Sobel"><BR/>
+					<input type = "button" onclick = "Kuwahara();" value = "Kuw">
+					<input type = "button" onclick = "AverageColoursFilter();" value = "Avg">
+					<input type = "button" onclick = "SNNBlur();" value = "SNNBlur">
+					<input type = "button" onclick = "BooleanEdgeDetectionFilter(3);" value = "BOOL">
+					<input type = "button" onclick = "FF(Range);" value = "FF"><BR/>
+					<!--<input type = "button" onclick = "setTimeout(function(){ FF123();}, 0); " value = "FF123"><BR/>-->
+					<input type = "button" onclick = "FF1();" value = "FF123"><BR/>
+				</th>
+			</tr>
+			<!-- <tr>
+				<th>
+					<input type="range" id="val" name="val" min="0" max="100" style = "width: 98%;"
+					onchange = "changeVal();"
+					autocomplete />
+				</th>
+				<th>
+					<h3 id = "valText" name = "valText">0%</h3>
+				</th>
+			</tr>-->
+		</table> 
+		<script>
+		</script>
+	</body>
+</html>
+
+
