@@ -40,14 +40,20 @@
                 testAPI();
             } else if (response.status === 'not_authorized') {
                 // The person is logged into Facebook, but not your app.
-                document.getElementById('status').innerHTML = 'Please log ' +
-                    'into this app.';
+                //document.getElementById('status').innerHTML = 'Please log into this app.';
+				FB.login(function(response) {
+					if (response.status === 'connected') {
+					// Logged into your app and Facebook.
+						testAPI();
+					} else {
+						document.getElementById('status').innerHTML = 'Failed connect to facebook app';
+					}
+				});
             } else {
                 // The person is not logged into Facebook, so we're not sure if
                 // they are logged into this app or not.
                 document.getElementById('status').innerHTML = 'Please log ' +
                     'into Facebook.';
-				FB.login();	
             }
         }
 
@@ -131,19 +137,6 @@
             });
 		}
 
-		function qw () {
-					FB.ui({
-			  method: 'share_open_graph',
-			  action_type: 'og.likes',
-			  action_properties: JSON.stringify({
-				object:'https://developers.facebook.com/docs/',
-			  })
-			}, function(response){
-			  // Debug response (optional)
-			  console.log(response);
-			});
-		
-		}
     </script>
     <div class="container">
         <br />
@@ -155,7 +148,8 @@
                     the JavaScript SDK to present a graphical Login button that triggers
                     the FB.login() function when clicked.
                     -->
-		<div class="fb-login-button" data-max-rows="1" data-size="small" data-button-type="login_with" 
+                    <fb:login-button scope="public_profile,email,user_groups,publish_actions" onlogin="checkLoginState();"></fb:login-button>
+					<div class="fb-login-button" data-max-rows="1" data-size="small" data-button-type="login_with" 
 					data-show-faces="true" data-auto-logout-link="true" data-use-continue-as="false" onlogin="checkLoginState();"></div>
                     <div id="status"></div>
                 </div>
@@ -168,7 +162,6 @@
                     </select>
                     <span class="help-block">Select your groups.</span>
                     <button type="button" onclick="getGroups();" class="btn btn-success">Load Groups</button>
-                    <button type="button" onclick="qw();" class="btn btn-success">QW</button>
                 </div>
             </div>
         </form>
