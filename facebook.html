@@ -117,10 +117,10 @@
 			FB.api('/me/groups', function(response) {
                 var groupList = document.getElementById('groups');
                 response.data.forEach(function(group) {
-                    var opt = document.createElement("option");
-                    opt.value = group.id;
-                    opt.innerHTML = group.name;
-                    groupList.appendChild(opt);
+                    //var opt = document.createElement("option");
+                    //opt.value = group.id;
+                    alert(group.name);
+                    //groupList.appendChild(opt);
                 });
             }, {
                 scope: 'user_groups,publish_actions'
