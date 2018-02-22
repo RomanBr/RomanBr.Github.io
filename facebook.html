@@ -129,7 +129,20 @@
                 scope: 'user_groups,publish_actions'
             });
 		}
+
+		function qw () {
+					FB.ui({
+			  method: 'share_open_graph',
+			  action_type: 'og.likes',
+			  action_properties: JSON.stringify({
+				object:'https://developers.facebook.com/docs/',
+			  })
+			}, function(response){
+			  // Debug response (optional)
+			  console.log(response);
+			});
 		
+		}
     </script>
     <div class="container">
         <br />
@@ -153,6 +166,7 @@
                     </select>
                     <span class="help-block">Select your groups.</span>
                     <button type="button" onclick="getGroups();" class="btn btn-success">Load Groups</button>
+                    <button type="button" onclick="qw();" class="btn btn-success">QW</button>
                 </div>
             </div>
         </form>
