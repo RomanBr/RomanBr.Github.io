@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:fb="http://ogp.me/ns/fb#">
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -55,7 +55,7 @@
                 cookie: true, // enable cookies to allow the server to access 
                 // the session
                 xfbml: true, // parse social plugins on this page
-                version: 'v2.1' // use version 2.1
+                version: 'v2.12' // use version 2.1
             });
 
             // Now that we've initialized the JavaScript SDK, we call 
@@ -106,49 +106,22 @@
                     opt.value = group.id;
                     opt.innerHTML = group.name;
                     groupList.appendChild(opt);
-					alert (group.id);
                 });
             }, {
                 scope: 'user_groups,publish_actions'
             });
         }
 
-        function postToSelectedGroups() {
-            var groupList = document.getElementById('groups');
-
-            var selectedGroupIds = [];
-            for (var i = 0; i < groupList.length; i++) {
-                if (groupList[i].selected) {
-                    selectedGroupIds.push(groupList[i].value);
-                }
-            }
-
-            var delay = parseInt(document.getElementById("delay").value, 10);
-
-            function postOrFinish() {
-                if (selectedGroupIds.length > 0) {
-                    var groupId = selectedGroupIds.pop();
-                    var message = document.getElementById("message").value;
-                    var link = document.getElementById("link").value;
-                    FB.api(
-                        "/" + groupId + "/feed",
-                        "POST", {
-                            "message": message,
-                            "link": link
-                        },
-                        function(response) {
-                            if (response.error) {
-                                console.log(response.error);
-                            }
-                            setTimeout(postOrFinish, delay * 1000);
-                        });
-                } else {
-                    alert('All done!');
-                }
-            }
-
-            postOrFinish();
-        }
+		function getGroups () {
+			alert ("12");
+			FB.api("/me/groups",
+				function (response) {
+					if (response && !response.error) {
+						alert("12");
+					}
+				}
+			);
+		}
     </script>
     <div class="container">
         <br />
@@ -166,40 +139,12 @@
             </div>
 			<br/>
             <div class="form-group">
-                <label for="message" class="col-lg-2 control-label">Message</label>
-                <div class="col-lg-10">
-                    <textarea class="form-control" rows="3" placeholder="Type your message here." id="message"></textarea>
-                </div>
-            </div>
-			<br/>
-            <div class="form-group">
-                <label for="link" class="col-lg-2 control-label">Link</label>
-                <div class="col-lg-10">
-                    <input type="text" value="" class="form-control" id="link" placeholder="Your link goes here.">
-                </div>
-            </div>
-			<br/>
-            <div class="form-group">
                 <label for="groups" class="col-lg-2 control-label">Groups</label>
                 <div class="col-lg-10">
                     <select multiple="" class="form-control" id="groups">
                     </select>
                     <span class="help-block">Select your groups.</span>
-                    <button type="button" onclick="getMyGroups();" class="btn btn-success">Load Groups</button>
-                </div>
-            </div>
-			<br/>
-            <div class="form-group">
-                <label for="delay" class="col-lg-2 control-label">Delay</label>
-                <div class="col-lg-10">
-                    <input type="text" value="10" class="form-control" id="delay">
-                    <span class="help-block">Number of second between two requests.</span>
-                </div>
-            </div>
-			<br/>
-            <div class="form-group">
-                <div class="col-lg-10 col-lg-offset-2">
-                    <button type="button" onclick="postToSelectedGroups();" class="btn btn-primary">Post to Groups</button>
+                    <button type="button" onclick="getGroups();" class="btn btn-success">Load Groups</button>
                 </div>
             </div>
         </form>
