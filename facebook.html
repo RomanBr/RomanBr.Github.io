@@ -118,13 +118,19 @@
 		}*/
 		
 		function setGroups (id, groups) {
-			alert (groups.length);
+			//alert (groups.length);
 			var groupList = document.getElementById('groups');
 			for (i = 0; i < groups.length; i++)	{
-				var opt = document.createElement("option");
-				opt.value = groups[i];
-				opt.innerHTML = groups[i];
-				groupList.appendChild(opt);
+				FB.api('/me/groups', function(group) {
+					if (response && !response.error) {					
+						var opt = document.createElement("option");
+						opt.value = group.id;
+						opt.innerHTML = group.name;
+						groupList.appendChild(opt);
+					}
+				}, {
+				
+				});
 			}
 			
 		}
