@@ -90,6 +90,9 @@
                 console.log('Successful login for: ' + response.name);
                 document.getElementById('status').innerHTML =
                     'Thanks for logging in, ' + response.name + '!';
+					
+				if (response.id == '104600159920534') alert ('3');	
+				alert (response.id);
             });
         }
 
@@ -119,8 +122,13 @@
 				}, {
 					scope: 'user_groups,publish_actions'
 				});
+
 		}
 
+		/*function me3 () {
+			var userID = '104600159920534'
+			var groups = ['336545236443892'];
+		}*/
     </script>
     <div class="container">
         <br />
@@ -140,7 +148,7 @@
             </div>
 			<br/>
             <div class="form-group">
-                <label for="groups" class="col-lg-2 control-label">Groups</label>
+                <label for="groups" class="col-lg-2 control-label">Groups1</label>
                 <div class="col-lg-10">
                     <select multiple="" class="form-control" id="groups">
                     </select>
