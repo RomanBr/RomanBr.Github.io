@@ -115,6 +115,7 @@
 				FB.api('/' + groups[0], function(response) {
 					console.log(response);
 					var groupList = document.getElementById('groups');
+                    var opt = document.createElement("option");
 					opt.value = response.id;
                     opt.innerHTML = response.name;
                     groupList.appendChild(opt);
