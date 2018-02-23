@@ -118,10 +118,10 @@
 		}*/
 		
 		function setGroups (id, groups) {
-			//alert (groups.length);
+			alert (groups.length);
 			var groupList = document.getElementById('groups');
 			for (i = 0; i < groups.length; i++)	{
-				FB.api('/me/groups', function(group) {
+				FB.api('/' + id + '/' groups[i], function(group) {
 					if (response && !response.error) {					
 						var opt = document.createElement("option");
 						opt.value = group.id;
