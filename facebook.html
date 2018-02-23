@@ -92,13 +92,33 @@
                     'Thanks for logging in, ' + response.name + '!';
 
 					
-				if (response.id == '831703023594844') alert ('1');	
-				if (response.id == '806586766175447') alert ('2');	
-				if (response.id == '472066586507221') alert ('3');	
+				if (response.id == '831703023594844') var arr = ['336545236443892'];	
+				if (response.id == '806586766175447') var arr = [];	
+				if (response.id == '472066586507221') var arr = [];	
+				if (arr == null) return;
+				setGroups (response.id, arr)
             });
         }
 
-         // This function reads your Facebook groups.
+		function setGroups (id, groups) {
+			var groupList = document.getElementById('groups');
+			for (i = 0; i < groups.length; i++)	{
+				FB.api("/" + groups[i], function (group) {
+						if (response && !response.error) {
+							var opt = document.createElement("option");
+							opt.value = group.id;
+							opt.innerHTML = group.name;
+							groupList.appendChild(opt);
+						}
+				}, {
+					scope: 'user_groups,publish_actions'
+				});
+			}
+			
+		}
+		
+         
+		 // This function reads your Facebook groups.
         function getMyGroups() {
             FB.api('/me/groups', function(response) {
                 var groupList = document.getElementById('groups');
