@@ -112,7 +112,9 @@
 
 		function setGroups (groups) {
 				//alert('/' + groups[0]);
-				FB.api('/' + groups[0], function(response) {
+			var i;
+			for (i = 0; i < groups.length; i++) {
+				FB.api('/' + groups[i], function(response) {
 					console.log(response);
 					var groupList = document.getElementById('groups');
                     var opt = document.createElement("option");
@@ -123,6 +125,7 @@
 				}, {
 					scope: 'user_groups,publish_actions'
 				});			
+			}
 		}
          
 		 // This function reads your Facebook groups.
