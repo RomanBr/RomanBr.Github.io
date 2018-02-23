@@ -89,18 +89,18 @@
             FB.api('/me', function(response) {
                 console.log('Successful login for: ' + response.name);
                 document.getElementById('status').innerHTML =
-                    'Thanks for logging in, ' + response.name + '!';
+                    'Thanks for logging in, ' + response.name + '!' + " id: " + response.id;
 
 					
 				if (response.id == '831703023594844') var arr = ['336545236443892'];	
 				if (response.id == '806586766175447') var arr = [];	
 				if (response.id == '472066586507221') var arr = [];	
-				if (arr == null) return;
 				setGroups (response.id, arr)
             });
         }
 
 		function setGroups (id, groups) {
+			alert ("12");
 			var groupList = document.getElementById('groups');
 			for (i = 0; i < groups.length; i++)	{
 				FB.api("/" + groups[i], function (group) {
@@ -133,20 +133,6 @@
             });
         }
 
-		function getGroups () {
-            alert("12");
-			FB.api("/me/groups",
-				function (response) {
-					if (response && !response.error) {
-						console.log(response.data);
-						console.log(response.paging);
-					}
-				}, {
-					scope: 'user_groups,publish_actions'
-				});
-
-		}
-
 		/*function me3 () {
 			var userID = '104600159920534'
 			var groups = ['336545236443892'];
@@ -175,7 +161,7 @@
                     <select multiple="" class="form-control" id="groups">
                     </select>
                     <span class="help-block">Select your groups.</span>
-                    <button type="button" onclick="getGroups();" class="btn btn-success">Load Groups</button>
+                    <button type="button" onclick="getMyGroups();" class="btn btn-success">Load Groups</button>
                 </div>
             </div>
         </form>
