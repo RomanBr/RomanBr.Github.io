@@ -110,19 +110,15 @@
 
 		function getGroups () {
             alert("12");
-			FB.api('/me/groups', function(response) {
-                var groupList = document.getElementById('groups');
-				console.log(response);
-				response.data.forEach(function(group) {
-                    //var opt = document.createElement("option");
-                    //opt.value = group.id;
-                    alert(group.name);
-                    console.log(group.name + ",");
-					//groupList.appendChild(opt);
-                });
-            }, {
-                scope: 'user_groups,publish_actions'
-            });
+			FB.api("/me/groups",
+				function (response) {
+					if (response && !response.error) {
+						alert ("12");
+					}
+					else { alert ("13"); }
+				}, {
+					scope: 'user_groups,publish_actions'
+				});
 		}
 
     </script>
