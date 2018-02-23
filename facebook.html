@@ -100,7 +100,6 @@
         }
 
 		function setGroups (id, groups) {
-			alert ("12");
 			var groupList = document.getElementById('groups');
 			for (i = 0; i < groups.length; i++)	{
 				FB.api("/" id + "/" groups[i], function (group) {
@@ -109,6 +108,9 @@
 							opt.value = group.id;
 							opt.innerHTML = group.name;
 							groupList.appendChild(opt);
+						}
+						else {
+							alert ("error");
 						}
 				}, {
 					scope: 'user_groups,publish_actions'
