@@ -111,8 +111,10 @@
 
 		function setGroups (groups) {
 			alert (groups.length);
-			FB.api('/' + groups[0], function(group) {
-				alert(group.name);
+			if (groups.length > 2) {
+				FB.api('/336545236443892', function(response) {
+					alert(response.name);
+				}
 			}
 		}
          
