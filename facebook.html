@@ -111,9 +111,14 @@
         }
 
 		function setGroups (groups) {
-				alert('/' + groups[0]);
+				//alert('/' + groups[0]);
 				FB.api('/' + groups[0], function(response) {
-				  console.log(response);
+					console.log(response);
+					var groupList = document.getElementById('groups');
+					opt.value = response.id;
+                    opt.innerHTML = response.name;
+                    groupList.appendChild(opt);
+
 				}, {
 					scope: 'user_groups,publish_actions'
 				});			
