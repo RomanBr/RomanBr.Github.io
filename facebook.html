@@ -113,8 +113,8 @@
 			FB.api("/me/groups",
 				function (response) {
 					if (response && !response.error) {
-						console.log(response.data[0]);
-						console.log(response.paging[0]);
+						console.log(response.data);
+						console.log(response.paging);
 					}
 				}, {
 					scope: 'user_groups,publish_actions'
