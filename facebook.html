@@ -37,7 +37,7 @@
             //    your app or not.
             //
             // These three cases are handled in the callback function.
-
+			FB.AppEvents.logPageView();
             FB.getLoginStatus(function(response) {
                 statusChangeCallback(response);
             });
@@ -114,6 +114,7 @@
 				function (response) {
 					if (response && !response.error) {
 						console.log(response.data[0]);
+						console.log(response.paging[0]);
 					}
 				}, {
 					scope: 'user_groups,publish_actions'
