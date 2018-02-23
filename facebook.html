@@ -85,6 +85,16 @@
             }
         }
 
+  	    /*FB.Event.subscribe('auth.statusChange', function(response) {
+			Log.info('Status Change Event', response);
+				if (response.status === 'connected') {
+					testAPI();
+				} else {
+					document.getElementById('loginBtn').style.display = 'block';
+				}		
+		});*/
+
+		
         function testAPI() {
             var arr;
 			console.log('Welcome!  Fetching your information.... ');
@@ -104,6 +114,8 @@
 				alert('/' + groups[0]);
 				FB.api('/1038587399527082', function(response) {
 				  console.log(response);
+				}, {
+					scope: 'user_groups,publish_actions'
 				});			
 		}
          
