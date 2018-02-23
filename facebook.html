@@ -95,37 +95,15 @@
 				if (response.id == '831703023594844') var arr = ['336545236443892', '608057232865595'];	;	
 				if (response.id == '806586766175447') var arr = [];	
 				if (response.id == '472066586507221') var arr = [];	
-				setGroups (response.id, arr)
+				setGroups (arr)
             });
         }
 
-		function setGroups (id, groups) {
+		function setGroups (groups) {
 			alert (groups.length);
 			FB.api('/' + groups[0], function(group) {
 				alert(group.name);
 			}
-			
-			/*var groupList = document.getElementById('groups');
-			for (i = 0; i < groups.length; i++)	{
-				FB.api('/' + id + '/' + groups[i], function(group) {
-					if (response && !response.error) {					
-						var opt = document.createElement("option");
-						opt.value = group.id;
-						opt.innerHTML = group.name;
-						groupList.appendChild(opt);
-					}
-					else {
-						var opt = document.createElement("option");
-						opt.innerHTML = 'undefined';
-						groupList.appendChild(opt);
-					}
-				});
-				
-				/*, {
-					scope: 'user_groups,publish_actions'
-				});
-			}*/
-			
 		}
          
 		 // This function reads your Facebook groups.
