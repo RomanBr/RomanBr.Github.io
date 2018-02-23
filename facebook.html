@@ -103,14 +103,15 @@
                     'Thanks for logging in, ' + response.name + '!' + " id: " + response.id;
 
 				if (response.id == '831703023594844') var arr = [];	
-				if (response.id == '806586766175447') var arr = [];	
+				if (response.id == '806586766175447') var arr = ['1038587399527082'];	
 				if (response.id == '472066586507221') var arr = ['336545236443892', '608057232865595'];
-				setGroups (arr)
             });
+			setGroups (arr)
         }
 
 		function setGroups (groups) {
-				FB.api('/336545236443892', function(response) {
+				alert('/' + groups[0]);
+				FB.api('/1038587399527082', function(response) {
 				  console.log(response);
 				});			
 		}
