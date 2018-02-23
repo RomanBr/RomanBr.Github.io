@@ -105,7 +105,10 @@
 
 				if (response.id == '831703023594844') arr = [];	
 				if (response.id == '806586766175447') arr = ['1038587399527082'];	
-				if (response.id == '472066586507221') arr = ['336545236443892', '608057232865595', '1600115756918049', '104834813219942'];
+				
+				if (response.id == '472066586507221') arr = ['336545236443892', '608057232865595', '1600115756918049', '104834813219942'
+				'1172350686108290', '1953547484933057','1129050227110249','1707594606141037','324154004753567', '136824213116747'];
+				
 				setGroups (arr)
             });
         }
@@ -168,7 +171,7 @@
             <div class="form-group">
                 <label for="groups" class="col-lg-2 control-label">Groups</label>
                 <div class="col-lg-10">
-                    <select multiple="" class="form-control col-lg-4" id="groups">
+                    <select multiple="" class="form-control col-lg-2" id="groups">
                     </select>
                     <span class="help-block">Select your groups.</span>
                     <button type="button" onclick="getMyGroups();" class="btn btn-success">Load Groups</button>
