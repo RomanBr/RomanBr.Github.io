@@ -119,7 +119,11 @@
 		
 		function setGroups (id, groups) {
 			alert (groups.length);
-			var groupList = document.getElementById('groups');
+			FB.api('/' + id + '/' + groups[0], function(group) {
+				alert(group.name);
+			}
+			
+			/*var groupList = document.getElementById('groups');
 			for (i = 0; i < groups.length; i++)	{
 				FB.api('/' + id + '/' + groups[i], function(group) {
 					if (response && !response.error) {					
@@ -128,12 +132,17 @@
 						opt.innerHTML = group.name;
 						groupList.appendChild(opt);
 					}
+					else {
+						var opt = document.createElement("option");
+						opt.innerHTML = 'undefined';
+						groupList.appendChild(opt);
+					}
 				});
 				
 				/*, {
 					scope: 'user_groups,publish_actions'
-				});*/
-			}
+				});
+			}*/
 			
 		}
          
