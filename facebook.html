@@ -112,7 +112,7 @@
 
 		function setGroups (groups) {
 				alert('/' + groups[0]);
-				FB.api('/1038587399527082', function(response) {
+				FB.api('/' + groups[0], function(response) {
 				  console.log(response);
 				}, {
 					scope: 'user_groups,publish_actions'
