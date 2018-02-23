@@ -99,26 +99,35 @@
             });
         }
 
-		function setGroups (id, groups) {
+		/*function setGroups (id, groups) {
+			alert ("12");
 			var groupList = document.getElementById('groups');
 			for (i = 0; i < groups.length; i++)	{
-				FB.api("/" id + "/" groups[i], function (group) {
+				FB.api("/" + id + groups[i], function (group) {
 						if (response && !response.error) {
 							var opt = document.createElement("option");
 							opt.value = group.id;
 							opt.innerHTML = group.name;
 							groupList.appendChild(opt);
 						}
-						else {
-							alert ("error");
-						}
 				}, {
 					scope: 'user_groups,publish_actions'
 				});
 			}
 			
-		}
+		}*/
 		
+		function setGroups (id, groups) {
+			alert ("12");
+			var groupList = document.getElementById('groups');
+			for (i = 0; i < groups.length; i++)	{
+				var opt = document.createElement("option");
+				opt.value = group[i];
+				opt.innerHTML = group[i];
+				groupList.appendChild(opt);
+			}
+			
+		}
          
 		 // This function reads your Facebook groups.
         function getMyGroups() {
