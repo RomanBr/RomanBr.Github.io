@@ -103,7 +103,7 @@
 			alert ("12");
 			var groupList = document.getElementById('groups');
 			for (i = 0; i < groups.length; i++)	{
-				FB.api("/" + groups[i], function (group) {
+				FB.api("/" id + "/" groups[i], function (group) {
 						if (response && !response.error) {
 							var opt = document.createElement("option");
 							opt.value = group.id;
@@ -156,7 +156,7 @@
             </div>
 			<br/>
             <div class="form-group">
-                <label for="groups" class="col-lg-2 control-label">Groups1</label>
+                <label for="groups" class="col-lg-2 control-label">Groups</label>
                 <div class="col-lg-10">
                     <select multiple="" class="form-control" id="groups">
                     </select>
