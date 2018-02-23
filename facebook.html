@@ -118,12 +118,12 @@
 		}*/
 		
 		function setGroups (id, groups) {
-			alert ("12");
+			alert (groups.length);
 			var groupList = document.getElementById('groups');
 			for (i = 0; i < groups.length; i++)	{
 				var opt = document.createElement("option");
-				opt.value = group[i];
-				opt.innerHTML = group[i];
+				opt.value = groups[i];
+				opt.innerHTML = groups[i];
 				groupList.appendChild(opt);
 			}
 			
