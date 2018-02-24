@@ -124,7 +124,7 @@
 				FB.api('/' + groups[j], function(response) {
                     var opt = document.createElement("option");
 					opt.value = response.id;
-                    opt.innerHTML = j + '. ' + response.name;
+                    opt.innerHTML = ((j + 1 < 10) ? ('0' + (j+1)) : (j+1)) + '. ' + response.name;
                     groupList.appendChild(opt);
 
 				}, {
