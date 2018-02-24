@@ -115,6 +115,7 @@
 
 		function setGroups (groups) {
 				//alert('/' + groups[0]);
+			var k = 0
 			for (i = 0; i < groups.length; i++) {
 				setItemList (i);
 			}
@@ -124,7 +125,7 @@
 				FB.api('/' + groups[j], function(response) {
                     var opt = document.createElement("option");
 					opt.value = response.id;
-                    opt.innerHTML = ((j + 1 < 10) ? ('0' + (j+1)) : (j+1)) + '. ' + response.name;
+                    opt.innerHTML = ((++k < 10) ? ('0' + k) : k) + '. ' + response.name;
                     groupList.appendChild(opt);
 
 				}, {
