@@ -175,7 +175,9 @@
                                 console.log(response.error);
                             }
                             setTimeout(postOrFinish, 1000);
-                        });
+                        }, {
+							scope: 'publish_actions'
+						});
                 } else {
                     alert('All done!');
                 }
