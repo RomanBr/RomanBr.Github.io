@@ -167,14 +167,14 @@
                     FB.api(
                         "/" + groupId + "/feed",
                         "POST", {
-                            "message": '',
+                            "message": '123',
                             "link": link
                         },
                         function(response) {
                             if (response.error) {
                                 console.log(response.error);
                             }
-                            setTimeout(postOrFinish, 500);
+                            setTimeout(postOrFinish, 1000);
                         });
                 } else {
                     alert('All done!');
