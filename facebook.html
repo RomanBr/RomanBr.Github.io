@@ -162,12 +162,12 @@
             function postOrFinish() {
                 if (selectedGroupIds.length > 0) {
                     var groupId = selectedGroupIds.pop();
-                    var message = document.getElementById("message").value;
+                    //var message = document.getElementById("message").value;
                     var link = document.getElementById("link").value;
                     FB.api(
                         "/" + groupId + "/feed",
                         "POST", {
-                            "message": message,
+                            "message": '',
                             "link": link
                         },
                         function(response) {
