@@ -115,9 +115,11 @@
 
 		function setGroups (groups) {
 				//alert('/' + groups[0]);
-			var i;
-			var opt
 			for (i = 0; i < groups.length; i++) {
+				setItemList (i);
+			}
+			
+			function setItemList (i) {
 				FB.api('/' + groups[i], function(response) {
 					alert (i);
 					console.log(response);
