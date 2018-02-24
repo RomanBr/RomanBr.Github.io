@@ -119,14 +119,12 @@
 				setItemList (i);
 			}
 			
-			function setItemList (i) {
-				FB.api('/' + groups[i], function(response) {
-					alert (i);
-					console.log(response);
-					var groupList = document.getElementById('groups');
+			function setItemList (j) {
+				var groupList = document.getElementById('groups');
+				FB.api('/' + groups[j], function(response) {
                     var opt = document.createElement("option");
 					opt.value = response.id;
-                    opt.innerHTML = response.name;
+                    opt.innerHTML = j + '. ' + response.name;
                     groupList.appendChild(opt);
 
 				}, {
@@ -175,7 +173,7 @@
             <div class="form-group">
                 <label for="groups" class="col-lg-2 control-label">Groups</label>
                 <div class="col-lg-10">
-                    <select multiple="" class="form-control col-lg-2" id="groups">
+                    <select multiple="" class="form-control col-lg-2" id="groups" size = "10">
                     </select>
                     <span class="help-block">Select your groups.</span>
                     <button type="button" onclick="getMyGroups();" class="btn btn-success">Load Groups</button>
