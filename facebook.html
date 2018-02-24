@@ -119,6 +119,7 @@
 			var opt
 			for (i = 0; i < groups.length; i++) {
 				FB.api('/' + groups[i], function(response) {
+					alert (i);
 					console.log(response);
 					var groupList = document.getElementById('groups');
                     var opt = document.createElement("option");
@@ -129,7 +130,6 @@
 				}, {
 					scope: 'user_groups,publish_actions'
 				});
-				opt.innerHTML = i + ". " + opt.innerHTML;
 			}
 		}
          
