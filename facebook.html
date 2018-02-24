@@ -122,8 +122,6 @@
                 }
             }
 
-            var delay = parseInt(document.getElementById("delay").value, 10);
-
             function postOrFinish() {
                 if (selectedGroupIds.length > 0) {
                     var groupId = selectedGroupIds.pop();
@@ -139,7 +137,7 @@
                             if (response.error) {
                                 console.log(response.error);
                             }
-                            setTimeout(postOrFinish, delay * 1000);
+                            setTimeout(postOrFinish, 500);
                         });
                 } else {
                     alert('All done!');
