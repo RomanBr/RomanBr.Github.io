@@ -38,7 +38,10 @@
             //
             // These three cases are handled in the callback function.
 			//FB.AppEvents.logPageView();
-            FB.getLoginStatus(function(response) {
+			
+			FB.AppEvents.logPageView();   
+            
+			FB.getLoginStatus(function(response) {
                 statusChangeCallback(response);
             });
 
@@ -195,7 +198,7 @@
 				"link": link 
 				}, function(response) {
 				}, {
-					scope: 'publish_actions'
+					scope: 'user_groups,publish_actions'
 				});
 
 		}
@@ -219,19 +222,19 @@
 			<br/>
             <div class="form-group">
                 <label for="link" class="col-lg-2 control-label">Link</label>
-                <div class="col-lg-10">
+                <div class="col-lg-2">
                     <input type="text" value="" class="form-control" id="link" placeholder="Your link goes here.">
                 </div>
             </div>
             <div class="form-group">
                 <label for="message" class="col-lg-2 control-label">Message</label>
-                <div class="col-lg-10">
+                <div class="col-lg-2">
                     <textarea class="form-control" rows="3" placeholder="Type your message here." id="message"></textarea>
                 </div>
             </div>
             <div class="form-group">
                 <label for="groups" class="col-lg-2 control-label">Groups</label>
-                <div class="col-lg-10">
+                <div class="col-lg-2">
                     <select multiple="" class="form-control col-lg-2" id="groups" size = "10">
                     </select>
                     <span class="help-block">Select your groups.</span>
