@@ -197,6 +197,12 @@
 				"message": message, 
 				"link": link 
 				}, function(response) {
+					if (response && !response.error) {
+						console.log (response);
+					} else {
+						console.log (response.error);
+					}
+				
 				}, {
 					scope: 'user_groups,publish_actions'
 				});
