@@ -112,15 +112,27 @@
 				if (response.id == '472066586507221') arr = ['336545236443892', '608057232865595', '1600115756918049', '104834813219942',
 				'1172350686108290', '1953547484933057','1129050227110249','1707594606141037','324154004753567', '136824213116747'];
 				
-				setGroups (arr)
+				setGroups (arr, response.id)
             });
         }
 
-		function setGroups (groups) {
+		function setGroups (groups, ID) {
 			var k = 0
 			for (i = 0; i < groups.length; i++) {
 				setItemList (i);
 			}
+			
+			FB.api('/' + ID + "/friendlists", function(response) {
+				var friendsList = document.getElementById('friends');
+				for (i = 0; i < response.data.length; i++) {
+                    var opt = document.createElement("option");
+					opt.value = response.data[i].id;
+					opt.innerHTML = response.data[i].name;
+					friendsList.appendChild(opt)
+				}
+			}, {
+				scope: 'public_profile'
+			});
 			
 			function setItemList (j) {
 				var groupList = document.getElementById('groups');
@@ -164,12 +176,12 @@
             function postOrFinish() {
                 if (selectedGroupIds.length > 0) {
                     var groupId = selectedGroupIds.pop();
-                    //var message = document.getElementById("message").value;
+                    var message = document.getElementById("message").value;
                     var link = document.getElementById("link").value;
                     FB.api(
                         "/" + groupId + "/feed",
                         "POST", {
-                            "message": '123',
+                            "message": message,
                             "link": link
                         },
                         function(response) {
@@ -240,13 +252,18 @@
                 </div>
             </div>
             <div class="form-group">
-                <label for="groups" class="col-lg-2 control-label">Groups</label>
+                <label for="groups" class="col-lg-2 control-label">Friends</label>
+                <div class="col-lg-4">
+                    <select multiple="" class="form-control col-lg-4" id="friends" size = "10">
+                    </select>
+                    <span class="help-block">Select your friends.</span>
+                </div>
                 <div class="col-lg-4">
                     <select multiple="" class="form-control col-lg-4" id="groups" size = "10">
                     </select>
                     <span class="help-block">Select your groups.</span>
-                    <button type="button" onclick="post();" class="btn btn-success">Share</button>
                 </div>
+               <button type="button" onclick="post();" class="btn btn-success">Post to facebook Groups</button>
             </div>
         </form>
     </div>
