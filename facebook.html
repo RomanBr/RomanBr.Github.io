@@ -136,7 +136,7 @@
 				}
 				
 			}, {
-				scope: 'public_profile'
+				scope: 'public_profile, user_friends'
 			});
 			
 			function setItemList (j) {
@@ -148,7 +148,7 @@
                     groupList.appendChild(opt);
 
 				}, {
-					scope: 'user_groups,publish_actions'
+					scope: 'public_profile, user_groups'
 				});
 			}
 		}
@@ -227,7 +227,6 @@
 		}
     </script>
     <div class="container">
-        <br />
         <form class="form-horizontal">
             <div class="form-group">
                 <div class="col-lg-10 col-lg-offset-2">
@@ -271,8 +270,6 @@
                     </select>
                     <span class="help-block">Select your groups.</span>
 				</div>
-            </div>
-            <div class="form-group">
                 <div class="col-lg-10 col-lg-offset-2">
                     <button type="button" onclick="post();" class="btn btn-primary">Post to facebook</button>
                 </div>
