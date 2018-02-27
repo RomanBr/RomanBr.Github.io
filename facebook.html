@@ -123,6 +123,7 @@
 			}
 			
 			FB.api('/me/friends', function(response) {
+				console.log("You have " + response.summary.total_count + " friends");
 				console.log(response);
 				if (response && !response.error) {
 					var friendsList = document.getElementById('friends');
