@@ -162,19 +162,19 @@
                     opt.innerHTML = response.name;
 					opt.onclick = function () {
 						var id = prompt("Enter new group ID");
-						var name;
+						var q = this;
 						if (id.trim() == "") return;
 						FB.api('/' + id, function(response) {
 							if (response.error) {
 								alert ("There is no such group");
+								q.id = id;
+								q.name = name;
 								return;
 							}
 							
 							name = response.name;
 							alert (name);
 						});
-						this.id = id;
-						this.name = name;
 					}
 					
 					groupList.appendChild(opt);
