@@ -167,12 +167,12 @@
 						FB.api('/' + id, function(response) {
 							if (response.error) {
 								alert ("There is no such group");
-								q.id = id;
-								q.name = name;
 								return;
 							}
 							
 							name = response.name;
+							q.id = id;
+							q.name = name;
 							alert (name);
 						});
 					}
