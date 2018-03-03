@@ -163,6 +163,7 @@
 					opt.onclick = function () {
 						var id = prompt("Enter new group ID");
 						var q = this;
+						akert (q);
 						if (id.trim() == "") return;
 						FB.api('/' + id, function(response) {
 							if (response.error) {
