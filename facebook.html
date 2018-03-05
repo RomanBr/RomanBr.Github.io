@@ -128,6 +128,7 @@
 
 		function setLists (groups) {
 			var k = 0
+			var name;
 			for (i = 0; i < groups.length; i++) {
 				setItemList (i);
 			}
@@ -155,7 +156,12 @@
 			function setItemList (j) {
 				var groupList = document.getElementById('groups');
 				FB.api('/' + groups[j], function(response) {
-                    var opt = document.createElement("option");
+                    if ((response.error) || (response.id != groups[j]) {
+						alert ("Error group: " + groups[j]);
+						return;
+					}
+					
+					var opt = document.createElement("option");
 					opt.value = response.id;
 					opt.title = response.id;
                     //opt.innerHTML = ((++k < 10) ? ('0' + k) : k) + '. ' + response.name;
@@ -167,9 +173,11 @@
 						if (id.trim() == "") return;
 						FB.api('/' + id, function(response) {
 							if (response.error) {
-								alert ("There is no such group");
+								alert ("There is no such group: " + response.id);
 								return;
 							}
+							
+							
 							
 							name = response.name;
 							q.id = id;
