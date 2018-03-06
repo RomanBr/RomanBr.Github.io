@@ -167,7 +167,7 @@
 					opt.title = response.id;
                     //opt.innerHTML = ((++k < 10) ? ('0' + k) : k) + '. ' + response.name;
                     opt.innerHTML = response.name;
-					opt.onclick = function () {
+					opt.ondblclick = function () {
 						var id = prompt("Enter new group ID");
 						var option  = this
 						if (id.trim() == "") return;
@@ -177,8 +177,8 @@
 								return;
 							}
 							
-							alert (response.id);
 							option.value = response.id;
+							opt.title = response.id;
 							option.innerHTML = response.name;
 						});
 					}
