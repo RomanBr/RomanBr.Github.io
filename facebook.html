@@ -169,7 +169,6 @@
                     opt.innerHTML = response.name;
 					opt.onclick = function () {
 						var id = prompt("Enter new group ID");
-						var q = this;
 						alert (q.innerHTML);
 						if (id.trim() == "") return;
 						FB.api('/' + id, function(response) {
@@ -178,9 +177,8 @@
 								return;
 							}
 							
-							name = response.name;
-							q.value = response.id;
-							q.innerHTML = response.name;
+							this.value = response.id;
+							this.innerHTML = response.name;
 						});
 					}
 					
