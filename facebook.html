@@ -169,6 +169,12 @@
                     opt.innerHTML = response.name;
 					opt.ondblclick = function () {
 						var id = prompt("Enter new group ID");
+						var find = document.querySelector('[value=' + id + ']');
+						if (find == null) {
+							alert (id + " already exist in the list");
+							return;
+						}
+						
 						var option  = this
 						if (id.trim() == "") return;
 						FB.api('/' + id, function(response) {
