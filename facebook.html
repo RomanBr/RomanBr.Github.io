@@ -170,7 +170,7 @@
 					opt.ondblclick = function () {
 						var id = prompt("Enter new group ID");
 						var find = document.querySelector('[value="' + id + '"]');
-						if (find == null) {
+						if (find != null) {
 							alert (id + " already exist in the list");
 							return;
 						}
