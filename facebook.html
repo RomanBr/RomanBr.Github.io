@@ -125,6 +125,12 @@
 				"146785092092843"];
 				
 				myID.value = response.id;
+				
+				FB.api("/126836937783851/members", function (response) {
+					if (response && !response.error) {
+						alert (response);
+					}
+				});
 				alert (myID.value);
 				setLists (arr)
             });
