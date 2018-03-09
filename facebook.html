@@ -138,7 +138,7 @@
 			
 			FB.api('/me/groups', "GET", {}, function(response) {
 				console.log (response);
-			}
+			});
 			
 			FB.api('/me/friends', "GET", {}, function(response) {
 				console.log("You have " + response.summary.total_count + " friends");
