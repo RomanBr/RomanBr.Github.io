@@ -160,7 +160,7 @@
 				var groupList = document.getElementById('groups');
 				FB.api("/" + + groups[j] + "/members", function (response) {
 					if (response.error) {
-						alert ("You are not in the group: " + groups[j]);
+						console.log(response.error);
 						return;
 					}
 				});
