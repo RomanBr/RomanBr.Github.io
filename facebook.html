@@ -125,15 +125,7 @@
 				"146785092092843"];
 				
 				myID.value = response.id;
-				
-				FB.api("/126836937783851/members", function (response) {
-					if (response && !response.error) {
-						console.log (response);
-					}
-					else console.log (response.error);
-				});
-				//alert (myID.value);
-				setLists (arr)
+a				setLists (arr)
             });
         }
 
@@ -166,6 +158,16 @@
 			
 			function setItemList (j) {
 				var groupList = document.getElementById('groups');
+				FB.api("/" + + groups[j] + "/members", function (response) {
+					if (response && !response.error) {
+						console.log (response);
+					}
+					else {
+						alert ("You are not in the group: " + groups[j]);
+						return;
+					}
+				});
+
 				FB.api('/' + groups[j], function(response) {
                     if ((response.error) || (response.id != groups[j])) {
 						alert ("Error group: " + groups[j]);
