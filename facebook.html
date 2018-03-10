@@ -137,7 +137,8 @@
 			}
 			
 			FB.api('/me/group', "GET", {}, function(response) {
-				console.log ("122223"+response);
+				response.jjj = "123";
+				console.log (response);
 			});
 			
 			FB.api('/me/friends', "GET", {}, function(response) {
