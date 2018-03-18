@@ -18,19 +18,7 @@
 		  gtag('config', 'UA-115749034-1');
 		</script>
 		<!-- End Google Analytics -->
-		<!-- Google Tag Manager -->
-		<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-		new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-		j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-		'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-		})(window,document,'script','dataLayer','GTM-MP8XXFK');</script>
-		<!-- End Google Tag Manager -->
-		
-		<!-- Google Tag Manager (noscript) -->
-		<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MP8XXFK"
-		height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-		<!-- End Google Tag Manager (noscript) -->
-		
+	
 		<!-- DFP -->
 		<script type='text/javascript'>
 			var googletag = googletag || {};
@@ -48,7 +36,6 @@
 			})();
 		</script>
 		<!-- END DFP -->
-
 
 		<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
 		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -70,20 +57,8 @@
 					oauth			 : true,
 					version          : 'v2.12'
 				});
-				// Now that we've initialized the JavaScript SDK, we call 
-				// FB.getLoginStatus().  This function gets the state of the
-				// person visiting this page and can return one of three states to
-				// the callback you provide.  They can be:
-				//
-				// 1. Logged into your app ('connected')
-				// 2. Logged into Facebook, but not your app ('not_authorized')
-				// 3. Not logged into Facebook and can't tell if they are logged into
-				//    your app or not.
-				//
-				// These three cases are handled in the callback function.
-				//FB.AppEvents.logPageView();
 				
-				FB.AppEvents.logPageView();   
+				FB.AppEvents.logPageView();				
 				
 				FB.getLoginStatus(function(response) {
 					statusChangeCallback(response);
