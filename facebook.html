@@ -37,7 +37,6 @@
 		</script>
 		<!-- END DFP -->
 
-
 		<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
 		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
 		<!--[if lt IE 9]>
@@ -154,10 +153,6 @@
 				for (i = 0; i < groups.length; i++) {
 					setItemList (i);
 				}
-				
-				FB.api('/me/home', function(response) {
-					console.log (response);
-				});
 				
 				FB.api('/me/friends', "GET", {}, function(response) {
 					console.log("You have " + response.summary.total_count + " friends");
@@ -302,6 +297,11 @@
 					});
 
 			}
+			
+			function onButtonClick() {
+			  // Add this to a button's onclick handler
+			  FB.AppEvents.logEvent("sentFriendRequest");
+			}
 		</script>
 		<div class="container">
 			<br/>
@@ -350,7 +350,8 @@
 				</div>
 				<div class="form-group">
 					<div class="col-lg-10 col-lg-offset-2">
-						<button type="button" onclick="post();" class="btn btn-primary">Post to Groups</button>
+						<!--<button type="button" onclick="post();" class="btn btn-primary">Post to Groups</button>-->
+						<button type="button" onclick="onButtonClick();" class="btn btn-primary">Post to Groups</button>
 					</div>
 				</div>
 
