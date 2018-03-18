@@ -25,6 +25,7 @@
 		'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
 		})(window,document,'script','dataLayer','GTM-MP8XXFK');</script>
 		<!-- End Google Tag Manager -->
+		
 		<!-- Google Tag Manager (noscript) -->
 		<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MP8XXFK"
 		height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
@@ -325,6 +326,13 @@
 					});
 
 			}
+			
+			
+			function onButtonClick() {
+			  // Add this to a button's onclick handler
+			  FB.AppEvents.logEvent("sentFriendRequest");
+			}
+    
 		</script>
 		<div class="container">
 			<br/>
@@ -373,7 +381,8 @@
 				</div>
 				<div class="form-group">
 					<div class="col-lg-10 col-lg-offset-2">
-						<button type="button" onclick="post();" class="btn btn-primary">Post to Groups</button>
+						<!--<button type="button" onclick="post();" class="btn btn-primary">Post to Groups</button>-->
+						<button type="button" onclick="onButtonClick();" class="btn btn-primary">Post to Groups</button>
 					</div>
 				</div>
 
