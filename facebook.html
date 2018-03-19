@@ -123,8 +123,8 @@
 				FB.api('/me', function(response) {
 					console.log('Successful login for: ' + response.name);
 					document.getElementById('profile').innerHTML =
-						'<span class="help-block col-lg-4">' + response.name + "</span><br/><br/>" + 
-						'<span class="help-block col-lg-4">' +  response.id  + "</span>";
+						'<span class="control-label col-lg-4 text-left">' + response.name + "</span><br/>" + 
+						'<span class="control-label col-lg-4 text-left">' +  response.id  + "</span>";
 
 					if (response.id == '831703023594844') arr = ["126836937783851", "271365913259411", "283159325102431", "449718845094074", "600333063448401",
 					"632503653440157", "691797114251172", "1433450830215404", "1458524017791122", "1587590338212583", "805098252892973",
@@ -227,21 +227,6 @@
 				
 			}
 			 
-			 // This function reads your Facebook groups.
-			/*function getMyGroups() {
-				FB.api('/me/groups', function(response) {
-					var groupList = document.getElementById('groups');
-					response.data.forEach(function(group) {
-						var opt = document.createElement("option");
-						opt.value = group.id;
-						opt.innerHTML = group.name;
-						groupList.appendChild(opt);
-					});
-				}, {
-					scope: 'user_groups,publish_actions'
-				});
-			}*/
-
 			function postToSelectedGroups() {
 				var groupList = document.getElementById('groups');
 
