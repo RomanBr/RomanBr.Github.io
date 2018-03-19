@@ -123,7 +123,7 @@
 				FB.api('/me', function(response) {
 					console.log('Successful login for: ' + response.name);
 					document.getElementById('profile').innerHTML =
-						'<label for="link" class="col-lg-4 control-label">' + response.name + "</label><br/>" + 
+						'<label for="link" class="col-lg-4 control-label">' + response.name + "</label><br/><br/><br/>" + 
 						'<label for="link" class="col-lg-4 control-label">' +  response.id  + "</label>";
 
 					if (response.id == '831703023594844') arr = ["126836937783851", "271365913259411", "283159325102431", "449718845094074", "600333063448401",
