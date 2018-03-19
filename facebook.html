@@ -178,11 +178,11 @@
 				function setItemList (j) {
 					var groupList = document.getElementById('groups');
 					FB.api("/" + + groups[j] + "/members", function (response) {
-						if (response.error) {
+						/*if (response.error) {
 							console.log(response.error);
 							alert (j);
 							return;
-						}
+						}*/
 					});
 
 					FB.api('/' + groups[j], function(response) {
