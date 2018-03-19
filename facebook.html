@@ -180,6 +180,7 @@
 					FB.api("/" + + groups[j] + "/members", function (response) {
 						if (response.error) {
 							console.log(response.error);
+							alert (j);
 							return;
 						}
 					});
