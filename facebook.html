@@ -44,6 +44,20 @@
 			  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 			<![endif]-->
 		<style>
+		body	{
+			position: relative;
+			min-height: 100%;
+		}
+
+		html, body {
+			height: 100%;
+			width: 100%;
+			padding: 0 0 0 0;
+			margin: 0 0 0 0;
+			left: 0;
+			right: 0;
+		}
+
 		.equalheight > div[class*='col-'] { 
 		  display: flex;
 		  flex-direction: column;
@@ -55,10 +69,6 @@
 			margin: 0;
 			padding: 0;
 			float: left; 
-		}
-		#form {
-			border-left:1px solid black; 
-			background-color: #f1f1f1;
 		}
 		</style>
 	</head>
@@ -313,8 +323,6 @@
 		<div class="container-fluid">
 			<div class="row content row-eq-height">
 				<div class = "equalheight">
-				
-					<div class="col-lg-2" id="profile"></div>
 					<div class="col-lg-8" id="form">
 						<form class="form-horizontal">
 							<div class="form-group" style = "display: none;">
@@ -360,7 +368,8 @@
 							</div>
 						</form>
 					</div>
-			
+					<div class="col-lg-2 text-right" id="profile"></div>
+
 				</div>
 			</div>
 		</div>
