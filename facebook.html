@@ -206,7 +206,7 @@
 				FB.api('/me', 'GET', {fields: 'first_name,last_name,name,id,picture.width(150).height(150)'}, function(response) {
 					console.log('Successful login for: ' + response.name);
 					document.getElementById('profile').innerHTML =
-						"<img src='" + response.picture.data.url + "'></img><br/>" + 
+						"<img src='" + response.picture.data.url + "'><br/>" + 
 						'<span class="control-label col-lg-10 text-left">' + response.name + "</span><br/>" + 
 						'<span class="control-label col-lg-10 text-left">' +  response.id  + "</span>";
 
