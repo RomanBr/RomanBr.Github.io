@@ -247,8 +247,9 @@
 					});
 
 					FB.api('/' + groups[j], function(response) {
-						if ((response.error) || (response.id != groups[j])) {
-							alert ("Error group: " + groups[j]);
+						//if ((response.error) || (response.id != groups[j])) {
+						if (response.error) {
+							console.log ("Error group: " + groups[j]);
 							return;
 						}
 						
