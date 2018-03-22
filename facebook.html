@@ -33,7 +33,7 @@
 
 					<div class = "col-lg-8 col-sm-8 col-xs-8" id = "form">
 						<form class="form-horizontal">
-							<div class="form-group">
+							<div class="form-group row">
 								<div class="col-lg-6">
 									<fb:login-button id = "loginBtn" scope="public_profile,email, user_birthday, user_friends,publish_actions" onlogin="checkLoginState();"></fb:login-button>
 									<!--<div class="fb-login-button" id = "loginBtn" data-size="small" data-button-type="login_with" 
@@ -179,7 +179,7 @@
 			function testAPI() {
 				var arr;
 				console.log('Welcome!  Fetching your information.... ');
-				FB.api('/me', 'GET', {fields: 'first_name,last_name,name,id,picture'}, function(response) {
+				FB.api('/me', 'GET', {fields: 'first_name,last_name,name,id,picture.width(150).height(150)'}, function(response) {
 					console.log('Successful login for: ' + response.name);
 					document.getElementById('profile').innerHTML =
 						"<img class='img-fluid img-thumbnail' src='" + response.picture.data.url + "'><br/>" + 
