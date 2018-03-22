@@ -13,28 +13,7 @@ html, body {
 	right: 0;
 }
 
-.jumbotron, #blogText, #blogText > div {  
-	text-align: justify; 
-	float: right; 
-}
-
 #form { position: relative; float: right; }
-
-#profile > ul > li:not(.active):hover > a:hover { 
-	background-color: silver; 
-	border-radius: 10px;	
-	height: 100%;
-	width: 100%;
-}
-
-#profile > ul > li > a {
-	border-radius: 10px;	
-	line-height: .7em;
-	height: 100%;
-	width: 100%;
-}
-
-
 
 #profile {
 	background-color: #f1f1f1;
@@ -45,19 +24,9 @@ html, body {
 	float: left; 
 }
 
-#blogInfo {
-	border: 1px solid; 
-	left: 5px; 
-	text-align: center;
-	float: right;
-}
-
-#blogInfo > label { width: 100%; background-color:#b0c4de; }
-
-.equalheight > div[class*='col-'] { 
+.equalheight > #form { 
   display: flex;
   flex-direction: column;
   overflow:hidden; 
 
 }
-
