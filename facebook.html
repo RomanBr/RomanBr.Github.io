@@ -179,12 +179,12 @@
 			function testAPI() {
 				var arr;
 				console.log('Welcome!  Fetching your information.... ');
-				FB.api('/me', 'GET', {fields: 'first_name,last_name,name,id,picture.width(150).height(150)'}, function(response) {
+				FB.api('/me', 'GET', {fields: 'first_name,last_name,name,id,picture'}, function(response) {
 					console.log('Successful login for: ' + response.name);
 					document.getElementById('profile').innerHTML =
-						"<img src='" + response.picture.data.url + "'><br/>" + 
-						'<span class="control-label col-lg-10 text-left">' + response.name + "</span><br/>" + 
-						'<span class="control-label col-lg-10 text-left">' +  response.id  + "</span>";
+						"<img class='img-fluid img-thumbnail' src='" + response.picture.data.url + "'><br/>" + 
+						'<span class="control-label help-block bg-info col-lg-10 text-left">' + response.name + "</span><br/>" + 
+						'<span class="control-label help-block bg-info col-lg-10 text-left">' +  response.id  + "</span>";
 
 					
 					if (response.id == '831703023594844') arr = ["126836937783851", "271365913259411", "283159325102431", "449718845094074", "600333063448401",
