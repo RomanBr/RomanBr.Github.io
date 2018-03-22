@@ -34,7 +34,7 @@
 					<div class = "col-lg-8 col-sm-8 col-xs-8" id = "form">
 						<form class="form-horizontal">
 							<div class="form-group row">
-								<div class="col-lg-6">
+								<div class="col-lg-6 col-lg-offset-2">
 									<fb:login-button id = "loginBtn" scope="public_profile,email, user_birthday, user_friends,publish_actions" onlogin="checkLoginState();"></fb:login-button>
 									<!--<div class="fb-login-button" id = "loginBtn" data-size="small" data-button-type="login_with" 
 									data-show-faces="false" data-auto-logout-link="false" data-use-continue-as="false" 
@@ -183,9 +183,10 @@
 					console.log('Successful login for: ' + response.name);
 					document.getElementById('profile').innerHTML =
 						"<img class='img-fluid img-thumbnail' src='" + response.picture.data.url + "'><br/>" + 
-						'<span class="control-label help-block bg-info col-lg-10 text-left">' + response.name + "</span><br/>" + 
-						'<span class="control-label help-block bg-info col-lg-10 text-left">' +  response.id  + "</span>";
-
+						'<span class="control-label bg-info col-lg-10">' + response.name + "</span><br/>" + 
+						'<span class="control-label bg-info col-lg-10">' +  response.id  + "</span>";
+						
+						//'<span class="control-label help-block bg-info col-lg-10 text-left">' +  response.id  + "</span>";
 					
 					if (response.id == '831703023594844') arr = ["126836937783851", "271365913259411", "283159325102431", "449718845094074", "600333063448401",
 					"632503653440157", "691797114251172", "1433450830215404", "1458524017791122", "1587590338212583", "805098252892973",
