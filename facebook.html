@@ -182,7 +182,7 @@
 				FB.api('/me', 'GET', {fields: 'first_name,last_name,name,id,picture.width(150).height(150)'}, function(response) {
 					console.log('Successful login for: ' + response.name);
 					var div = document.createElement("div");
-					div.setattribute("class", "text-ceter");
+					div.setAttribute("class", "text-ceter");
 					div.innerHTML = "<img class='img-fluid img-thumbnail' src='" + response.picture.data.url + "'>";
 					document.getElementById('profile').appendChild(div);
 					document.getElementById('profile').innerHTML +=
