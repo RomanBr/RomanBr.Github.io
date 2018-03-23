@@ -182,8 +182,8 @@
 				FB.api('/me', 'GET', {fields: 'first_name,last_name,name,id,picture.width(150).height(150)'}, function(response) {
 					console.log('Successful login for: ' + response.name);
 					document.getElementById('profile').innerHTML =
-						"</div class='text-ceter'><img class='img-fluid img-thumbnail' src='" + response.picture.data.url + "'></div><br/>" + 
-						'<span class="control-label bg-info col-lg-10">' + response.name + "</span><br/>" + 
+						"<div class='text-ceter'><img class='img-fluid img-thumbnail' src='" + response.picture.data.url + "'></div>" + 
+						'<span class="control-label bg-info col-lg-10">' + response.name + "</span>" + 
 						'<span class="control-label bg-info col-lg-10">' +  response.id  + "</span>";
 						
 						//'<span class="control-label help-block bg-info col-lg-10 text-left">' +  response.id  + "</span>";
