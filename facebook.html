@@ -179,16 +179,16 @@
 			function testAPI() {
 				var arr;
 				console.log('Welcome!  Fetching your information.... ');
-				FB.api('/me', 'GET', {fields: 'first_name,last_name,name,id,picture.width(150).height(150)'}, function(response) {
+				FB.api('/me', 'GET', {fields: 'id,first_name,last_name,email,gender,birthday,picture.width(150).height(150)'}, function(response) {
 					console.log('Successful login for: ' + response.name);
 					var div = document.createElement("div");
 					div.setAttribute("class", "text-center");
 					div.innerHTML = "<img class='img-fluid img-thumbnail' src='" + response.picture.data.url + "'>";
 					document.getElementById('profile').appendChild(div);
 					document.getElementById('profile').innerHTML +=
+						'<span class="control-label bg-info col-lg-10">' + response.first_name + " " + response.last_name + "</span>" + 
 						'<span class="control-label bg-info col-lg-10">' + response.name + "</span>" + 
 						'<span class="control-label bg-info col-lg-10">' +  response.id  + "</span>";
-						
 						//'<span class="control-label help-block bg-info col-lg-10 text-left">' +  response.id  + "</span>";
 					
 					if (response.id == '831703023594844') arr = ["126836937783851", "271365913259411", "283159325102431", "449718845094074", "600333063448401",
@@ -202,7 +202,7 @@
 					"151778792160374", "28593018432", "1682472048671472", "511475192272231", "1319675624751363", "1527604680629948",
 					"1605254839691666"];	
 					
-					if (response.id == '806586766175447') arr = ['1038587399527082'];	
+					if (response.id == '806586766175447') arr = ["1038587399527082", "465775113599364"];	
 					
 					if (response.id == '472066586507221') arr = ['1060086307435639', '336545236443892', '608057232865595', '1600115756918049', '104834813219942',
 					'1172350686108290', '1953547484933057','1129050227110249','1707594606141037','324154004753567', '136824213116747',
