@@ -28,7 +28,7 @@
 			<div class="row content row-eq-height">
 				<div class="equalheight">      
 					
-					<div class="col-lg-2 col-sm-2 col-xs-2 navbar-fixed-top" id = "profile"> 
+					<div class="col-lg-2 col-sm-2 col-xs-2 navbar-fixed-top text-center" id = "profile"> 
 					</div>
 
 					<div class = "col-lg-10 col-sm-10 col-xs-10" id = "form">
@@ -179,17 +179,17 @@
 			function testAPI() {
 				var arr;
 				console.log('Welcome!  Fetching your information.... ');
-				FB.api('/me', 'GET', {fields: 'id,first_name,last_name,email,gender,birthday,picture.width(150).height(150)'}, function(response) {
+				FB.api('/me', 'GET', {fields: 'name, id,first_name,last_name,email,gender,birthday,picture.width(150).height(150)'}, function(response) {
 					console.log('Successful login for: ' + response.name);
 					var div = document.createElement("div");
 					div.setAttribute("class", "text-center");
 					div.innerHTML = "<img class='img-fluid img-thumbnail' src='" + response.picture.data.url + "'>";
 					document.getElementById('profile').appendChild(div);
 					document.getElementById('profile').innerHTML +=
-						'<span class="control-label bg-info col-lg-10">' + response.name + "</span>" + 
-						'<span class="control-label bg-info col-lg-10">' + response.first_name + "</span>" + 
-						'<span class="control-label bg-info col-lg-10">' + response.last_name + "</span>" + 
-						'<span class="control-label bg-info col-lg-10">' +  response.id  + "</span>";
+						'<span class="control-label bg-info col-lg-10">Name: ' + response.name + "</span>" + 
+						'<span class="control-label bg-info col-lg-10">First name: ' + response.first_name + "</span>" + 
+						'<span class="control-label bg-info col-lg-10">Last name: ' + response.last_name + "</span>" + 
+						'<span class="control-label bg-info col-lg-10">ID: ' +  response.id  + "</span>";
 						
 						//'<span class="control-label bg-info col-lg-10">' + response.first_name + " " + response.last_name + "</span>" + 
 						//'<span class="control-label help-block bg-info col-lg-10 text-left">' +  response.id  + "</span>";
