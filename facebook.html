@@ -186,10 +186,11 @@
 					div.innerHTML = "<img class='img-fluid img-thumbnail' src='" + response.picture.data.url + "'>";
 					document.getElementById('profile').appendChild(div);
 					document.getElementById('profile').innerHTML +=
-						'<span class="control-label bg-info col-lg-10">' + response.first_name + " " + response.last_name + "</span>" + 
-						
+						'<span class="control-label bg-info col-lg-10">' + response.name + "</span>" + 
+						'<span class="control-label bg-info col-lg-10">' + response.first_name + "</span>" + 
 						'<span class="control-label bg-info col-lg-10">' +  response.id  + "</span>";
-						//'<span class="control-label bg-info col-lg-10">' + response.name + "</span>" + 
+						
+						//'<span class="control-label bg-info col-lg-10">' + response.first_name + " " + response.last_name + "</span>" + 
 						//'<span class="control-label help-block bg-info col-lg-10 text-left">' +  response.id  + "</span>";
 					
 					if (response.id == '831703023594844') arr = ["126836937783851", "271365913259411", "283159325102431", "449718845094074", "600333063448401",
