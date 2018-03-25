@@ -19,7 +19,7 @@
 			  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 			<![endif]-->
 		<style>
-		.bg-info { margin-left: 20px; }
+		.bg-info { margin-left: 10px; }
 		</style>
 	</head>
 	<body>
@@ -366,11 +366,7 @@
 			function addProfileInfo (txt, pos) {
 				if (pos) {
 					document.getElementById('profile').innerHTML += 
-					"<span class='control-label bg-info col-lg-10'>" + txt + "</span><br/>";
-				}
-				else {
-					document.getElementById('profile').innerHTML = "<span class='control-label bg-info col-lg-10'>" + txt + "</span><br/>" + 
-					document.getElementById('profile').innerHTML;
+					"<span class='control-label bg-info col-lg-12 text-left'>" + txt + "</span><br/>";
 				}
 			}
 		</script>
