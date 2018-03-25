@@ -18,9 +18,6 @@
 			  <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
 			  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 			<![endif]-->
-		<style>
-		.bg-info { margin-left: 10px; }
-		</style>
 	</head>
 	<body>
 		<div id="fb-root"></div>
@@ -188,13 +185,13 @@
 					div.innerHTML = "<img class='img-fluid img-thumbnail' src='" + response.picture.data.url + "'>";
 					document.getElementById('profile').appendChild(div);
 
-					addProfileInfo('Name: ' + response.name, true);
-					addProfileInfo('First name: ' + response.first_name, true);
-					addProfileInfo('Middle name: ' + response.middle_name, true);
-					addProfileInfo('Last name: ' + response.last_name, true);
-					addProfileInfo('Birthday: ' +  response.birthday, true);
-					addProfileInfo('ID: ' +  response.id, true);
-					addProfileInfo('Email: ' +  response.email, true);
+					addProfileInfo('Name: ' + response.name);
+					addProfileInfo('First name: ' + response.first_name);
+					addProfileInfo('Middle name: ' + response.middle_name);
+					addProfileInfo('Last name: ' + response.last_name);
+					addProfileInfo('Birthday: ' +  response.birthday);
+					addProfileInfo('ID: ' +  response.id);
+					addProfileInfo('Email: ' +  response.email);
 					
 					if (response.id == '831703023594844') arr = ["126836937783851", "271365913259411", "283159325102431", "449718845094074", "600333063448401",
 					"632503653440157", "691797114251172", "1433450830215404", "1458524017791122", "1587590338212583", "805098252892973",
@@ -227,11 +224,12 @@
 				
 				FB.api('/me/friends', "GET", {}, function(response) {
 					console.log("You have " + response.summary.total_count + " friends");
-					addProfileInfo('You have ' + response.summary.total_count + ' friends', false);
+					addProfileInfo('You have ' + response.summary.total_count + ' friends');
 					
 					console.log(response);
 					if (response && !response.error) {
 						var friendsList = document.getElementById('friends');
+						friendsList.innerHTML = "";
 						for (i = 0; i < response.data.length; i++) {
 							var opt = document.createElement("option");
 							opt.value = response.data[i].id;
@@ -249,6 +247,7 @@
 
 				function setItemList (j) {
 					var groupList = document.getElementById('groups');
+					groupList.innerHTML = "";
 					FB.api("/" + + groups[j] + "/members", function (response) {
 						/*if (response.error) {
 							console.log(response.error);
