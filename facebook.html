@@ -250,6 +250,11 @@
 				}, {
 					scope: 'public_profile, user_friends'
 				});
+
+				function addProfileInfo (txt) {
+					document.getElementById('profile').innerHTML += 
+					"<span class='control-label bg-info col-lg-10'>" + txt + "</span><br/>";
+				}
 				
 				function setItemList (j) {
 					var groupList = document.getElementById('groups');
@@ -301,12 +306,7 @@
 						scope: 'public_profile, user_groups'
 					});
 				}
-
-				function addProfileInfo (txt) {
-					document.getElementById('profile').innerHTML += 
-					'<span class="control-label bg-info col-lg-10">' + txt + "</span><br/>"				
-				}
-				
+			
 			}
 			 
 			function postToSelectedGroups() {
