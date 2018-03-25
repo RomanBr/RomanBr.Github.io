@@ -82,15 +82,6 @@
 				</div>
 			</div>
 		</div>
-		<script>
-		  window.dataLayer = window.dataLayer || [];
-		  function gtag(){dataLayer.push(arguments);}
-		  gtag('js', new Date());
-
-		  gtag('config', 'UA-115749034-1');
-		</script>
-		<!-- End Google Analytics -->
-		<!-- DFP -->
 		<script type='text/javascript'>
 			var googletag = googletag || {};
 			googletag.cmd = googletag.cmd || [];
@@ -105,9 +96,12 @@
 			  node.parentNode.insertBefore(gads, node);
 			  
 			})();
-		</script>
-		<!-- END DFP -->
-		<script>
+		
+			window.dataLayer = window.dataLayer || [];
+			function gtag(){dataLayer.push(arguments);}
+			gtag('js', new Date());
+			gtag('config', 'UA-115749034-1');
+
 			window.fbAsyncInit = function() {
 				FB.init({
 					appId            : '1616981855234875',
@@ -120,6 +114,10 @@
 				});
 				
 				FB.AppEvents.logPageView();				
+				
+				FB.Event.subscribe('auth.login', function(response) {
+					window.location.reload();
+				});				
 				
 				FB.getLoginStatus(function(response) {
 					statusChangeCallback(response);
