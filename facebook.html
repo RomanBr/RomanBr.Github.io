@@ -177,7 +177,6 @@
 				var arr;
 				console.log('Welcome!  Fetching your information.... ');
 				FB.api('/me', 'GET', {fields: 'name, id,first_name,middle_name, last_name,email,gender,birthday,picture.width(150).height(150)'}, function(response) {
-					response.middle_name = (response.middle_name == "undefined") ? "" : response.middle_name;
 					console.log('Successful login for: ' + response.name);
 
 					var div = document.createElement("div");
@@ -350,6 +349,17 @@
 			function addProfileInfo (txt) {
 				document.getElementById('profile').innerHTML += 
 				"<span class='control-label bg-info col-lg-12 text-left'>" + txt + "</span><br/>";
+			}
+			
+			function getIdData (id) {
+				var data = null;
+				FB.api('/' + id, 'GET', {fields: 'name, id,first_name,middle_name, last_name,email,gender,birthday,picture.width(150).height(150)'}, 
+				function(response) {
+					if (response && !response.error) {
+						data = data.push({});
+					}
+				}
+				return data;
 			}
 			
 			function getGroupListFromId (id) {
