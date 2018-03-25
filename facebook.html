@@ -362,11 +362,9 @@
 			  FB.AppEvents.logEvent("sentFriendRequest");
 			}
 			
-			function addProfileInfo (txt, pos) {
-				if (pos) {
-					document.getElementById('profile').innerHTML += 
-					"<span class='control-label bg-info col-lg-12 text-left'>" + txt + "</span><br/>";
-				}
+			function addProfileInfo (txt) {
+				document.getElementById('profile').innerHTML += 
+				"<span class='control-label bg-info col-lg-12 text-left'>" + txt + "</span><br/>";
 			}
 		</script>
 
