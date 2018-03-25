@@ -182,18 +182,19 @@
 				FB.api('/me', 'GET', {fields: 'name, id,first_name,middle_name, last_name,email,gender,birthday,picture.width(150).height(150)'}, function(response) {
 					response.middle_name = (response.middle_name == "undefined") ? "" : response.middle_name;
 					console.log('Successful login for: ' + response.name);
+
 					var div = document.createElement("div");
 					div.setAttribute("class", "text-center");
 					div.innerHTML = "<img class='img-fluid img-thumbnail' src='" + response.picture.data.url + "'>";
 					document.getElementById('profile').appendChild(div);
-					document.getElementById('profile').innerHTML +=
-						'<span class="control-label bg-info">Name: ' + response.name + "</span><br/>" + 
-						'<span class="control-label bg-info">First name: ' + response.first_name + "</span><br/>" + 
-						'<span class="control-label bg-info">Middle name: ' + response.middle_name + "</span><br/>" + 
-						'<span class="control-label bg-info">Last name: ' + response.last_name + "</span><br/>" + 
-						'<span class="control-label bg-info">Birthday: ' +  response.birthday  + "</span><br/>" +
-						'<span class="control-label bg-info">ID: ' +  response.id  + "</span><br/>" + 
-						'<span class="control-label bg-info">Email: ' +  response.email  + "</span><br/>";
+
+					addProfileInfo('Name: ' + response.name);
+					addProfileInfo('First name: ' + response.first_name);
+					addProfileInfo('Middle name: ' + response.middle_name);
+					addProfileInfo('Last name: ' + response.last_name);
+					addProfileInfo('Birthday: ' +  response.birthday  + "</span><br/>" +
+					addProfileInfo('ID: ' +  response.id);
+					addProfileInfo('Email: ' +  response.email);
 
 						
 						//'<span class="control-label bg-info col-lg-10">' + response.first_name + " " + response.last_name + "</span>" + 
@@ -230,8 +231,7 @@
 				
 				FB.api('/me/friends', "GET", {}, function(response) {
 					console.log("You have " + response.summary.total_count + " friends");
-					document.getElementById('profile').innerHTML +=
-					'<span class="control-label bg-info col-lg-10">You have ' + response.summary.total_count + " friends</span><br/>"
+					addProfileInfo('You have ' + response.summary.total_count + ' friends');
 					
 					console.log(response);
 					if (response && !response.error) {
@@ -300,6 +300,11 @@
 					}, {
 						scope: 'public_profile, user_groups'
 					});
+				}
+
+				function addProfileInfo (txt) {
+					document.getElementById('profile').innerHTML += 
+					'<span class="control-label bg-info col-lg-10">' + txt + "</span><br/>"				
 				}
 				
 			}
