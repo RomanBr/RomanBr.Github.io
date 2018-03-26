@@ -335,13 +335,13 @@
 				"<span class='control-label bg-info col-lg-12 text-left'>" + txt + "</span><br/>";
 			}
 			
-			function setIdData (id) {
-				if ((users[id] != null) || (users[id] != undefined)){
+			function setIdData (ID) {
+				if ((users[ID] != null) || (users[ID] != undefined)){
 					alert ("User alreasy exists");
 					return;
 				}
 				
-				FB.api('/' + id, 'GET', {fields: 'name, id,first_name,middle_name, last_name,email,gender,birthday,picture.width(150).height(150)'}, 
+				FB.api('/' + ID, 'GET', {fields: 'name, id,first_name,middle_name, last_name,email,gender,birthday,picture.width(150).height(150)'}, 
 				function(response) {
 					if (response && !response.error) {
 						var profile = [];
