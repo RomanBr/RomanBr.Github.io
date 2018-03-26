@@ -164,7 +164,6 @@
 					if (response && !response.error) {
 						setIdData (response.id);
 						//alert (users[response.id]);
-
 						console.log('Successful login for: ' + response.name);
 						myID.value = response.id;
 						profImg.innerHTML = "<img class='img-fluid img-thumbnail' src='" + response.picture.data.url + "'>";
@@ -182,18 +181,15 @@
 					}
 					else { console.log (response.error); }
 				});
-				
 			}
 
 			function setLists (groups) {
 				var k = 0
 				var name;
-				if (group.length > 0) {
-					for (i = 0; i < groups.length; i++) {
-						setItemList (i);
-					}
+				for (i = 0; i < groups.length; i++) {
+					setItemList (i);
 				}
-
+				
 				FB.api('/me/friends', "GET", {}, function(response) {
 					console.log("You have " + response.summary.total_count + " friends");
 					addProfileInfo('You have ' + response.summary.total_count + ' friends');
@@ -348,14 +344,23 @@
 				FB.api('/' + id, 'GET', {fields: 'name, id,first_name,middle_name, last_name,email,gender,birthday,picture.width(150).height(150)'}, 
 				function(response) {
 					if (response && !response.error) {
-						users.push({id: response});
+						var profile = [];
+						profile.push({id: response.id});
+						profile.push({name: response.name});
+						profile.push({first_name: response.first_name});
+						profile.push({middle_name: response.middle_name});
+						profile.push({last_name: response.last_name});
+						profile.push({email: response.email});
+						profile.push({gender: response.gender});
+						profile.push({birthday: response.birthday});
+						//profile.push({picture: response.picture.data.url});
+
+						alert(profile.id);
 					}
 					else { alert ("Error"); return; }
 				}, {
 					scope: 'public_profile'
 				});
-				
-				alert (users[id].name);
 			}
 			
 			function getGroupListFromId (id) {
