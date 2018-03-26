@@ -162,7 +162,7 @@
 				function(response) {
 					if (response && !response.error) {
 						setIdData (response.id);
-						alert (users[response.id]);
+						alert (users);
 
 						console.log('Successful login for: ' + response.name);
 						myID.value = response.id;
