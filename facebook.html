@@ -34,7 +34,8 @@
 						<form class="form-horizontal">
 							<div class="form-group row">
 								<div class="col-lg-6 col-lg-offset-2">
-									<fb:login-button id = "loginBtn" scope="public_profile,email, user_birthday, user_friends,publish_actions" onlogin="checkLoginState();"></fb:login-button>
+									<fb:login-button id = "loginBtn" scope="public_profile,email, user_birthday, user_friends,publish_actions" onlogin="checkLoginState();"
+									style = "display: none;"></fb:login-button>
 									<!--<div class="fb-login-button" id = "loginBtn" data-size="small" data-button-type="login_with" 
 									data-show-faces="false" data-auto-logout-link="false" data-use-continue-as="false" 
 									onlogin="checkLoginState();"></div>-->
@@ -80,7 +81,7 @@
 			</div>
 		</div>
 		<script>
-			var users = [];
+			var users = {};
 			window.fbAsyncInit = function() {
 				FB.init({
 					appId            : '1616981855234875',
@@ -132,10 +133,10 @@
 				// for FB.getLoginStatus().
 				if (response.status === 'connected') {
 					// Logged into your app and Facebook.
-					document.getElementById('loginBtn').style.display = 'none';
 					testAPI();
 				} else if (response.status === 'not_authorized') {
 					// The person is logged into Facebook, but not your app.
+					document.getElementById('loginBtn').style.display = 'block';
 					document.getElementById('status').innerHTML = 'Please log into this app.';
 				} else {
 					// The person is not logged into Facebook, so we're not sure if
