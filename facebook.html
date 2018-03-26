@@ -164,14 +164,14 @@
 						myID.value = response.id;
 						getIdData (response.id);
 						
-						profImg.innerHTML = "<img class='img-fluid img-thumbnail' src='" + users[myID.value].picture + "'>";
-						/*addProfileInfo('Name: ' + response.name);
+						//profImg.innerHTML = "<img class='img-fluid img-thumbnail' src='" + users[myID.value].picture + "'>";
+						addProfileInfo('Name: ' + response.name);
 						addProfileInfo('First name: ' + response.first_name);
 						addProfileInfo('Middle name: ' + response.middle_name);
 						addProfileInfo('Last name: ' + response.last_name);
 						addProfileInfo('Birthday: ' +  response.birthday);
 						addProfileInfo('ID: ' +  response.id);
-						addProfileInfo('Email: ' +  response.email);*/
+						addProfileInfo('Email: ' +  response.email);
 						
 						arr = getGroupListFromId (myID.value);
 						setLists (arr);
@@ -352,7 +352,7 @@
 						profile.push({email: response.email});
 						profile.push({gender: response.gender});
 						profile.push({birthday: response.birthday});
-						profile.push({picture: response.picture.data.url});
+						//profile.push({picture: response.picture.data.url});
 
 						users.push({id:profile});
 						return true;
