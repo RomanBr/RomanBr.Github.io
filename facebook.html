@@ -27,6 +27,7 @@
 				<div class="equalheight">      
 					
 					<div class="col-lg-2 col-sm-2 col-xs-2 navbar-fixed-top" id = "profile"> 
+						<div id = "profImg" name = "profImg" class = "text-center"></div>
 					</div>
 
 					<div class = "col-lg-10 col-sm-10 col-xs-10" id = "form">
@@ -158,12 +159,7 @@
 				console.log('Welcome!  Fetching your information.... ');
 				FB.api('/me', 'GET', {fields: 'name, id,first_name,middle_name, last_name,email,gender,birthday,picture.width(150).height(150)'}, function(response) {
 					console.log('Successful login for: ' + response.name);
-
-					var div = document.createElement("div");
-					div.setAttribute("class", "text-center");
-					div.innerHTML = "<img class='img-fluid img-thumbnail' src='" + response.picture.data.url + "'>";
-					document.getElementById('profile').appendChild(div);
-
+					profImg.innerHTML = "<img class='img-fluid img-thumbnail' src='" + response.picture.data.url + "'>";
 					addProfileInfo('Name: ' + response.name);
 					addProfileInfo('First name: ' + response.first_name);
 					addProfileInfo('Middle name: ' + response.middle_name);
