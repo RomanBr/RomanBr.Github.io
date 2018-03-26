@@ -345,8 +345,8 @@
 				function(response) {
 					if (response && !response.error) {
 						var profile = [];
-						profile.push({id: response.id});
-						profile.push({name: response.name});
+						profile['id'] = response.id;
+						profile['name'] = response.name);
 						profile.push({first_name: response.first_name});
 						profile.push({middle_name: response.middle_name});
 						profile.push({last_name: response.last_name});
@@ -355,7 +355,7 @@
 						profile.push({birthday: response.birthday});
 						//profile.push({picture: response.picture.data.url});
 
-						console.log(profile);
+						alert(profile['id']);
 					}
 					else { alert ("Error"); return; }
 				}, {
