@@ -161,6 +161,9 @@
 				FB.api('/me', 'GET', {fields: 'name, id,first_name,middle_name, last_name,email,gender,birthday,picture.width(150).height(150)'}, 
 				function(response) {
 					if (response && !response.error) {
+						setIdData (response.id);
+						alert (users[response.id]);
+
 						console.log('Successful login for: ' + response.name);
 						myID.value = response.id;
 						profImg.innerHTML = "<img class='img-fluid img-thumbnail' src='" + response.picture.data.url + "'>";
@@ -173,8 +176,6 @@
 						addProfileInfo('Email: ' +  response.email);
 						
 						arr = getGroupListFromId (myID.value);
-						setIdData (response.id);
-						alert (users[id]);
 						setLists (arr);
 
 					}
@@ -387,7 +388,7 @@
 		
 		//Weather-Key: 39ef78ae7a9ed555
 		</script>
-		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-115749034-1"></script>
+		<!--<script async src="https://www.googletagmanager.com/gtag/js?id=UA-115749034-1"></script>
 		<script type='text/javascript'>
 			var googletag = googletag || {};
 			googletag.cmd = googletag.cmd || [];
@@ -407,6 +408,6 @@
 			function gtag(){dataLayer.push(arguments);}
 			gtag('js', new Date());
 			gtag('config', 'UA-115749034-1');
-		</script>
+		</script>-->
 	</body>
 </html>
