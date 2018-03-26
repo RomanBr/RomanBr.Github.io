@@ -80,7 +80,7 @@
 			</div>
 		</div>
 		<script>
-			var data = {};
+			var data = [];
 			window.fbAsyncInit = function() {
 				FB.init({
 					appId            : '1616981855234875',
@@ -159,8 +159,12 @@
 				var arr;
 				console.log('Welcome!  Fetching your information.... ');
 				FB.api('/me', 'GET', {fields: 'name, id'}, function(response) {
-					myID.value = response.id;
-					console.log('Successful login for: ' + response.name);
+					if (response && !response.error) {
+						console.log('Successful login for: ' + response.name);
+						myID.value = response.id;
+						getIdData (response.id);
+					}
+					else { console.log (response.error); }
 				});
 				
 				profImg.innerHTML = "<img class='img-fluid img-thumbnail' src='" + data[myID.value].picture + "'>";
@@ -331,24 +335,22 @@
 			function getIdData (id) {
 				if (data[id] != null) {
 					alert ("User alreasy exists");
-					return false;
+					return;
 				}
-				var profile = {};
+				
 				FB.api('/' + id, 'GET', {fields: 'name, id,first_name,middle_name, last_name,email,gender,birthday,picture.width(150).height(150)'}, 
 				function(response) {
 					if (response && !response.error) {
-						profile.push({id: response.id});
-						profile.push({name: response.name});
-						profile.push({first_name: response.first_name});
-						profile.push({middle_name: response.middle_name});
-						profile.push({last_name: response.last_name});
+						data[id].push({id: response.id});
+						data[id].push({name: response.name});
+						data[id].push({first_name: response.first_name});
+						data[id].push({middle_name: response.middle_name});
+						data[id].push({last_name: response.last_name});
 
-						profile.push({email: response.email});
-						profile.push({gender: response.gender});
-						profile.push({birthday: response.birthday});
-						profile.push({picture: response.picture.data.url});
-						
-						data.push({id:profile});
+						data[id].push({email: response.email});
+						data[id].push({gender: response.gender});
+						data[id].push({birthday: response.birthday});
+						data[id].push({picture: response.picture.data.url});
 						return true;
 					}
 					else { return false; }
