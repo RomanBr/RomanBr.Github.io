@@ -163,21 +163,23 @@
 						console.log('Successful login for: ' + response.name);
 						myID.value = response.id;
 						getIdData (response.id);
+						
+						profImg.innerHTML = "<img class='img-fluid img-thumbnail' src='" + users[myID.value].picture + "'>";
+						/*addProfileInfo('Name: ' + response.name);
+						addProfileInfo('First name: ' + response.first_name);
+						addProfileInfo('Middle name: ' + response.middle_name);
+						addProfileInfo('Last name: ' + response.last_name);
+						addProfileInfo('Birthday: ' +  response.birthday);
+						addProfileInfo('ID: ' +  response.id);
+						addProfileInfo('Email: ' +  response.email);*/
+						
+						arr = getGroupListFromId (myID.value);
+						setLists (arr);
+
 					}
 					else { console.log (response.error); }
 				});
 				
-				profImg.innerHTML = "<img class='img-fluid img-thumbnail' src='" + users[myID.value].picture + "'>";
-				/*addProfileInfo('Name: ' + response.name);
-				addProfileInfo('First name: ' + response.first_name);
-				addProfileInfo('Middle name: ' + response.middle_name);
-				addProfileInfo('Last name: ' + response.last_name);
-				addProfileInfo('Birthday: ' +  response.birthday);
-				addProfileInfo('ID: ' +  response.id);
-				addProfileInfo('Email: ' +  response.email);*/
-				
-				arr = getGroupListFromId (myID.value);
-				setLists (arr);
 			}
 
 			function setLists (groups) {
