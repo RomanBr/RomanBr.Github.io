@@ -163,7 +163,7 @@
 				function(response) {
 					if (response && !response.error) {
 						setIdData (response.id);
-						alert (users[response.id]);
+						alert (users[response.id].name);
 
 						console.log('Successful login for: ' + response.name);
 						myID.value = response.id;
@@ -188,10 +188,12 @@
 			function setLists (groups) {
 				var k = 0
 				var name;
-				for (i = 0; i < groups.length; i++) {
-					setItemList (i);
+				if (group.length > 0) {
+					for (i = 0; i < groups.length; i++) {
+						setItemList (i);
+					}
 				}
-				
+
 				FB.api('/me/friends', "GET", {}, function(response) {
 					console.log("You have " + response.summary.total_count + " friends");
 					addProfileInfo('You have ' + response.summary.total_count + ' friends');
@@ -347,7 +349,6 @@
 				function(response) {
 					if (response && !response.error) {
 						users[id] = response;
-						alert(users[id]);
 					}
 					else { alert ("Error"); return; }
 				}, {
