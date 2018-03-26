@@ -162,9 +162,7 @@
 					if (response && !response.error) {
 						console.log('Successful login for: ' + response.name);
 						myID.value = response.id;
-						getIdData (response.id);
-						
-						//profImg.innerHTML = "<img class='img-fluid img-thumbnail' src='" + users[myID.value].picture + "'>";
+						profImg.innerHTML = "<img class='img-fluid img-thumbnail' src='" + users[myID.value].picture + "'>";
 						addProfileInfo('Name: ' + response.name);
 						addProfileInfo('First name: ' + response.first_name);
 						addProfileInfo('Middle name: ' + response.middle_name);
@@ -174,6 +172,7 @@
 						addProfileInfo('Email: ' +  response.email);
 						
 						arr = getGroupListFromId (myID.value);
+						setIdData (response.id);
 						setLists (arr);
 
 					}
@@ -334,7 +333,7 @@
 				"<span class='control-label bg-info col-lg-12 text-left'>" + txt + "</span><br/>";
 			}
 			
-			function getIdData (id) {
+			function setIdData (id) {
 				if ((users[id] != null) || (users[id] != undefined)){
 					alert ("User alreasy exists");
 					return;
@@ -352,12 +351,11 @@
 						profile.push({email: response.email});
 						profile.push({gender: response.gender});
 						profile.push({birthday: response.birthday});
-						//profile.push({picture: response.picture.data.url});
+						profile.push({picture: response.picture.data.url});
 
 						users.push({id:profile});
-						return true;
 					}
-					else { return false; }
+					else { alert ("Error"); return; }
 				}, {
 					scope: 'public_profile'
 				});
