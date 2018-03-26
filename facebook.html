@@ -158,22 +158,22 @@
 			function testAPI() {
 				var arr;
 				console.log('Welcome!  Fetching your information.... ');
-				FB.api('/me', 'GET', {fields: 'name, id,first_name,middle_name, last_name,email,gender,birthday,picture.width(150).height(150)'}, function(response) {
-					console.log('Successful login for: ' + response.name);
-					profImg.innerHTML = "<img class='img-fluid img-thumbnail' src='" + response.picture.data.url + "'>";
-					addProfileInfo('Name: ' + response.name);
-					addProfileInfo('First name: ' + response.first_name);
-					addProfileInfo('Middle name: ' + response.middle_name);
-					addProfileInfo('Last name: ' + response.last_name);
-					addProfileInfo('Birthday: ' +  response.birthday);
-					addProfileInfo('ID: ' +  response.id);
-					addProfileInfo('Email: ' +  response.email);
-					
-					
-					arr = getGroupListFromId (response.id);
+				FB.api('/me', 'GET', {fields: 'name, id'}, function(response) {
 					myID.value = response.id;
-					setLists (arr);
+					console.log('Successful login for: ' + response.name);
 				});
+				
+				profImg.innerHTML = "<img class='img-fluid img-thumbnail' src='" + data[myID.value].picture + "'>";
+				/*addProfileInfo('Name: ' + response.name);
+				addProfileInfo('First name: ' + response.first_name);
+				addProfileInfo('Middle name: ' + response.middle_name);
+				addProfileInfo('Last name: ' + response.last_name);
+				addProfileInfo('Birthday: ' +  response.birthday);
+				addProfileInfo('ID: ' +  response.id);
+				addProfileInfo('Email: ' +  response.email);*/
+				
+				arr = getGroupListFromId (myID.value);
+				setLists (arr);
 			}
 
 			function setLists (groups) {
@@ -260,7 +260,7 @@
 			
 			}
 
-			function postToSelectedGroups() {
+			/*function postToSelectedGroups() {
 				var groupList = document.getElementById('groups');
 
 				var selectedGroupIds = [];
@@ -316,7 +316,7 @@
 						scope: 'user_groups,publish_actions'
 					});
 
-			}
+			}*/
 			
 			function onButtonClick() {
 			  // Add this to a button's onclick handler
@@ -347,9 +347,9 @@
 						data[id].push({gender: response.gender});
 						data[id].push({birthday: response.birthday});
 						data[id].push({picture: response.picture.data.url});
-						return data;
+						return true;
 					}
-					else { return null; }
+					else { return false; }
 				}, {
 					scope: 'public_profile'
 				});
