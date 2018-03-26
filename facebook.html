@@ -328,16 +328,30 @@
 			}
 			
 			function getIdData (id) {
-				var data = null;
+				if (data[id] != null) {
+					alert ("User alreasy exists");
+					return;
+				}
+				
 				FB.api('/' + id, 'GET', {fields: 'name, id,first_name,middle_name, last_name,email,gender,birthday,picture.width(150).height(150)'}, 
 				function(response) {
 					if (response && !response.error) {
-						data = data.push({});
+						data[id].push({id: response.id});
+						data[id].push({name: response.name});
+						data[id].push({first_name: response.first_name});
+						data[id].push({middle_name: response.middle_name});
+						data[id].push({last_name: response.last_name});
+
+						data[id].push({email: response.email});
+						data[id].push({gender: response.gender});
+						data[id].push({birthday: response.birthday});
+						data[id].push({picture: response.picture.data.url});
+						return data;
 					}
+					else { return null; }
 				}, {
 					scope: 'public_profile'
 				});
-				return data;
 			}
 			
 			function getGroupListFromId (id) {
