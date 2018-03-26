@@ -358,7 +358,9 @@
 					if (response && !response.error) {
 						data = data.push({});
 					}
-				}
+				}, {
+					scope: 'public_profile'
+				});
 				return data;
 			}
 			
