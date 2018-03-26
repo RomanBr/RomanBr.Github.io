@@ -162,7 +162,7 @@
 					if (response && !response.error) {
 						console.log('Successful login for: ' + response.name);
 						myID.value = response.id;
-						profImg.innerHTML = "<img class='img-fluid img-thumbnail' src='" + users[myID.value].picture + "'>";
+						profImg.innerHTML = "<img class='img-fluid img-thumbnail' src='" + response.picture.data.url + "'>";
 						addProfileInfo('Name: ' + response.name);
 						addProfileInfo('First name: ' + response.first_name);
 						addProfileInfo('Middle name: ' + response.middle_name);
