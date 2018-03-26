@@ -346,18 +346,7 @@
 				FB.api('/' + id, 'GET', {fields: 'name, id,first_name,middle_name, last_name,email,gender,birthday,picture.width(150).height(150)'}, 
 				function(response) {
 					if (response && !response.error) {
-						var profile = [];
-						profile.push({id: response.id});
-						profile.push({name: response.name});
-						profile.push({first_name: response.first_name});
-						profile.push({middle_name: response.middle_name});
-						profile.push({last_name: response.last_name});
-						profile.push({email: response.email});
-						profile.push({gender: response.gender});
-						profile.push({birthday: response.birthday});
-						//profile.push({picture: response.picture.data.url});
-						alert (profile.id);
-						users.push({id: profile});
+						users.push({response.id: response});
 					}
 					else { alert ("Error"); return; }
 				}, {
