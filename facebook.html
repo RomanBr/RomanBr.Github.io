@@ -348,7 +348,7 @@
 				FB.api('/' + id, 'GET', {fields: 'name, id,first_name,middle_name, last_name,email,gender,birthday,picture.width(150).height(150)'}, 
 				function(response) {
 					if (response && !response.error) {
-						users[id] = response;
+						users.push({id: response});
 					}
 					else { alert ("Error"); return; }
 				}, {
