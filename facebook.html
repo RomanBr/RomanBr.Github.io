@@ -81,7 +81,7 @@
 			</div>
 		</div>
 		<script>
-			var users = {};
+			var users = [];
 			window.fbAsyncInit = function() {
 				FB.init({
 					appId            : '1616981855234875',
@@ -355,7 +355,7 @@
 					scope: 'public_profile'
 				});
 				
-				alert (users[id]);
+				alert (users[id].name);
 			}
 			
 			function getGroupListFromId (id) {
