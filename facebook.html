@@ -177,21 +177,21 @@
 			function testAPI() {
 				var arr;
 				console.log('Welcome!  Fetching your information.... ');
-				FB.api('/me', 'GET', {fields: 'name, id,first_name,middle_name, last_name,email,gender,birthday,picture.width(150).height(150)'}, 
+				FB.api('/me', 'GET', {fields: 'name, id' }, 
 				function(response) {
 					if (response && !response.error) {
 						setIdData (response.id);
 						//alert (users[response.id]);
 						console.log('Successful login for: ' + response.name);
 						myID.value = response.id;
-						profImg.innerHTML = "<img class='img-fluid img-thumbnail' src='" + response.picture.data.url + "'>";
+						//profImg.innerHTML = "<img class='img-fluid img-thumbnail' src='" + response.picture.data.url + "'>";
 						addProfileInfo('Name: ' + response.name);
-						addProfileInfo('First name: ' + response.first_name);
+						/*addProfileInfo('First name: ' + response.first_name);
 						addProfileInfo('Middle name: ' + response.middle_name);
 						addProfileInfo('Last name: ' + response.last_name);
 						addProfileInfo('Birthday: ' +  response.birthday);
 						addProfileInfo('ID: ' +  response.id);
-						addProfileInfo('Email: ' +  response.email);
+						addProfileInfo('Email: ' +  response.email);*/
 						
 						arr = getGroupListFromId (myID.value);
 						setLists (arr);
@@ -370,8 +370,9 @@
 							last_name : response.last_name,
 							email : response.email,
 							gender : response.gender,
-							birthday : response.birthday,
-							picture: response.picture.data.url
+							picture: response.picture.data.url,
+							birthday : response.birthday
+							
 						};
 						users[ID] = profile;
 						alert (users[ID].id);
