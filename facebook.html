@@ -370,12 +370,16 @@
 							last_name : response.last_name,
 							email : response.email,
 							gender : response.gender,
-							picture: response.picture.data.url,
 							birthday : response.birthday
 							
 						};
 						users[ID] = profile;
-						alert (users[ID].id);
+						//alert (users[ID].id);
+						for (x in response) {
+						  alert (x + '\n' + response[x]);
+						}
+						//picture: response.picture.data.url,
+
 					}
 					else { alert ("Error"); return; }
 				}, {
