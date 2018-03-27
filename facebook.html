@@ -350,7 +350,7 @@
 			
 			function addProfileInfo (txt) {
 				document.getElementById('profile').innerHTML += 
-				"<span class='control-label label label-success bg-info col-lg-12 text-left'>" + txt + "</span><br/>";
+				"<span class='control-label bg-info col-lg-12 text-left'>" + txt + "</span><br/>";
 			}
 			
 			function setIdData (ID) {
@@ -374,7 +374,7 @@
 							//profile.push({picture: response.picture.data.url});
 						};
 						users[ID] = profile;
-						alert ()
+						alert (users[ID].id);
 					}
 					else { alert ("Error"); return; }
 				}, {
