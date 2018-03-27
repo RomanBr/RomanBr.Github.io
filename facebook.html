@@ -344,7 +344,7 @@
 				FB.api('/' + ID, 'GET', {fields: 'name, id,first_name,middle_name, last_name,email,gender,birthday,picture.width(150).height(150)'}, 
 				function(response) {
 					if (response && !response.error) {
-						var profile = [];
+						var profile = {};
 						profile.id = response.id;
 						profile.name = response.name;
 						profile.first_name = response.first_name;
