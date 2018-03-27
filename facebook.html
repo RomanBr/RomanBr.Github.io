@@ -344,17 +344,17 @@
 				FB.api('/' + ID, 'GET', {fields: 'name, id,first_name,middle_name, last_name,email,gender,birthday,picture.width(150).height(150)'}, 
 				function(response) {
 					if (response && !response.error) {
-						var profile = {};
-						profile.id = response.id;
-						profile.name = response.name;
-						profile.first_name = response.first_name;
-						profile.middle_name = response.middle_name;
-						profile.last_name = response.last_name;
-						profile.email = response.email;
-						profile.gender = response.gender;
-						profile.birthday = response.birthday;
-						//profile.push({picture: response.picture.data.url});
-
+						var profile = {
+							id : response.id,
+							name : response.name,
+							first_name : response.first_name,
+							middle_name : response.middle_name,
+							last_name : response.last_name,
+							email : response.email,
+							gender : response.gender,
+							birthday : response.birthday,
+							//profile.push({picture: response.picture.data.url});
+						};
 						alert(profile.email);
 					}
 					else { alert ("Error"); return; }
