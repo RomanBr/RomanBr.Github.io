@@ -373,7 +373,9 @@
 							birthday : response.birthday,
 							//profile.push({picture: response.picture.data.url});
 						};
-						alert(profile.email);
+						for (x in profile) {
+							alert(x);
+						}
 					}
 					else { alert ("Error"); return; }
 				}, {
