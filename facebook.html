@@ -57,7 +57,7 @@
 									<!--<div class="fb-login-button" id = "loginBtn" data-size="small" data-button-type="login_with" 
 									data-show-faces="false" data-auto-logout-link="false" data-use-continue-as="false" 
 									onlogin="checkLoginState();"></div>-->
-									<span id="status"></span>
+									<span id="status" class = "label label-success"></span>
 								</div>
 							</div>
 							<div class="form-group row">
@@ -76,14 +76,14 @@
 								<label for="groups" class="col-lg-2 control-label">Groups</label>
 								<div class="col-lg-6">
 									<select multiple="" class="form-control" id="groups" size = "7"></select>
-									<span class="help-block">Select your groups.</span>
+									<span class="help-block label label-success">Select your groups.</span>
 								</div>
 							</div>
 							<div class="form-group row">
 								<label for="friends" class="col-lg-2 control-label">Friends</label>
 								<div class="col-lg-6">
 									<select multiple="" class="form-control col-lg-4" id="friends" size = "7"></select>
-									<span class="help-block">Select your friends.</span>
+									<span class="help-block label label-success">Select your friends.</span>
 								</div>
 							</div>
 							<div class="form-group row">
@@ -99,7 +99,7 @@
 			</div>
 		</div>
 		<script>
-			var users = [];
+			var users = {};
 			window.fbAsyncInit = function() {
 				FB.init({
 					appId            : '1616981855234875',
@@ -350,7 +350,7 @@
 			
 			function addProfileInfo (txt) {
 				document.getElementById('profile').innerHTML += 
-				"<span class='control-label bg-info col-lg-12 text-left'>" + txt + "</span><br/>";
+				"<span class='control-label label label-success bg-info col-lg-12 text-left'>" + txt + "</span><br/>";
 			}
 			
 			function setIdData (ID) {
@@ -373,9 +373,8 @@
 							birthday : response.birthday,
 							//profile.push({picture: response.picture.data.url});
 						};
-						for (x in profile) {
-							alert(x);
-						}
+						users[ID] = profile;
+						alert ()
 					}
 					else { alert ("Error"); return; }
 				}, {
@@ -400,7 +399,7 @@
 					
 				if (id == '472066586507221') arr = ['1060086307435639', '336545236443892', '608057232865595', '1600115756918049', '104834813219942',
 					'1172350686108290', '1953547484933057','1129050227110249','1707594606141037','324154004753567', '136824213116747',
-					"146785092092843", "113842655320989", "1433450830215404", "1196215953764647"];
+					"146785092092843", "113842655320989", "1433450830215404", "1196215953764647", "158289821540929", "1427398547583010"];
 					
 				return arr;	
 			}
