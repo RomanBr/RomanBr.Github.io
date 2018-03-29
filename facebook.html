@@ -349,12 +349,12 @@
 					return;
 				}
 				
-				var profile;
+				let profile;
 				FB.api('/' + ID, 'GET', {fields: 'name, id,first_name,middle_name, last_name,email,gender,birthday,picture.width(150).height(150)'}, 
 				function(response) {
 					if (response.error) { alert ("Error"); return; }
 					
-					profile = {
+					let profile = {
 						id : response.id,
 						name : response.name,
 						first_name : response.first_name,
@@ -364,7 +364,7 @@
 						gender : response.gender,
 						birthday : response.birthday	
 					};		
-					users[ID] = {};
+					let users[ID] = {};
 				/*for (x in response) {
 					alert (x + '\n' + response[x]);
 				}*/
@@ -373,10 +373,10 @@
 					
 					
 				}, {
-					scope: 'public_profile'
+					scope: 'public_profile, email, birthday'
 				});
 				
-				users[ID] = profile;
+				let users[ID] = profile;
 				alert ("ID1: " + users[ID].id);
 			}
 			
