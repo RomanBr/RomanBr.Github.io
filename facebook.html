@@ -352,25 +352,25 @@
 				var profile;
 				FB.api('/' + ID, 'GET', {fields: 'name, id,first_name,middle_name, last_name,email,gender,birthday,picture.width(150).height(150)'}, 
 				function(response) {
-					if (response && !response.error) {
-						profile = {
-							id : response.id,
-							name : response.name,
-							first_name : response.first_name,
-							middle_name : response.middle_name,
-							last_name : response.last_name,
-							email : response.email,
-							gender : response.gender,
-							birthday : response.birthday
-							
-						};		
-						/*for (x in response) {
-						  alert (x + '\n' + response[x]);
-						}*/
-						//picture: response.picture.data.url,
+					if (response.error) { alert ("Error"); return; }
+					
+					profile = {
+						id : response.id,
+						name : response.name,
+						first_name : response.first_name,
+						middle_name : response.middle_name,
+						last_name : response.last_name,
+						email : response.email,
+						gender : response.gender,
+						birthday : response.birthday	
+					};		
+				/*for (x in response) {
+					alert (x + '\n' + response[x]);
+				}*/
+				//picture: response.picture.data.url,
 
-					}
-					else { alert ("Error"); return; }
+					
+					
 				}, {
 					scope: 'public_profile'
 				});
