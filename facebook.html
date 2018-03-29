@@ -114,6 +114,42 @@
 				};	
 				users[response.id] = profile;
 			}
+			
+			function addUsers () {
+				var a, b, c;
+				if (true) {
+					a = {
+					  "id": "694557363976078",
+					  "name": "רומן ברברמן",
+					  "first_name": "רומן",
+					  "last_name": "ברברמן",
+					  "birthday": "12/22/1988",
+					  "email": "ronenbr60@gmail.com",
+					};
+					
+					b = {
+					  "id": "806586766175447",
+					  "name": "רומן ברברמן",
+					  "first_name": "רומן",
+					  "last_name": "ברברמן",
+					  "birthday": "12/22/1988",
+					  "email": "ronenbr70@gmail.com",
+					};
+					c = {
+					  "id": "472066586507221",
+					  "name": "רומן ברברמן",
+					  "first_name": "רומן",
+					  "last_name": "ברברמן",
+					  "birthday": "12/22/1988",
+					  "email": "qwertie@walla.com",
+					};
+				}
+				users[a.id] = a;
+				users[b.id] = b;
+				users[c.id] = c;
+			}
+		
+
 		</script>
 		<script>
 			window.fbAsyncInit = function() {
@@ -206,7 +242,8 @@
 					else { console.log (response.error); }
 				});
 				alert ("ID0: " + myID.value);
-				setIdData (myID.value);
+				//setIdData (myID.value);
+				addUsers ();
 				for (x in users) {
 					alert (x);
 				}
