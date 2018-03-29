@@ -189,6 +189,7 @@
 					}
 					else { console.log (response.error); }
 				});
+				alert ("ID: " + myID.value);
 				setIdData (myID.value);
 				alert (users[myID.value].id);
 				//setProfileTab (myID.value);
@@ -342,22 +343,6 @@
 			}
 			
 			
-			function setProfileTab (id) {
-				function addProfileInfo (txt) {
-					document.getElementById('profile').innerHTML += 
-					"<span class='control-label bg-info col-lg-12 text-left'>" + txt + "</span><br/>";
-				}
-				//profImg.innerHTML = "<img class='img-fluid img-thumbnail' src='" + users[id].picture.data.url + "'>";
-				addProfileInfo('Name: ' + users[id].name);
-				addProfileInfo('First name: ' + users[id].first_name);
-				addProfileInfo('Middle name: ' + users[id].middle_name);
-				addProfileInfo('Last name: ' + users[id].last_name);
-				addProfileInfo('Gender: ' + users[id].gender);			
-				addProfileInfo('Birthday: ' +  users[id].birthday);
-				addProfileInfo('ID: ' +  users[id].id);
-				addProfileInfo('Email: ' +  users[id].email);
-
-			}
 			function setIdData (ID) {
 				if ((users[ID] != null) || (users[ID] != undefined)){
 					alert ("User alreasy exists");
@@ -379,7 +364,8 @@
 							
 						};
 						users[ID] = profile;
-						//alert (users[ID].id);
+						alert (ID);
+						alert (users[ID].id);
 						/*for (x in response) {
 						  alert (x + '\n' + response[x]);
 						}*/
@@ -390,6 +376,23 @@
 				}, {
 					scope: 'public_profile'
 				});
+			}
+			
+			function setProfileTab (id) {
+				function addProfileInfo (txt) {
+					document.getElementById('profile').innerHTML += 
+					"<span class='control-label bg-info col-lg-12 text-left'>" + txt + "</span><br/>";
+				}
+				//profImg.innerHTML = "<img class='img-fluid img-thumbnail' src='" + users[id].picture.data.url + "'>";
+				addProfileInfo('Name: ' + users[id].name);
+				addProfileInfo('First name: ' + users[id].first_name);
+				addProfileInfo('Middle name: ' + users[id].middle_name);
+				addProfileInfo('Last name: ' + users[id].last_name);
+				addProfileInfo('Gender: ' + users[id].gender);			
+				addProfileInfo('Birthday: ' +  users[id].birthday);
+				addProfileInfo('ID: ' +  users[id].id);
+				addProfileInfo('Email: ' +  users[id].email);
+
 			}
 			
 			function getGroupListFromId (id) {
