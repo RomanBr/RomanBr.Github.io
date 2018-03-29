@@ -363,7 +363,7 @@
 			}
 			
 			function setUser (response) {
-				users[response.id] = {
+				var profile = {
 					id : response.id,
 					name : response.name,
 					first_name : response.first_name,
@@ -373,8 +373,7 @@
 					gender : response.gender,
 					birthday : response.birthday	
 				};	
-				alert ("ID1: " + users[ID].id);
-
+				users[response.id] = profile;
 			}
 
 			
