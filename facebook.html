@@ -39,6 +39,7 @@
 	<body>
 		<div id="fb-root"></div>
 		<input type = "hidden" id = "myID" name = "myID" />
+		<input type = "hidden" id = "profs" name = "profs" />
 		<br/>
 		<div class="container-fluid">
 			<div class="row content row-eq-height">
@@ -99,7 +100,7 @@
 			</div>
 		</div>
 		<script>
-			let users = {};
+			var users = {}
 			window.fbAsyncInit = function() {
 				FB.init({
 					appId            : '1616981855234875',
@@ -349,12 +350,11 @@
 					return;
 				}
 				
-				let profile;
 				FB.api('/' + ID, 'GET', {fields: 'name, id,first_name,middle_name, last_name,email,gender,birthday,picture.width(150).height(150)'}, 
 				function(response) {
 					if (response.error) { alert ("Error"); return; }
 					
-					let profile = {
+					users[ID] = {
 						id : response.id,
 						name : response.name,
 						first_name : response.first_name,
@@ -363,8 +363,7 @@
 						email : response.email,
 						gender : response.gender,
 						birthday : response.birthday	
-					};		
-					users[ID] = {};
+					};	
 				/*for (x in response) {
 					alert (x + '\n' + response[x]);
 				}*/
@@ -376,7 +375,6 @@
 					scope: 'public_profile, email, birthday'
 				});
 				
-				users[ID] = profile;
 				alert ("ID1: " + users[ID].id);
 			}
 			
