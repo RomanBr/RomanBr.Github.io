@@ -183,7 +183,6 @@
 						//alert (users[response.id]);
 						console.log('Successful login for: ' + response.name);
 						myID.value = response.id;
-						setProfileTab (response.id);
 						arr = getGroupListFromId (myID.value);
 						setLists (arr);
 
@@ -191,7 +190,7 @@
 					else { console.log (response.error); }
 				});
 				setIdData (myID.value);
-
+				setProfileTab (response.id);
 			}
 
 			function setLists (groups) {
@@ -380,9 +379,9 @@
 						};
 						users[ID] = profile;
 						//alert (users[ID].id);
-						for (x in response) {
+						/*for (x in response) {
 						  alert (x + '\n' + response[x]);
-						}
+						}*/
 						//picture: response.picture.data.url,
 
 					}
