@@ -192,9 +192,8 @@
 				});
 				alert ("ID0: " + myID.value);
 				setIdData (myID.value);
-				for (x in users) {
-					alert (x);
-				}
+				alert (users[myID.value].id);
+				//setProfileTab (myID.value);
 			}
 
 			function setLists (groups) {
@@ -351,11 +350,17 @@
 					return;
 				}
 				
-				users[ID] = {};
+
 				FB.api('/' + ID, 'GET', {fields: 'name, id,first_name,middle_name, last_name,email,gender,birthday,picture.width(150).height(150)'}, 
 				function(response) {
 					if (response.error) { alert ("Error"); return; }
-					
+					setUser (response);
+				
+				}, {
+					scope: 'public_profile, email, birthday'
+				});
+
+				setUser (response) {
 					users[ID] = {
 						id : response.id,
 						name : response.name,
@@ -367,12 +372,8 @@
 						birthday : response.birthday	
 					};	
 					alert ("ID1: " + users[ID].id);
-				/*for (x in response) {
-					alert (x + '\n' + response[x]);
-				}*/
-				//picture: response.picture.data.url,
-				});
-				
+
+				}
 				//alert ("ID1: " + users[ID].id);
 			}
 			
