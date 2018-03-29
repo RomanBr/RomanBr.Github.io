@@ -272,7 +272,7 @@
 							opt.title = response.data[i].id;
 							opt.innerHTML = response.data[i].name;
 							opt.onclick = function () {
-								setProfileTab (opt.value);
+								setProfileTab (this.value);
 							}
 							friendsList.appendChild(opt)
 						}
