@@ -360,7 +360,7 @@
 					scope: 'public_profile, email, birthday'
 				});
 
-				setUser (response) {
+				function setUser (response) {
 					users[ID] = {
 						id : response.id,
 						name : response.name,
