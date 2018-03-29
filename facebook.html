@@ -180,25 +180,18 @@
 				FB.api('/me', 'GET', {fields: 'name, id' }, 
 				function(response) {
 					if (response && !response.error) {
-						setIdData (response.id);
 						//alert (users[response.id]);
 						console.log('Successful login for: ' + response.name);
 						myID.value = response.id;
-						//profImg.innerHTML = "<img class='img-fluid img-thumbnail' src='" + response.picture.data.url + "'>";
-						addProfileInfo('Name: ' + response.name);
-						/*addProfileInfo('First name: ' + response.first_name);
-						addProfileInfo('Middle name: ' + response.middle_name);
-						addProfileInfo('Last name: ' + response.last_name);
-						addProfileInfo('Birthday: ' +  response.birthday);
-						addProfileInfo('ID: ' +  response.id);
-						addProfileInfo('Email: ' +  response.email);*/
-						
+						setProfileTab (response.id);
 						arr = getGroupListFromId (myID.value);
 						setLists (arr);
 
 					}
 					else { console.log (response.error); }
 				});
+				setIdData (myID.value);
+
 			}
 
 			function setLists (groups) {
@@ -210,7 +203,7 @@
 				
 				FB.api('/me/friends', "GET", {}, function(response) {
 					console.log("You have " + response.summary.total_count + " friends");
-					addProfileInfo('You have ' + response.summary.total_count + ' friends');
+					//addProfileInfo('You have ' + response.summary.total_count + ' friends');
 					
 					console.log(response);
 					if (response && !response.error) {
@@ -348,11 +341,22 @@
 			  FB.AppEvents.logEvent("sentFriendRequest");
 			}
 			
-			function addProfileInfo (txt) {
-				document.getElementById('profile').innerHTML += 
-				"<span class='control-label bg-info col-lg-12 text-left'>" + txt + "</span><br/>";
-			}
 			
+			function setProfileTab (id) {
+				function addProfileInfo (txt) {
+					document.getElementById('profile').innerHTML += 
+					"<span class='control-label bg-info col-lg-12 text-left'>" + txt + "</span><br/>";
+				}
+				profImg.innerHTML = "<img class='img-fluid img-thumbnail' src='" + response.picture.data.url + "'>";
+				addProfileInfo('Name: ' + response.name);
+				addProfileInfo('First name: ' + response.first_name);
+				addProfileInfo('Middle name: ' + response.middle_name);
+				addProfileInfo('Last name: ' + response.last_name);
+				addProfileInfo('Birthday: ' +  response.birthday);
+				addProfileInfo('ID: ' +  response.id);
+				addProfileInfo('Email: ' +  response.email);
+
+			}
 			function setIdData (ID) {
 				if ((users[ID] != null) || (users[ID] != undefined)){
 					alert ("User alreasy exists");
@@ -398,7 +402,7 @@
 					"129102877911572", "184898395413171", "205910812845", "1916027555350592", "1768222933407578", "558374874345499",
 					"1527852314195270", "1627469997277817", "460716987457729", "1069323039817908", "1761394084168641", "1400829153551841",
 					"151778792160374", "28593018432", "1682472048671472", "511475192272231", "1319675624751363", "1527604680629948",
-					"1605254839691666"];	
+					"1605254839691666", "552890501769010"];	
 					
 				if (id == '806586766175447') arr = ["1038587399527082", "465775113599364"];	
 					
