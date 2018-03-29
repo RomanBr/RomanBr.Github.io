@@ -271,6 +271,9 @@
 							opt.value = response.data[i].id;
 							opt.title = response.data[i].id;
 							opt.innerHTML = response.data[i].name;
+							opt.onclick = function () {
+								setProfileTab (opt.value);
+							}
 							friendsList.appendChild(opt)
 						}
 					} else {
