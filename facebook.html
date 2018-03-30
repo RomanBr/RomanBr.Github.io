@@ -443,7 +443,7 @@
 			}
 			
 			function setProfileFriends (id) {
-				if ((users[id] != null) || (users[Iid] == undefined)){
+				if ((users[id] == null) || (users[Iid] == undefined)){
 					alert ("User doesn't exist");
 					return;
 				}
