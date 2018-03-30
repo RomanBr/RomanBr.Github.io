@@ -443,8 +443,9 @@
 			}
 			
 			function setProfileFriends (id) {
-				var setFriends = function (response) { users[id].friends_count = response.summary.total_count; }
-
+				//var setFriends = function (response) { users[id].friends_count = response.summary.total_count; }
+				var setFriends = function (response) { users[id].friends_count = 621; }
+				
 				if ((users[id] == null) || (users[id] == undefined)){
 					alert ("User doesn't exist");
 					return;
