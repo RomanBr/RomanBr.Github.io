@@ -438,7 +438,7 @@
 				addProfileInfo('ID: ' +  users[id].id);
 				addProfileInfo('Email: ' +  users[id].email);
 				
-				if (id != myID.value) { addProfileInfo('You have: ' +  users[id].friends_count + " friends"); }
+				if (id == myID.value) { addProfileInfo('You have: ' +  users[id].friends_count + " friends"); }
 				else { addProfileInfo(users[id].first_name + ' have: ' +  users[id].friends_count + " friends"); }
 			}
 			
