@@ -102,20 +102,7 @@
 		</div>
 		<script>
 			var users = {};
-			var setUser = function (response) {
-				var profile = {
-					id : response.id,
-					name : response.name,
-					first_name : response.first_name,
-					middle_name : response.middle_name,
-					last_name : response.last_name,
-					email : response.email,
-					gender : response.gender,
-					birthday : response.birthday	
-				};	
-				users[response.id] = profile;
-			}
-			
+		
 			function addUsers () {
 				var a, b, c;
 				if (true) {
@@ -414,6 +401,20 @@
 				}, {
 					scope: 'public_profile'
 				});
+				
+				var setUser = function (response) {
+					var profile = {
+						id : response.id,
+						name : response.name,
+						first_name : response.first_name,
+						middle_name : response.middle_name,
+						last_name : response.last_name,
+						email : response.email,
+						gender : response.gender,
+						birthday : response.birthday	
+					};	
+					users[response.id] = profile;
+				}
 			}
 				
 			function setProfileTab (id) {
