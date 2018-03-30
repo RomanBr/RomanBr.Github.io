@@ -225,14 +225,21 @@
 						myID.value = response.id;
 						arr = getGroupListFromId (myID.value);
 						setLists (arr);
-
+						users[response.id] = response;
 					}
 					else { console.log (response.error); }
 				});
 				setIdData (myID.value);
 				//addUsers ();
-			
-				setProfileTab (myID.value);
+				FB.api("/806586766175447/all_mutual_friends",
+					function (response) {
+						if (response && !response.error) {
+							alert (response.summary);
+						}
+					}
+				);
+				
+				//setProfileTab (myID.value);
 			}
 
 			function setLists (groups) {
@@ -258,6 +265,7 @@
 							opt.onclick = function () {
 								setProfileTab (this.value);
 							}
+							
 							friendsList.appendChild(opt)
 						}
 					} else {
@@ -414,6 +422,7 @@
 						birthday : response.birthday	
 					};	
 					users[ID] = profile;
+					alert (users[ID].od)
 				}
 			}
 				
