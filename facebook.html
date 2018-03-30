@@ -220,6 +220,7 @@
 			function testAPI() {
 				var arr;
 				console.log('Welcome!  Fetching your information.... ');
+				addUsers ();
 				FB.api('/me', 'GET', {fields: 'name, id' }, 
 				function(response) {
 					if (response && !response.error) {
@@ -233,7 +234,6 @@
 					else { console.log (response.error); }
 				});
 				//setIdData (myID.value);
-				addUsers ();
 				
 				setProfileTab (myID.value);
 			}
@@ -425,6 +425,11 @@
 			
 				
 			function setProfileTab (id) {
+				if ((users[id] == null) || (users[id] == undefined)){
+					alert ("User doesn't exist");
+					return;
+				}
+
 				function addProfileInfo (txt) {
 					document.getElementById('profInfo').innerHTML += 
 					"<span class='control-label bg-info col-lg-12 text-left'>" + txt + "</span><br/>";
@@ -446,17 +451,16 @@
 			}
 			
 			function setProfileFriends (id) {
-				id1 = (id == myID.value) ? "me" : id;
-				alert (id1);
-				//var setFriends = function (response) { users[id].friends_count = response.summary.total_count; }
-				var setFriends = function (response) { users[id].friends_count = 621; }
-				
 				if ((users[id] == null) || (users[id] == undefined)){
 					alert ("User doesn't exist");
 					return;
 				}
-
-				FB.api('/me/friends', "GET", {}, function(response) {
+			
+				id1 = (id == myID.value) ? "me" : id;
+				//var setFriends = function (response) { users[id].friends_count = response.summary.total_count; }
+				var setFriends = function (response) { users[id].friends_count = 621; }
+				
+				FB.api('/' + id1 + '/friends', "GET", {}, function(response) {
 					if (response && !response.error) {
 						setFriends(response);
 					}
