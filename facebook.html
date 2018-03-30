@@ -224,8 +224,8 @@
 						console.log('Successful login for: ' + response.name);
 						myID.value = response.id;
 						arr = getGroupListFromId (myID.value);
+						setProfileFriends (myID.value);
 						setLists (arr);
-						users[response.id] = response;
 					}
 					else { console.log (response.error); }
 				});
@@ -259,7 +259,8 @@
 								setProfileTab (this.value);
 							}
 							
-							friendsList.appendChild(opt)
+							friendsList.appendChild(opt);
+							setProfileFriends (opt.value);
 						}
 					} else {
 						console.log(response.error)
@@ -418,6 +419,7 @@
 					alert (users[ID].od)
 				}
 			}
+			
 				
 			function setProfileTab (id) {
 				function addProfileInfo (txt) {
@@ -436,8 +438,24 @@
 				addProfileInfo('ID: ' +  users[id].id);
 				addProfileInfo('Email: ' +  users[id].email);
 				
-				//if (id == myID.value) { addProfileInfo('You have: ' +  users[id].friends_count + " friends"); }
-				//else { addProfileInfo(users[id].first_name + ' have: ' +  users[id].friends_count + " friends"); }
+				if (id != myID.value) { addProfileInfo('You have: ' +  users[id].friends_count + " friends"); }
+				else { addProfileInfo(users[id].first_name + ' have: ' +  users[id].friends_count + " friends"); }
+			}
+			
+			function setProfileFriends (id) {
+				if ((users[id] != null) || (users[Iid] == undefined)){
+					alert ("User doesn't exist");
+					return;
+				}
+
+				FB.api('/' + id + '/friends', "GET", {}, function(response) {
+					if (response && !response.error) {
+						users[id].friends_count = response.summary.total_count;
+					}
+				}, {
+					scope: 'public_profile, user_friends'
+				});
+			
 			}
 			
 			function getGroupListFromId (id) {
