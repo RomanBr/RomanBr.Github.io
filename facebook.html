@@ -229,17 +229,10 @@
 					}
 					else { console.log (response.error); }
 				});
-				setIdData (myID.value);
-				//addUsers ();
-				FB.api("/806586766175447/all_mutual_friends",
-					function (response) {
-						if (response && !response.error) {
-							alert (response);
-						}
-					}
-				);
+				//setIdData (myID.value);
+				addUsers ();
 				
-				//setProfileTab (myID.value);
+				setProfileTab (myID.value);
 			}
 
 			function setLists (groups) {
