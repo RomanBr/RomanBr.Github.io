@@ -443,6 +443,8 @@
 			}
 			
 			function setProfileFriends (id) {
+				var setFriends = function (response) { users[id].friends_count = response.summary.total_count; }
+
 				if ((users[id] == null) || (users[id] == undefined)){
 					alert ("User doesn't exist");
 					return;
@@ -450,12 +452,11 @@
 
 				FB.api('/' + id + '/friends', "GET", {}, function(response) {
 					if (response && !response.error) {
-						users[id].friends_count = response.summary.total_count;
+						setFriends(response);
 					}
 				}, {
 					scope: 'public_profile, user_friends'
 				});
-			
 			}
 			
 			function getGroupListFromId (id) {
