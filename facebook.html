@@ -242,12 +242,9 @@
 					}
 					else { console.log (response.error); }
 				});
-				//setIdData (myID.value);
-				addUsers ();
-				for (x in users) {
-					console.log ("ID: " + x);
-				}
-				
+				setIdData (myID.value);
+				//addUsers ();
+			
 				//setProfileTab (myID.value);
 			}
 
@@ -415,7 +412,7 @@
 					setUser (response);
 				
 				}, {
-					scope: 'public_profile, email, birthday'
+					scope: 'public_profile'
 				});
 			}
 				
@@ -435,7 +432,9 @@
 				addProfileInfo('Birthday: ' +  users[id].birthday);
 				addProfileInfo('ID: ' +  users[id].id);
 				addProfileInfo('Email: ' +  users[id].email);
-
+				
+				//if (id == myID.value) { addProfileInfo('You have: ' +  users[id].friends_count + " friends"); }
+				//else { addProfileInfo(users[id].first_name + ' have: ' +  users[id].friends_count + " friends"); }
 			}
 			
 			function getGroupListFromId (id) {
