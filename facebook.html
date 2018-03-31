@@ -449,6 +449,7 @@
 				FB.api('/' + id + '/picture', "GET", {"height":"150","width":"150","redirect":"false"} ,
 				function(response) {
 					if (response && !response.error) {
+						alert(response.data.url);
 						setPicture(response);
 					}
 				}, {
