@@ -438,10 +438,9 @@
 				}
 
 				
-				FB.api('/' + id, 'GET', {fields: 'name, id,first_name,middle_name, last_name,email,gender,birthday,picture.width(150).height(150)'}, 
+				FB.api('/' + id, 'GET', {fields: 'name, id,first_name,middle_name, last_name,email,gender,birthday'}, 
 				function(response) {
 					if (response.error) { alert ("Error"); return; }
-					alert (response.picture)
 					setUser (response);
 				
 				}, {
@@ -456,7 +455,7 @@
 					scope: 'user_friends'
 				});
 				
-				var setFriends = function (response) { users[id].friends_count = response.summary.total_count; }
+				function setFriends (response) { users[id].friends_count = response.summary.total_count; }
 				function setUser (response) {
 					var profile = {
 						id : response.id,
