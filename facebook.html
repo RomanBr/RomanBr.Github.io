@@ -242,6 +242,8 @@
 						//alert (users[response.id]);
 						console.log('Successful login for: ' + response.name);
 						myID.value = response.id;
+						setUserData (myID.value);
+
 						arr = getGroupListFromId (myID.value);
 						
 						var friendsList = document.getElementById('friends');
@@ -259,10 +261,6 @@
 					}
 					else { console.log (response.error); }
 				});
-				setUserData (myID.value);
-				setProfileFriends (myID.value);
-				//setProfileTab (myID.value);
-				//alert(users[myID.value].friends_count);
 			}
 
 			function setLists (groups) {
@@ -274,7 +272,6 @@
 				
 				var friendsList = document.getElementById('friends');
 				FB.api('/me/friends', "GET", {}, function(response) {
-					//addProfileInfo('You have ' + response.summary.total_count + ' friends');
 					console.log(response);
 					if (response.error) { console.log(response.error) }
 					for (i = 0; i < response.data.length; i++) {
@@ -288,7 +285,11 @@
 						}
 						friendsList.appendChild(opt);
 					}
+				}, {
+					scope: 'user_friends'
 				});
+
+				setProfileFriends (myID.value);
 
 				/*FB.api('/me/family', "GET", {}, function(response) {
 					console.log(response);
@@ -445,12 +446,18 @@
 						else
 							return now.getFullYear() - born.getFullYear() - 1;
 					}*/
-				});				
+				}, {
+					scope: 'public_profile,email,birthday,picture'
+				});
+);				
 				
 				FB.api('/' + id + '/friends', "GET", {}, function(response) {
 					if (response.error) { alert ("Error"); return; }
 					setFriends(response);
+				}, {
+					scope: 'user_friends'
 				});
+);
 
 				function setFriends (response) { users[id].friends_count = response.summary.total_count; }
 				function setUser (response) {
