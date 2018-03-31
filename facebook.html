@@ -274,29 +274,20 @@
 				
 				var friendsList = document.getElementById('friends');
 				FB.api('/me/friends', "GET", {}, function(response) {
-					console.log("You have " + response.summary.total_count + " friends");
 					//addProfileInfo('You have ' + response.summary.total_count + ' friends');
-					
 					console.log(response);
-					if (response && !response.error) {
-						for (i = 0; i < response.data.length; i++) {
-							//setProfileFriends (response.data[i].id);							
-							//setUserData (response.data[i].id);
-							var opt = document.createElement("option");
-							opt.value = response.data[i].id;
-							opt.title = response.data[i].id;
-							opt.innerHTML = response.data[i].name;
-							opt.onclick = function () {
-								setProfileTab (this.value);
-							}
-							friendsList.appendChild(opt);
+					if (response.error) { console.log(response.error) }
+					for (i = 0; i < response.data.length; i++) {
+						setUserData (response.data[i].id);
+						var opt = document.createElement("option");
+						opt.value = response.data[i].id;
+						opt.title = response.data[i].id;
+						opt.innerHTML = response.data[i].name;
+						opt.onclick = function () {
+							setProfileTab (this.value);
 						}
-					} else {
-						console.log(response.error)
+						friendsList.appendChild(opt);
 					}
-					
-				}, {
-					scope: 'user_friends'
 				});
 
 				/*FB.api('/me/family', "GET", {}, function(response) {
@@ -447,10 +438,12 @@
 					if (response.error) { alert ("Error"); return; }
 					setUser (response);
 					/*if (response.birthday != undefined) {
-						var d = new Date("July 21, 1983 01:15:00");
-						var n = d.getDate();
-						var d1 = new Date(response.birthday);
-						var n1 = d.getDate();
+						var born
+						var birthday = new Date(now.getFullYear(), born.getMonth(), born.getDate());
+						if (now >= birthday) 
+							return now.getFullYear() - born.getFullYear();
+						else
+							return now.getFullYear() - born.getFullYear() - 1;
 					}*/
 				});				
 				
