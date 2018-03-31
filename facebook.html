@@ -438,8 +438,7 @@
 				}
 
 				
-				FB.api('/' + id, 'GET', {fields: 'name, id,first_name,middle_name, last_name,email,gender,birthday'}, 
-				function(response) {
+				FB.api('/' + id, 'GET', {}, 	function(response) {
 					if (response.error) { alert ("Error"); return; }
 					setUser (response);
 				
@@ -447,6 +446,15 @@
 					scope: 'public_profile'
 				});
 
+				FB.api('/' + id + '/picture', "GET", {"height":"150","width":"150","redirect":"false"} ,
+				function(response) {
+					if (response && !response.error) {
+						setPicture(response);
+					}
+				}, {
+					scope: 'user_picture'
+				});
+				
 				FB.api('/' + id + '/friends', "GET", {}, function(response) {
 					if (response && !response.error) {
 						setFriends(response);
@@ -454,8 +462,9 @@
 				}, {
 					scope: 'user_friends'
 				});
-				
+
 				function setFriends (response) { users[id].friends_count = response.summary.total_count; }
+				function setPicture (response) { users[id].picture = response.data.url; }
 				function setUser (response) {
 					var profile = {
 						id : response.id,
