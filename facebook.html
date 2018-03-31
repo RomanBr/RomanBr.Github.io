@@ -224,6 +224,7 @@
 				var arr;
 				console.log('Welcome!  Fetching your information.... ');
 				addUsers ();
+
 				FB.api('/me', 'GET', {fields: 'name, id' }, 
 				function(response) {
 					if (response && !response.error) {
@@ -231,9 +232,6 @@
 						console.log('Successful login for: ' + response.name);
 						myID.value = response.id;
 						arr = getGroupListFromId (myID.value);
-						setProfileFriends (myID.value);
-						setProfileTab (myID.value);
-						alert (users[myID.value].friends_count);
 						
 						var friendsList = document.getElementById('friends');
 						friendsList.innerHTML = "";
@@ -251,6 +249,8 @@
 					else { console.log (response.error); }
 				});
 				//setIdData (myID.value);
+				setProfileFriends (myID.value);
+				setProfileTab (myID.value);
 				
 			}
 
