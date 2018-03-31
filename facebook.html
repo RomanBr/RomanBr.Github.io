@@ -442,7 +442,7 @@
 					return;
 				}
 
-				FB.api('/' + id, 'GET', {fields: 'id, name, picture.width(150).height(150)'},
+				FB.api('/' + id, 'GET', {fields: 'first_name,middle_name,last_name,gender,email,name,id,picture.width(150).height(150)'},
 				function(response) {
 					if (response.error) { alert ("Error"); return; }
 					setUser (response);
