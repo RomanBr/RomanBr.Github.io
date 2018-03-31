@@ -269,7 +269,7 @@
 					console.log(response);
 					if (response && !response.error) {
 						for (i = 0; i < response.data.length; i++) {
-							setProfileFriends (response.data[i].id);							
+							//setProfileFriends (response.data[i].id);							
 							//setUserData (response.data[i].id);
 							var opt = document.createElement("option");
 							opt.value = response.data[i].id;
@@ -437,21 +437,6 @@
 					return;
 				}
 
-				var setFriends = function (response) { users[id].friends_count = response.summary.total_count; }
-				var setUser = function (response) {
-					var profile = {
-						id : response.id,
-						name : response.name,
-						first_name : response.first_name,
-						middle_name : response.middle_name,
-						last_name : response.last_name,
-						email : response.email,
-						gender : response.gender,
-						birthday : response.birthday,
-						picture :	response.picture.data.url
-					};	
-					users[id] = profile;
-				}
 				
 				FB.api('/' + id, 'GET', {fields: 'name, id,first_name,middle_name, last_name,email,gender,birthday,picture.width(150).height(150)'}, 
 				function(response) {
@@ -470,6 +455,21 @@
 					scope: 'user_friends'
 				});
 				
+				var setFriends = function (response) { users[id].friends_count = response.summary.total_count; }
+				var setUser = function (response) {
+					var profile = {
+						id : response.id,
+						name : response.name,
+						first_name : response.first_name,
+						middle_name : response.middle_name,
+						last_name : response.last_name,
+						email : response.email,
+						gender : response.gender,
+						birthday : response.birthday,
+						picture :	response.picture.data.url
+					};	
+					users[id] = profile;
+				}
 				
 			}
 			
