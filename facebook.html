@@ -248,7 +248,7 @@
 					}
 					else { console.log (response.error); }
 				});
-				//setIdData (myID.value);
+				//setUserData (myID.value);
 				setProfileFriends (myID.value);
 				setProfileTab (myID.value);
 				
@@ -406,22 +406,15 @@
 			}
 			
 			
-			function setIdData (ID) {
-				if ((users[ID] != null) || (users[ID] != undefined)){
+			function setUserData (id) {
+				if ((users[id] != null) || (users[id] != undefined)){
 					alert ("User alreasy exists");
 					return;
 				}
-				
 
-				FB.api('/' + ID, 'GET', {fields: 'name, id,first_name,middle_name, last_name,email,gender,birthday,picture.width(150).height(150)'}, 
-				function(response) {
-					if (response.error) { alert ("Error"); return; }
-					setUser (response);
+				id1 = (id == myID.value) ? "me" : id;
 				
-				}, {
-					scope: 'public_profile'
-				});
-				
+				var setFriends = function (response) { users[id].friends_count = response.summary.total_count; }
 				var setUser = function (response) {
 					var profile = {
 						id : response.id,
@@ -431,10 +424,30 @@
 						last_name : response.last_name,
 						email : response.email,
 						gender : response.gender,
-						birthday : response.birthday	
+						birthday : response.birthday,
+						picture :	
 					};	
-					users[ID] = profile;
+					users[id] = profile;
 				}
+				
+				FB.api('/' + id1, 'GET', {fields: 'name, id,first_name,middle_name, last_name,email,gender,birthday,picture.width(150).height(150)'}, 
+				function(response) {
+					if (response.error) { alert ("Error"); return; }
+					setUser (response);
+				
+				}, {
+					scope: 'public_profile'
+				});
+
+				FB.api('/' + id1 + '/friends', "GET", {}, function(response) {
+					if (response && !response.error) {
+						setFriends(response);
+					}
+				}, {
+					scope: 'user_friends'
+				});
+				
+				
 			}
 			
 				
