@@ -486,6 +486,7 @@
 				profImg.innerHTML = "<img class='img-fluid img-thumbnail' src='" + users[id].picture + "'>";
 				profInfo.innerHTML = "";
 				addProfileInfo('Name: ' + users[id].name);
+				addProfileInfo('Age: ' +  users[id].age);
 				addProfileInfo('First name: ' + users[id].first_name);
 				addProfileInfo('Middle name: ' + users[id].middle_name);
 				addProfileInfo('Last name: ' + users[id].last_name);
@@ -496,22 +497,6 @@
 				
 				if (id == myID.value) { addProfileInfo('You have: ' +  users[id].friends_count + " friends"); }
 				else { addProfileInfo(users[id].first_name + ' have: ' +  users[id].friends_count + " friends"); }
-			}
-			
-			function setProfileFriends (id) {
-				if ((users[id] == null) || (users[id] == undefined)){
-					alert ("User doesn't exist");
-					return;
-				}
-			
-				var setFriends = function (response) { users[id].friends_count = response.summary.total_count; }
-				//var setFriends = function (response) { users[id].friends_count = 621; }
-				
-				FB.api('/' + id + '/friends', function(response) {
-					if (response && !response.error) {
-						setFriends(response);
-					}
-				});
 			}
 			
 			function getGroupListFromId (id) {
