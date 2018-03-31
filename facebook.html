@@ -261,13 +261,13 @@
 					setItemList (i);
 				}
 				
+				var friendsList = document.getElementById('friends');
 				FB.api('/me/friends', "GET", {}, function(response) {
 					console.log("You have " + response.summary.total_count + " friends");
 					//addProfileInfo('You have ' + response.summary.total_count + ' friends');
 					
 					console.log(response);
 					if (response && !response.error) {
-						var friendsList = document.getElementById('friends');
 						for (i = 0; i < response.data.length; i++) {
 							var opt = document.createElement("option");
 							opt.value = response.data[i].id;
@@ -288,6 +288,29 @@
 					scope: 'public_profile, user_friends'
 				});
 
+				FB.api('/me/family', "GET", {}, function(response) {
+					console.log(response);
+					if (response && !response.error) {
+						for (i = 0; i < response.data.length; i++) {
+							var opt = document.createElement("option");
+							opt.value = response.data[i].id;
+							opt.title = response.data[i].id;
+							opt.innerHTML = response.data[i].name;
+							opt.onclick = function () {
+								setProfileTab (this.value);
+							}
+							
+							friendsList.appendChild(opt);
+							//setProfileFriends (opt.value);
+						}
+					} else {
+						console.log(response.error)
+					}
+					
+				}, {
+					scope: 'public_profile, user_family'
+				});
+				
 				function setItemList (j) {
 					var groupList = document.getElementById('groups');
 					groupList.innerHTML = "";
@@ -425,7 +448,7 @@
 						email : response.email,
 						gender : response.gender,
 						birthday : response.birthday,
-						picture :	
+						picture :	response.picture.data.url
 					};	
 					users[id] = profile;
 				}
