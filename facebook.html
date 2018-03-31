@@ -441,13 +441,14 @@
 				FB.api('/' + id, 'GET', {fields: 'name, id,first_name,middle_name, last_name,email,gender,birthday,picture.width(150).height(150)'}, 
 				function(response) {
 					if (response.error) { alert ("Error"); return; }
+					alert (response.picture)
 					setUser (response);
 				
 				}, {
 					scope: 'public_profile'
 				});
 
-				FB.api('/' + id1 + '/friends', "GET", {}, function(response) {
+				FB.api('/' + id + '/friends', "GET", {}, function(response) {
 					if (response && !response.error) {
 						setFriends(response);
 					}
@@ -466,7 +467,6 @@
 						email : response.email,
 						gender : response.gender,
 						birthday : response.birthday,
-						picture :	response.picture.data.url
 					};	
 					users[id] = profile;
 				}
