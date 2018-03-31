@@ -449,7 +449,6 @@
 				}, {
 					scope: 'public_profile,email,birthday,picture'
 				});
-);				
 				
 				FB.api('/' + id + '/friends', "GET", {}, function(response) {
 					if (response.error) { alert ("Error"); return; }
