@@ -107,7 +107,7 @@
 			function onButtonClick() {
 			  // Add this to a button's onclick handler
 			  //FB.AppEvents.logEvent("sentFriendRequest");
-			  	FB.api('/me/feed', 'post', {message: message.value }, function(response) {
+			  	FB.api('/me/feed', 'post', {message: message.value, link: link.value }, function(response) {
 					if (response.error) { alert ("Error"); return; }
 					alert("Posted!")
 				});
@@ -446,9 +446,6 @@
 				FB.api('/' + id, 'GET', {}, 	function(response) {
 					if (response.error) { alert ("Error"); return; }
 					setUser (response);
-				
-				}, {
-					scope: 'public_profile'
 				});
 
 				FB.api('/' + id, 'GET', {fields: 'picture.width(150).height(150)'},
