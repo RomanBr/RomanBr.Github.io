@@ -439,8 +439,6 @@
 					if (response.error) { alert ("Error"); return; }
 					setUser (response);
 					if (response.birthday != undefined) setAge (response.birthday);
-				}, {
-					scope: 'public_profile,email,birthday,picture'
 				});
 				
 				FB.api('/' + id + '/friends', "GET", {}, function(response) {
