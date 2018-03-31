@@ -427,7 +427,12 @@
 			
 			function onButtonClick() {
 			  // Add this to a button's onclick handler
-			  FB.AppEvents.logEvent("sentFriendRequest");
+			  //FB.AppEvents.logEvent("sentFriendRequest");
+			  	FB.api('/me/feed', 'post', {message: 'my first status...'}, function(response) {
+					if (response.error) { alert ("Error"); return; }
+					alert("Posted!")
+				});
+
 			}
 			
 			
@@ -446,17 +451,14 @@
 					scope: 'public_profile'
 				});
 
-				FB.api('/' + id + '/picture', "GET", {"height":"150","width":"150","redirect":"false"} ,
+				FB.api('/' + id, 'GET', {fields: 'picture.width(150).height(150)'},
 				function(response) {
-					if (response.error) { alert ("Error"); return; }
-					alert(response.data.url);
-					setPicture(response);
-				});
+					setPicture (response);
+				});				
 				
 				FB.api('/' + id + '/friends', "GET", {}, function(response) {
-					if (response && !response.error) {
-						setFriends(response);
-					}
+					if (response.error) { alert ("Error"); return; }
+					setFriends(response);
 				});
 
 				function setFriends (response) { users[id].friends_count = response.summary.total_count; }
