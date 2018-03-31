@@ -438,14 +438,7 @@
 				function(response) {
 					if (response.error) { alert ("Error"); return; }
 					setUser (response);
-					/*if (response.birthday != undefined) {
-						var born
-						var birthday = new Date(now.getFullYear(), born.getMonth(), born.getDate());
-						if (now >= birthday) 
-							return now.getFullYear() - born.getFullYear();
-						else
-							return now.getFullYear() - born.getFullYear() - 1;
-					}*/
+					if (response.birthday != undefined) setAge (response.birthday);
 				}, {
 					scope: 'public_profile,email,birthday,picture'
 				});
@@ -456,7 +449,6 @@
 				}, {
 					scope: 'user_friends'
 				});
-);
 
 				function setFriends (response) { users[id].friends_count = response.summary.total_count; }
 				function setUser (response) {
@@ -474,8 +466,13 @@
 					users[id] = profile;
 				}
 				
+				function setAge(born) {
+					var now = new Date();
+					var birthday = new Date(now.getFullYear(), born.getMonth(), born.getDate());
+					if (now >= birthday) users[id].age = now.getFullYear() - born.getFullYear();
+					else users[id].age = now.getFullYear() - born.getFullYear() - 1;
+				}
 			}
-			
 				
 			function setProfileTab (id) {
 				if ((users[id] == null) || (users[id] == undefined)){
