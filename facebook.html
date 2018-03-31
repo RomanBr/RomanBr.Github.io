@@ -251,7 +251,7 @@
 				//setUserData (myID.value);
 				setProfileFriends (myID.value);
 				setProfileTab (myID.value);
-				alert(users[myID.value].friends_count);
+				//alert(users[myID.value].friends_count);
 			}
 
 			function setLists (groups) {
@@ -269,7 +269,7 @@
 					console.log(response);
 					if (response && !response.error) {
 						for (i = 0; i < response.data.length; i++) {
-							setProfileFriends (opt.value);							
+							setProfileFriends (response.data[i].id);							
 							//setUserData (response.data[i].id);
 							var opt = document.createElement("option");
 							opt.value = response.data[i].id;
@@ -512,13 +512,11 @@
 				var setFriends = function (response) { users[id].friends_count = response.summary.total_count; }
 				//var setFriends = function (response) { users[id].friends_count = 621; }
 				
-				FB.api('/' + id1 + '/friends', "GET", {}, function(response) {
+				FB.api('/' + id1 + '/friends', function(response) {
 					if (response && !response.error) {
 						setFriends(response);
 					}
-				}, {
-					scope: 'user_friends'
-				});
+				}
 			}
 			
 			function getGroupListFromId (id) {
