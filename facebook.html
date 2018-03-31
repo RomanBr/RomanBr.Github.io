@@ -223,7 +223,7 @@
 			function testAPI() {
 				var arr;
 				console.log('Welcome!  Fetching your information.... ');
-				addUsers ();
+				//addUsers ();
 
 				FB.api('/me', 'GET', {fields: 'name, id' }, 
 				function(response) {
@@ -248,8 +248,8 @@
 					}
 					else { console.log (response.error); }
 				});
-				//setUserData (myID.value);
-				setProfileFriends (myID.value);
+				setUserData (myID.value);
+				//setProfileFriends (myID.value);
 				setProfileTab (myID.value);
 				
 			}
@@ -273,6 +273,7 @@
 							opt.value = response.data[i].id;
 							opt.title = response.data[i].id;
 							opt.innerHTML = response.data[i].name;
+							setUserData (response.data[i].id);
 							opt.onclick = function () {
 								setProfileTab (this.value);
 							}
