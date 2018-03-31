@@ -449,7 +449,7 @@
 				FB.api('/' + id + '/picture', "GET", {"height":"150","width":"150","redirect":"false"} ,
 				function(response) {
 					if (response.error) { alert ("Error"); return; }
-					alert(response.data);
+					alert(response.data.url);
 					setPicture(response);
 				});
 				
@@ -457,8 +457,6 @@
 					if (response && !response.error) {
 						setFriends(response);
 					}
-				}, {
-					scope: 'user_friends'
 				});
 
 				function setFriends (response) { users[id].friends_count = response.summary.total_count; }
