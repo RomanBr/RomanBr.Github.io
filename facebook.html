@@ -113,7 +113,8 @@
 					  "first_name": "רומן",
 					  "last_name": "ברברמן",
 					  "birthday": "12/22/1988",
-					  "email": "ronenbr60@gmail.com"
+					  "email": "ronenbr60@gmail.com",
+					  "gender": "male"
 					};
 					
 					b = {
@@ -123,7 +124,8 @@
 					  "first_name": "רומן",
 					  "last_name": "ברברמן",
 					  "birthday": "12/22/1988",
-					  "email": "ronenbr70@gmail.com"
+					  "email": "ronenbr70@gmail.com",
+					  "gender": "male"
 					};
 					c = {
 					  "profileImg_link": "https://scontent.fsdv2-1.fna.fbcdn.net/v/t1.0-9/26167128_534473990266480_420265277719926356_n.jpg?_nc_cat=0&oh=365474f1f1cc4d6fe042b186a4a0e305&oe=5B321E61",
@@ -132,7 +134,8 @@
 					  "first_name": "רומן",
 					  "last_name": "ברברמן",
 					  "birthday": "12/22/1988",
-					  "email": "qwertie@walla.com"
+					  "email": "qwertie@walla.com",
+					  "gender": "male"
 					};
 				}
 				users[a.id] = a;
@@ -229,6 +232,19 @@
 						myID.value = response.id;
 						arr = getGroupListFromId (myID.value);
 						setProfileFriends (myID.value);
+
+						var friendsList = document.getElementById('friends');
+						friendsList.innerHTML = "";
+						var opt = document.createElement("option");
+						opt.value = myID.value;
+						opt.title = myID.value;
+						opt.innerHTML = "me";
+						opt.onclick = function () {
+							setProfileTab (this.value);
+						}
+							
+						friendsList.appendChild(opt);
+
 						setLists (arr);
 					}
 					else { console.log (response.error); }
@@ -252,7 +268,6 @@
 					console.log(response);
 					if (response && !response.error) {
 						var friendsList = document.getElementById('friends');
-						friendsList.innerHTML = "";
 						for (i = 0; i < response.data.length; i++) {
 							var opt = document.createElement("option");
 							opt.value = response.data[i].id;
@@ -419,7 +434,6 @@
 						birthday : response.birthday	
 					};	
 					users[ID] = profile;
-					alert (users[ID].od)
 				}
 			}
 			
@@ -451,10 +465,10 @@
 			}
 			
 			function setProfileFriends (id) {
-				if ((users[id] == null) || (users[id] == undefined)){
+				/*if ((users[id] == null) || (users[id] == undefined)){
 					alert ("User doesn't exist");
 					return;
-				}
+				}*/
 			
 				id1 = (id == myID.value) ? "me" : id;
 				//var setFriends = function (response) { users[id].friends_count = response.summary.total_count; }
