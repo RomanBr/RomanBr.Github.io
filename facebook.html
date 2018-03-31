@@ -233,7 +233,8 @@
 						arr = getGroupListFromId (myID.value);
 						setProfileFriends (myID.value);
 						setProfileTab (myID.value);
-
+						alert (users[myID.value].friends_count);
+						
 						var friendsList = document.getElementById('friends');
 						friendsList.innerHTML = "";
 						var opt = document.createElement("option");
