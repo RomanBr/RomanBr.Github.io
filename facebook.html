@@ -456,7 +456,7 @@
 				});
 				
 				var setFriends = function (response) { users[id].friends_count = response.summary.total_count; }
-				var setUser = function (response) {
+				function setUser (response) {
 					var profile = {
 						id : response.id,
 						name : response.name,
