@@ -65,13 +65,14 @@
 							<div class="form-group row">
 								<label for="link" class="col-lg-2 control-label">Link</label>
 								<div class="col-lg-6">
-									<input type="text" value="" class="form-control" id="link" placeholder="Your link goes here.">
+									<input type="text" value="" class="form-control" id="link" name = "link" placeholder="Your link goes here.">
 								</div>
 							</div>
 							<div class="form-group row">
 								<label for="message" class="col-lg-2 control-label">Message</label>
 								<div class="col-lg-6">
-									<textarea class="form-control" rows="3" placeholder="Type your message here." id="message"></textarea>
+									<textarea class="form-control" rows="3" placeholder="Type your message here." id="message" name="message">
+									</textarea>
 								</div>
 							</div>
 							<div class="form-group row">
@@ -102,6 +103,16 @@
 		</div>
 		<script>
 			var users = {};
+
+			function onButtonClick() {
+			  // Add this to a button's onclick handler
+			  //FB.AppEvents.logEvent("sentFriendRequest");
+			  	FB.api('/me/feed', 'post', {message: message.value }, function(response) {
+					if (response.error) { alert ("Error"); return; }
+					alert("Posted!")
+				});
+
+			}
 		
 			function addUsers () {
 				var a, b, c;
@@ -425,17 +436,6 @@
 
 			}*/
 			
-			function onButtonClick() {
-			  // Add this to a button's onclick handler
-			  //FB.AppEvents.logEvent("sentFriendRequest");
-			  	FB.api('/me/feed', 'post', {message: 'my first status...'}, function(response) {
-					if (response.error) { alert ("Error"); return; }
-					alert("Posted!")
-				});
-
-			}
-			
-			
 			function setUserData (id) {
 				if ((users[id] != null) || (users[id] != undefined)){
 					alert ("User alreasy exists");
@@ -462,7 +462,7 @@
 				});
 
 				function setFriends (response) { users[id].friends_count = response.summary.total_count; }
-				function setPicture (response) { users[id].picture = response.data.url; }
+				function setPicture (response) { users[id].picture = response.picture.data.url; }
 				function setUser (response) {
 					var profile = {
 						id : response.id,
