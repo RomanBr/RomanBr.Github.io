@@ -451,8 +451,6 @@
 					if (response.error) { alert ("Error"); return; }
 					alert(response.data);
 					setPicture(response);
-				}, {
-					scope: 'user_picture'
 				});
 				
 				FB.api('/' + id + '/friends', "GET", {}, function(response) {
