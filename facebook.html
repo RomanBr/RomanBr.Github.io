@@ -232,6 +232,7 @@
 						myID.value = response.id;
 						arr = getGroupListFromId (myID.value);
 						setProfileFriends (myID.value);
+						setProfileTab (myID.value);
 
 						var friendsList = document.getElementById('friends');
 						friendsList.innerHTML = "";
@@ -244,14 +245,12 @@
 						}
 							
 						friendsList.appendChild(opt);
-
 						setLists (arr);
 					}
 					else { console.log (response.error); }
 				});
 				//setIdData (myID.value);
 				
-				setProfileTab (myID.value);
 			}
 
 			function setLists (groups) {
