@@ -285,13 +285,14 @@
 					}
 					
 				}, {
-					scope: 'public_profile, user_friends'
+					scope: 'user_friends'
 				});
 
 				FB.api('/me/family', "GET", {}, function(response) {
 					console.log(response);
 					if (response && !response.error) {
 						for (i = 0; i < response.data.length; i++) {
+							if (users[response.data[i].id] != undefined) continue;
 							var opt = document.createElement("option");
 							opt.value = response.data[i].id;
 							opt.title = response.data[i].id;
@@ -300,6 +301,7 @@
 								setProfileTab (this.value);
 							}
 							
+							alert (opt.innerHTML);
 							friendsList.appendChild(opt);
 							//setProfileFriends (opt.value);
 						}
@@ -308,7 +310,7 @@
 					}
 					
 				}, {
-					scope: 'public_profile, user_family'
+					scope: 'user_family'
 				});
 				
 				function setItemList (j) {
