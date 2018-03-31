@@ -448,10 +448,9 @@
 
 				FB.api('/' + id + '/picture', "GET", {"height":"150","width":"150","redirect":"false"} ,
 				function(response) {
-					if (response && !response.error) {
-						alert(response.data.url);
-						setPicture(response);
-					}
+					if (response.error) { alert ("Error"); return; }
+					alert(response.data);
+					setPicture(response);
 				}, {
 					scope: 'user_picture'
 				});
