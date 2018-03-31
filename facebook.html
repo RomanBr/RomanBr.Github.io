@@ -508,11 +508,11 @@
 					return;
 				}
 			
-				id1 = (id == myID.value) ? "me" : id;
+				//id1 = (id == myID.value) ? "me" : id;
 				var setFriends = function (response) { users[id].friends_count = response.summary.total_count; }
 				//var setFriends = function (response) { users[id].friends_count = 621; }
 				
-				FB.api('/' + id1 + '/friends', function(response) {
+				FB.api('/' + id + '/friends', function(response) {
 					if (response && !response.error) {
 						setFriends(response);
 					}
