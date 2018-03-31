@@ -442,10 +442,16 @@
 					return;
 				}
 
-				FB.api('/' + id, 'GET', {fields: 'first_name,middle_name,last_name,gender,email,name,id,picture.width(150).height(150)'},
+				FB.api('/' + id, 'GET', {fields: 'first_name,middle_name,last_name,gender,email,birthday,name,id,picture.width(150).height(150)'},
 				function(response) {
 					if (response.error) { alert ("Error"); return; }
 					setUser (response);
+					/*if (response.birthday != undefined) {
+						var d = new Date("July 21, 1983 01:15:00");
+						var n = d.getDate();
+						var d1 = new Date(response.birthday);
+						var n1 = d.getDate();
+					}*/
 				});				
 				
 				FB.api('/' + id + '/friends', "GET", {}, function(response) {
