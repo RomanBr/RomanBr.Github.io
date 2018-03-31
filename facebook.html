@@ -442,15 +442,10 @@
 					return;
 				}
 
-				
-				FB.api('/' + id, 'GET', {}, 	function(response) {
+				FB.api('/' + id, 'GET', {fields: 'id, name, picture.width(150).height(150)'},
+				function(response) {
 					if (response.error) { alert ("Error"); return; }
 					setUser (response);
-				});
-
-				FB.api('/' + id, 'GET', {fields: 'picture.width(150).height(150)'},
-				function(response) {
-					setPicture (response);
 				});				
 				
 				FB.api('/' + id + '/friends', "GET", {}, function(response) {
@@ -459,7 +454,6 @@
 				});
 
 				function setFriends (response) { users[id].friends_count = response.summary.total_count; }
-				function setPicture (response) { users[id].picture = response.picture.data.url; }
 				function setUser (response) {
 					var profile = {
 						id : response.id,
@@ -470,6 +464,7 @@
 						email : response.email,
 						gender : response.gender,
 						birthday : response.birthday,
+						picture: response.picture.data.url;
 					};	
 					users[id] = profile;
 				}
