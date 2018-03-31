@@ -223,7 +223,7 @@
 			function testAPI() {
 				var arr;
 				console.log('Welcome!  Fetching your information.... ');
-				addUsers ();
+				//addUsers ();
 
 				FB.api('/me', 'GET', {fields: 'name, id' }, 
 				function(response) {
@@ -248,9 +248,9 @@
 					}
 					else { console.log (response.error); }
 				});
-				//setUserData (myID.value);
+				setUserData (myID.value);
 				setProfileFriends (myID.value);
-				setProfileTab (myID.value);
+				//setProfileTab (myID.value);
 				//alert(users[myID.value].friends_count);
 			}
 
@@ -437,8 +437,6 @@
 					return;
 				}
 
-				id1 = (id == myID.value) ? "me" : id;
-				
 				var setFriends = function (response) { users[id].friends_count = response.summary.total_count; }
 				var setUser = function (response) {
 					var profile = {
@@ -455,7 +453,7 @@
 					users[id] = profile;
 				}
 				
-				FB.api('/' + id1, 'GET', {fields: 'name, id,first_name,middle_name, last_name,email,gender,birthday,picture.width(150).height(150)'}, 
+				FB.api('/' + id, 'GET', {fields: 'name, id,first_name,middle_name, last_name,email,gender,birthday,picture.width(150).height(150)'}, 
 				function(response) {
 					if (response.error) { alert ("Error"); return; }
 					setUser (response);
@@ -508,7 +506,6 @@
 					return;
 				}
 			
-				//id1 = (id == myID.value) ? "me" : id;
 				var setFriends = function (response) { users[id].friends_count = response.summary.total_count; }
 				//var setFriends = function (response) { users[id].friends_count = 621; }
 				
