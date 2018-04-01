@@ -289,7 +289,7 @@
 					scope: 'user_friends'
 				});
 
-				setProfileFriends (myID.value);
+				setProfileTab (myID.value);
 
 				/*FB.api('/me/family', "GET", {}, function(response) {
 					console.log(response);
@@ -465,6 +465,7 @@
 				}
 				
 				function setAge(born) {
+					born = new Date(born);
 					var now = new Date();
 					var birthday = new Date(now.getFullYear(), born.getMonth(), born.getDate());
 					if (now >= birthday) users[id].age = now.getFullYear() - born.getFullYear();
