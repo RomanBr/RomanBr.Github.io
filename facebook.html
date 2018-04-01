@@ -54,7 +54,7 @@
 						<form class="form-horizontal">
 							<div class="form-group row">
 								<div class="col-lg-6 col-lg-offset-2">
-									<fb:login-button id = "loginBtn" scope="public_profile,email, user_birthday, user_friends,publish_actions" onlogin="checkLoginState();"
+									<fb:login-button id = "loginBtn" scope="public_profile,email,user_birthday,user_friends,publish_actions" onlogin="checkLoginState();"
 									style = "display: none;"></fb:login-button>
 									<!--<div class="fb-login-button" id = "loginBtn" data-size="small" data-button-type="login_with" 
 									data-show-faces="false" data-auto-logout-link="false" data-use-continue-as="false" 
@@ -110,7 +110,10 @@
 			  	FB.api('/me/feed', 'post', {message: message.value, link: link.value }, function(response) {
 					if (response.error) { console.log (response.error); return; }
 					alert("Posted!")
+				}, {
+					scope: 'publish_actions'
 				});
+				
 
 			}
 
