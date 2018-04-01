@@ -108,52 +108,11 @@
 			  // Add this to a button's onclick handler
 			  //FB.AppEvents.logEvent("sentFriendRequest");
 			  	FB.api('/me/feed', 'post', {message: message.value, link: link.value }, function(response) {
-					if (response.error) { alert ("Error"); return; }
+					if (response.error) { console.log (response.error); return; }
 					alert("Posted!")
 				});
 
 			}
-		
-			function addUsers () {
-				var a, b, c;
-				if (true) {
-					a = {
-					  "profileImg_link": "https://scontent.fsdv2-1.fna.fbcdn.net/v/t1.0-9/26167128_534473990266480_420265277719926356_n.jpg?_nc_cat=0&oh=365474f1f1cc4d6fe042b186a4a0e305&oe=5B321E61",
-					  "id": "831703023594844",
-					  "name": "רומן ברברמן",
-					  "first_name": "רומן",
-					  "last_name": "ברברמן",
-					  "birthday": "12/22/1988",
-					  "email": "ronenbr60@gmail.com",
-					  "gender": "male"
-					};
-					
-					b = {
-					  "profileImg_link": "https://scontent.fsdv2-1.fna.fbcdn.net/v/t1.0-9/26167128_534473990266480_420265277719926356_n.jpg?_nc_cat=0&oh=365474f1f1cc4d6fe042b186a4a0e305&oe=5B321E61",
-					  "id": "806586766175447",
-					  "name": "רומן ברברמן",
-					  "first_name": "רומן",
-					  "last_name": "ברברמן",
-					  "birthday": "12/22/1988",
-					  "email": "ronenbr70@gmail.com",
-					  "gender": "male"
-					};
-					c = {
-					  "profileImg_link": "https://scontent.fsdv2-1.fna.fbcdn.net/v/t1.0-9/26167128_534473990266480_420265277719926356_n.jpg?_nc_cat=0&oh=365474f1f1cc4d6fe042b186a4a0e305&oe=5B321E61",
-					  "id": "472066586507221",
-					  "name": "רומן ברברמן",
-					  "first_name": "רומן",
-					  "last_name": "ברברמן",
-					  "birthday": "12/22/1988",
-					  "email": "qwertie@walla.com",
-					  "gender": "male"
-					};
-				}
-				users[a.id] = a;
-				users[b.id] = b;
-				users[c.id] = c;
-			}
-		
 
 		</script>
 		<script>
@@ -258,6 +217,7 @@
 							
 						friendsList.appendChild(opt);
 						setLists (arr);
+						setProfileTab (myID.value);
 					}
 					else { console.log (response.error); }
 				});
@@ -288,8 +248,6 @@
 				}, {
 					scope: 'user_friends'
 				});
-
-				setProfileTab (myID.value);
 
 				/*FB.api('/me/family', "GET", {}, function(response) {
 					console.log(response);
