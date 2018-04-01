@@ -84,7 +84,7 @@
 							<div class="form-group row">
 								<label for="friends" class="col-lg-2 control-label">Friends</label>
 								<div class="col-lg-6">
-									<select multiple="" class="form-control col-lg-4" id="friends" size = "7"></select>
+									<select class="form-control col-lg-4" id="friends" size = "7"></select>
 									<span class="help-block label label-success">Select your friends.</span>
 								</div>
 							</div>
@@ -107,14 +107,9 @@
 			  // Add this to a button's onclick handler
 			  //FB.AppEvents.logEvent("sentFriendRequest");
 			  	//FB.api('/me/feed', 'post', {message: message.value, link: link.value }, function(response) {
-			  	FB.api('/me/feed', 'post', { message: message.value }, function(response) {
-					if (response.error) { console.log (response.error); return; }
-					alert("Posted!")
-				}, {
-					scope: 'publish_actions'
-				});
-				
-
+				FB.api('/me/feed', 'post', {message: 'Hello, world!'});
+					//if (response.error) { console.log (response.error); return; }
+					//alert("Posted!")
 			}
 
 		</script>
