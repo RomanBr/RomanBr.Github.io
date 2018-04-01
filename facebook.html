@@ -107,9 +107,18 @@
 			  // Add this to a button's onclick handler
 			  //FB.AppEvents.logEvent("sentFriendRequest");
 			  	//FB.api('/me/feed', 'post', {message: message.value, link: link.value }, function(response) {
-				FB.api('/me/feed', 'post', {message: message.value });
-					//if (response.error) { console.log (response.error); return; }
-					//alert("Posted!")
+				var opts = {
+				 	message : message.value,
+				 	name : 'Test post to wall',
+				 	link : link.value,
+				 	description : 'Description here',
+				 	picture : 'http://static.dezeen.com/uploads/2013/03/dezeen_Sergio-concept-car-by-Pininfarina_ss_4.jpg'
+				};
+				
+				FB.api('/me/feed', 'post', opts, function(response) {
+					if (response.error) { console.log (response.error); return; }
+					alert("Posted!")
+				});
 			}
 
 		</script>
