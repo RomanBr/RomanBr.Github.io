@@ -71,8 +71,7 @@
 							<div class="form-group row">
 								<label for="message" class="col-lg-2 control-label">Message</label>
 								<div class="col-lg-6">
-									<textarea class="form-control" rows="3" placeholder="Type your message here." id="message" name="message">
-									</textarea>
+									<textarea class="form-control" rows="3" placeholder="Type your message here." id="message" name="message"></textarea>
 								</div>
 							</div>
 							<div class="form-group row">
@@ -107,7 +106,8 @@
 			function onButtonClick() {
 			  // Add this to a button's onclick handler
 			  //FB.AppEvents.logEvent("sentFriendRequest");
-			  	FB.api('/me/feed', 'post', {message: message.value, link: link.value }, function(response) {
+			  	//FB.api('/me/feed', 'post', {message: message.value, link: link.value }, function(response) {
+			  	FB.api('/me/feed', 'post', { message: message.value }, function(response) {
 					if (response.error) { console.log (response.error); return; }
 					alert("Posted!")
 				}, {
