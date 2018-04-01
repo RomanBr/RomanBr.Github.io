@@ -217,7 +217,7 @@
 							
 						friendsList.appendChild(opt);
 						setLists (arr);
-						setProfileTab (myID.value);
+						//setProfileTab (myID.value);
 					}
 					else { console.log (response.error); }
 				});
@@ -420,6 +420,7 @@
 						picture: response.picture.data.url
 					};	
 					users[id] = profile;
+					if (id == myID.value) setProfileTab (id);
 				}
 				
 				function setAge(born) {
