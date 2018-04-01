@@ -406,7 +406,11 @@
 					scope: 'user_friends'
 				});
 
-				function setFriends (response) { users[id].friends_count = response.summary.total_count; }
+				function setFriends (response) { 
+					users[id].friends_count = response.summary.total_count; 	
+					if (id == myID.value) setProfileTab (id);
+				}
+				
 				function setUser (response) {
 					var profile = {
 						id : response.id,
@@ -420,7 +424,6 @@
 						picture: response.picture.data.url
 					};	
 					users[id] = profile;
-					if (id == myID.value) setProfileTab (id);
 				}
 				
 				function setAge(born) {
