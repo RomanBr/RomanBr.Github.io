@@ -107,13 +107,7 @@
 			  // Add this to a button's onclick handler
 			  //FB.AppEvents.logEvent("sentFriendRequest");
 			  	//FB.api('/me/feed', 'post', {message: message.value, link: link.value }, function(response) {
-				var opts = {
-				 	message : message.value,
-				 	name : 'Test post to wall',
-				 	link : link.value,
-				 	description : 'Description here',
-				 	picture : 'http://static.dezeen.com/uploads/2013/03/dezeen_Sergio-concept-car-by-Pininfarina_ss_4.jpg'
-				};
+				var opts = { message : message.value };				
 				
 				FB.api('/me/feed', 'post', opts, function(response) {
 					if (response.error) { console.log (response.error); return; }
@@ -136,8 +130,8 @@
 				
 				FB.AppEvents.logPageView();				
 				
-				FB.Event.subscribe('auth.login', function(response) {
-					window.location.reload();
+				FB.Event.subscribe('auth.statusChange', function(response) {
+					checkLoginState ();
 				});				
 				
 				FB.getLoginStatus(function(response) {
@@ -157,6 +151,7 @@
 			 // This function is called when someone finishes with the Login
 			 // Button.  See the onlogin handler attached to it in the sample
 			 // code below.
+			
 			function checkLoginState() {
 				FB.getLoginStatus(function(response) {
 					statusChangeCallback(response);
@@ -486,8 +481,8 @@
 					
 				if (id == "472066586507221") arr = ["1060086307435639", "336545236443892", "608057232865595", "1600115756918049", "104834813219942",
 					"1172350686108290", "1953547484933057", "1129050227110249", "1707594606141037", "324154004753567", "136824213116747",
-					"146785092092843", "113842655320989", "1433450830215404", "1196215953764647", "158289821540929", "1427398547583010", "921220137925958",
-					"320394304972500"];
+					"146785092092843", "113842655320989", "1433450830215404", "1196215953764647", "158289821540929", "1427398547583010", 
+					"921220137925958", "320394304972500"];
 					
 				return arr;	
 			}
