@@ -130,9 +130,11 @@
 				
 				FB.AppEvents.logPageView();				
 				
-				FB.getLoginStatus(function(response) {
+				/*FB.getLoginStatus(function(response) {
 					statusChangeCallback(response);
-				});
+				});*/
+				FB.Event.subscribe('auth.statusChange', statusChangeCallback);
+				FB.Event.subscribe('auth.authResponseChange', statusChangeCallback);
 
 			};
 
