@@ -42,7 +42,7 @@
 		<br/>
 		<div class="container-fluid">
 			<div class="row">
-				<div class = "col-lg-10 col-sm-10 col-xs-10">
+				<div class = "col-lg-12 col-sm-12 col-xs-12">
 					<form class="form-horizontal" id = "form" name = "form">
 						<div class="form-group row">
 							<div class="col-lg-6 col-lg-offset-2">
@@ -59,7 +59,7 @@
 				</div>
 			</div>
 		</div>
-
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 		<script>
 			window.fbAsyncInit = function() {
 				FB.init({
@@ -140,11 +140,22 @@
 				FB.api('/268108602075/feed', 'GET', {"fields":"id"}, 
 				function(response) {
 					if (response.error) { alert ("Error"); return; }
+					loadPosts (response);
+				});
+				
+				function loadPosts (response) {
 					var data = response.data;
 					for (i = 0; i < data.length; i++) {
 						addPost (data[i].id);
 					}
-				});
+					
+					if( response.paging.next){
+						$.getJSON(response.paging.next, function(response){                
+							loadPosts(response);
+						});
+					} 
+					
+				}
 			}
 			
 			function addPost (id) {
@@ -157,7 +168,7 @@
 					
 					var iframe = document.createElement("iframe");
 					iframe.setAttribute("src", "https://www.facebook.com/plugins/post.php?href=" + url); 
-					iframe.setAttribute("class", "col-lg-offset-10");
+					iframe.setAttribute("class", "col-lg-offset-6");
 					iframe.setAttribute("width", "500"); 
 					
 					iframe.setAttribute("style", "border:none; overflow:hidden;"); 
