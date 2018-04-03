@@ -157,7 +157,7 @@
 					
 					var iframe = document.createElement("iframe");
 					iframe.setAttribute("src", "https://www.facebook.com/plugins/post.php?href=" + url); 
-					iframe.setAttribute("class", "col-lg-offset-2");
+					iframe.setAttribute("class", "col-lg-offset-10");
 					iframe.setAttribute("width", "500"); 
 					
 					iframe.setAttribute("style", "border:none; overflow:hidden;"); 
@@ -167,6 +167,7 @@
 					
 					div.appendChild(iframe);
 					form.appendChild(div);
+					form.innerHTML += "<br/>"
 				});
 			}
 		</script>
