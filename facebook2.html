@@ -54,13 +54,25 @@
 								<span id="status" class = "label label-success"></span>
 							</div>
 						</div>
-						
+						<nav class = "col-lg-offset-2">
+							<ul class="pagination">
+								<li class="page-item" id = "previousLink">
+									<a class="page-link disabled" href="javascript:void(0);" onclick = "loadPosts (next);">Previous</a>
+								</li>
+								<li class="page-item" id = "nextLink">
+									<a class="page-link" href="javascript:void(0);" onclick = "loadPosts (previous);">Next</a>
+								</li>
+							</ul>
+						</nav>					
 					</form>
 				</div>
 			</div>
 		</div>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 		<script>
+			var previous, next;
+			users = ["268108602075"];
+
 			window.fbAsyncInit = function() {
 				FB.init({
 					appId            : '1616981855234875',
@@ -121,7 +133,6 @@
 				}
 			}
 			
-			users = ["268108602075"];
 			var auth_response_change_callback = function(response) {
 			  console.log ("auth_response_change_callback");
 			  console.log (response);
@@ -143,19 +154,30 @@
 					loadPosts (response);
 				});
 				
-				function loadPosts (response) {
-					var data = response.data;
-					for (i = 0; i < data.length; i++) {
-						addPost (data[i].id);
-					}
-					
-					if( response.paging.next){
-						$.getJSON(response.paging.next, function(response){                
-							setTimeout(function(){ loadPosts(response); }, 10);
-						});
-					} 
-					
+			}
+
+			function loadPosts (response) {
+				var data = response.data;
+				for (i = 0; i < data.length; i++) {
+					addPost (data[i].id);
 				}
+					
+				if(response.paging.next){
+					$.getJSON(response.paging.next, function(response){                
+						next = response;
+					});
+					nextLink.setAttribute("class", "page-item");
+				} 
+				else { nextLink.setAttribute("class", "page-item disabled"); }
+				
+				if(response.paging.previous){
+					$.getJSON(response.paging.next, function(response){                
+						next = response;
+					});
+					previousLink.setAttribute("class", "page-item");
+				} 
+				else { previousLink.setAttribute("class", "page-item disabled"); }
+
 			}
 			
 			function addPost (id) {
