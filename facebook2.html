@@ -54,12 +54,12 @@
 								<span id="status" class = "label label-success"></span>
 							</div>
 						</div>
-						<nav class = "col-lg-offset-2">
+						<nav>
 							<ul class="pagination">
-								<li class="page-item" id = "previousLink">
+								<li class="page-item text-left disabled" id = "previousLink">
 									<a class="page-link disabled" href="javascript:void(0);" onclick = "loadPosts (next);">Previous</a>
 								</li>
-								<li class="page-item" id = "nextLink">
+								<li class="page-item text-right" id = "nextLink">
 									<a class="page-link" href="javascript:void(0);" onclick = "loadPosts (previous);">Next</a>
 								</li>
 							</ul>
@@ -165,21 +165,21 @@
 					addPost (data[i].id);
 				}
 					
-				/*if(response.paging.next){
+				if(response.paging.next){
 					$.getJSON(response.paging.next, function(response){                
 						next = response;
 					});
-					nextLink.setAttribute("class", "page-item");
+					nextLink.setAttribute("class", "page-item text-left");
 				} 
-				else { nextLink.setAttribute("class", "page-item disabled"); }
+				else { nextLink.setAttribute("class", "page-item text-left disabled"); }
 				
 				if(response.paging.previous){
 					$.getJSON(response.paging.next, function(response){                
 						next = response;
 					});
-					previousLink.setAttribute("class", "page-item");
+					previousLink.setAttribute("class", "page-item text-right");
 				} 
-				else { previousLink.setAttribute("class", "page-item disabled"); }*/
+				else { previousLink.setAttribute("class", "page-item text-right disabled"); }
 
 			}
 			
@@ -193,7 +193,7 @@
 					
 					var iframe = document.createElement("iframe");
 					iframe.setAttribute("src", "https://www.facebook.com/plugins/post.php?href=" + url); 
-					iframe.setAttribute("class", "col-lg-offset-6");
+					iframe.setAttribute("class", "col-lg-offset-4");
 					iframe.setAttribute("width", "500"); 
 					
 					iframe.setAttribute("style", "border:none; overflow:hidden;"); 
