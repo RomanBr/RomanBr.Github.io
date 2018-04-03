@@ -203,17 +203,18 @@
 					div1.setAttribute("data-width","500")
 					div1.setAttribute("data-show-text","true");
 					
-					div.appendChild(div1);
-					
 					var a = document.createElement("a")
 					a.setAttribute("class", "btn btn-primary");
 					a.setAttribute("href", url);
 					a.setAttribute("target", "_blank");
 					a.setAttribute("role","button");
 					a.innerHTML = url
-					form.appendChild(a);
+					
+					div.appendChild(a);
+					div.appendChild(div1);
 					form.appendChild(div);
 					form.innerHTML += "<br/>"
+					FB.XFBML.parse (div1);
 				});
 			}
 		</script>
