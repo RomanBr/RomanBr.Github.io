@@ -42,7 +42,7 @@
 		<br/>
 		<div class="container-fluid">
 			<div class = "col-lg-10 col-sm-10 col-xs-10" id = "form">
-				<form class="form-horizontal">
+				<form class="form-horizontal" id = "form" name = "form">
 					<div class="form-group row">
 						<div class="col-lg-6 col-lg-offset-2">
 							<fb:login-button id = "loginBtn" scope="public_profile,email,user_birthday,user_friends,publish_actions" onlogin="checkLoginState();"
@@ -109,6 +109,7 @@
 				// for FB.getLoginStatus().
 				if (response.status === 'connected') {
 					document.getElementById('status').innerHTML = '';
+					showPosts ();
 
 				} else if (response.status === 'not_authorized') {
 					document.getElementById('status').innerHTML = 'Please log into this app.';
@@ -119,6 +120,7 @@
 				}
 			}
 			
+			users = ["268108602075"];
 			var auth_response_change_callback = function(response) {
 			  console.log ("auth_response_change_callback");
 			  console.log (response);
@@ -131,6 +133,29 @@
 			var comment_callback = function(response) {
 			  console.log("comment_callback");
 			  console.log(response);
+			}
+			
+			function showPosts () {
+				FB.api('/268108602075/feed', 'GET', {"fields":"id"}, 
+				function(response) {
+					if (response.error) { alert ("Error"); return; }
+					var data = response.data;
+					for (i = 0; i < data.length; i++) {
+					
+					}
+				});
+			}
+			
+			function addPost (id) {
+				FB.api('/' + id, 'GET', {"fields":"permalink_url"},
+				function(response) {
+					if (response.error) { alert ("Error:" + id); return; }
+					url = response.permalink_url;
+					var div = document.createElement("div");
+					div.setAttribute("class", "form-group row"); 
+					div.innerHTML = '<div class="fb-post" data-href="' + url + '" data-width="500" data-show-text="true"></div>'
+					form.appendChild(div);
+				});
 			}
 		</script>
 		<!--<script async src="https://www.googletagmanager.com/gtag/js?id=UA-115749034-1"></script>
