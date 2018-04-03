@@ -141,7 +141,7 @@
 					if (response.error) { alert ("Error"); return; }
 					var data = response.data;
 					for (i = 0; i < data.length; i++) {
-					
+						addPost (data[i].id)
 					}
 				});
 			}
