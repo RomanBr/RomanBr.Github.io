@@ -51,6 +51,9 @@
 							data-show-faces="false" data-auto-logout-link="false" data-use-continue-as="false" 
 							onlogin="checkLoginState();"></div>-->
 							<span id="status" class = "label label-success"></span>
+							
+							<div class="fb-comments" data-href="https://www.facebook.com/Netanyahu/posts/10155500606907076" data-numposts="5"
+							data-colorscheme="light"></div>
 						</div>
 					</div>
 				</form>
@@ -74,7 +77,10 @@
 				
 				FB.Event.subscribe('auth.authResponseChange', auth_response_change_callback);
 				FB.Event.subscribe('auth.statusChange', auth_status_change_callback);
-
+				
+				FB.Event.subscribe('comment.create', comment_callback);
+				FB.Event.subscribe('comment.remove', comment_callback);
+				
 			};
 
 			(function(d, s, id) {
@@ -125,6 +131,11 @@
 
 			var auth_status_change_callback = function(response) {
 			  alert("auth_status_change_callback: " + response.status);
+			}
+			
+			var comment_callback = function(response) {
+			  console.log("comment_callback");
+			  console.log(response);
 			}
 		</script>
 		<!--<script async src="https://www.googletagmanager.com/gtag/js?id=UA-115749034-1"></script>
