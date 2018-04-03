@@ -154,14 +154,9 @@
 					url = response.permalink_url;
 					var div = document.createElement("div");
 					div.setAttribute("class", "form-group row"); 
-
-					var div1 = document.createElement("div");
-					div.setAttribute("class", "embed-responsive embed-responsive-16by9 col-lg-offset-2"); 
-
 					
 					var iframe = document.createElement("iframe");
 					iframe.setAttribute("src", "https://www.facebook.com/plugins/post.php?href=" + url); 
-					iframe.setAttribute("class", "embed-responsive-item"); 
 					iframe.setAttribute("width", "500"); 
 					
 					iframe.setAttribute("style", "border:none;"); 
@@ -169,8 +164,7 @@
 					iframe.setAttribute("frameborder", "0"); 
 					iframe.setAttribute("allowTransparency", "true"); 
 					
-					div1.appendChild(iframe);
-					div.appendChild(div1)
+					div.appendChild(iframe);
 					form.appendChild(div);
 				});
 			}
