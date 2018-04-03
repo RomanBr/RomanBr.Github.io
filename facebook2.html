@@ -178,6 +178,7 @@
 				for (i = 0; i < data.length; i++) {
 					addPost (data[i].id);
 				}
+				FB.XFBML.parse(document.getElementsByClassName("fb-post"));
 			}
 			
 			function addPost (id) {
@@ -188,16 +189,21 @@
 					var div = document.createElement("div");
 					div.setAttribute("class", "form-group row"); 
 					
-					var iframe = document.createElement("iframe");
+					/*var iframe = document.createElement("iframe");
 					iframe.setAttribute("src", "https://www.facebook.com/plugins/post.php?href=" + url); 
 					iframe.setAttribute("class", "fb-post");
 					iframe.setAttribute("width", "500"); 
 					iframe.setAttribute("style", "border:none; overflow:hidden;"); 
 					iframe.setAttribute("scrolling", "no"); 
 					iframe.setAttribute("frameborder", "0"); 
-					iframe.setAttribute("allowTransparency", "true"); 
+					iframe.setAttribute("allowTransparency", "true");*/
+					var div1 = document.createElement("div");
+					div1.setAttribute("class", "fb-post");
+					div1.setAttribute("data-href", url);
+					div1.setAttribute("data-width","500")
+					div1.setAttribute("data-show-text","true");
 					
-					div.appendChild(iframe);
+					div.appendChild(div1);
 					
 					var a = document.createElement("a")
 					a.setAttribute("class", "btn btn-primary");
