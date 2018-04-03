@@ -141,7 +141,6 @@
 					if (response.error) { alert ("Error"); return; }
 					var data = response.data;
 					for (i = 0; i < data.length; i++) {
-						alert (data[i].id);
 						addPost (data[i].id);
 					}
 				});
@@ -155,6 +154,7 @@
 					var div = document.createElement("div");
 					div.setAttribute("class", "form-group row"); 
 					div.innerHTML = '<div class="fb-post" data-href="' + url + '" data-width="500" data-show-text="true"></div>'
+					alert (div.innerHTML);
 					form.appendChild(div);
 				});
 			}
