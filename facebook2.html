@@ -158,11 +158,6 @@
 
 			function loadPosts (response) {
 				var data = response.data;
-				form.innerHTML = "";
-				for (i = 0; i < data.length; i++) {
-					addPost (data[i].id);
-				}
-					
 				if(response.paging.next){
 					$.getJSON(response.paging.next, function(response){                
 						next = response;
@@ -179,6 +174,10 @@
 				} 
 				else { previousLink.setAttribute("class", "page-item text-right disabled"); }
 
+				form.innerHTML = "";
+				for (i = 0; i < data.length; i++) {
+					addPost (data[i].id);
+				}
 			}
 			
 			function addPost (id) {
@@ -187,19 +186,25 @@
 					if (response.error) { alert ("Error:" + id); return; }
 					url = response.permalink_url;
 					var div = document.createElement("div");
-					div.setAttribute("class", "form-group row"); 
+					div.setAttribute("class", "form-group row col-lg-offset-4"); 
 					
 					var iframe = document.createElement("iframe");
 					iframe.setAttribute("src", "https://www.facebook.com/plugins/post.php?href=" + url); 
-					iframe.setAttribute("class", "col-lg-offset-4");
+					//iframe.setAttribute("class", "col-lg-offset-4");
+					iframe.setAttribute("class", "fb-post");
 					iframe.setAttribute("width", "500"); 
-					
 					iframe.setAttribute("style", "border:none; overflow:hidden;"); 
 					iframe.setAttribute("scrolling", "no"); 
 					iframe.setAttribute("frameborder", "0"); 
 					iframe.setAttribute("allowTransparency", "true"); 
 					
 					div.appendChild(iframe);
+					
+					var a = document.createElement("a")
+					a.setAttribute("class", "label label-success");
+					a.setAttribute("href", url);
+					a.setAttribute("target", "_blank");
+					form.appendChild(a);
 					form.appendChild(div);
 					form.innerHTML += "<br/>"
 				});
