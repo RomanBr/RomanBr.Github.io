@@ -63,7 +63,7 @@
 							</li>
 						</ul>
 					</nav>					
-					<div class="form-group row" id = "form" name = "form">
+					<div class="row col-lg-offset-4" id = "form" name = "form">
 					</div>
 				</form>
 			</div>
@@ -167,8 +167,8 @@
 				else { nextLink.setAttribute("class", "page-item text-left disabled"); }
 				
 				if(response.paging.previous){
-					$.getJSON(response.paging.next, function(response){                
-						next = response;
+					$.getJSON(response.paging.previous, function(response){                
+						previous = response;
 					});
 					previousLink.setAttribute("class", "page-item text-right");
 				} 
@@ -186,11 +186,10 @@
 					if (response.error) { alert ("Error:" + id); return; }
 					url = response.permalink_url;
 					var div = document.createElement("div");
-					div.setAttribute("class", "form-group row col-lg-offset-4"); 
+					div.setAttribute("class", "form-group row"); 
 					
 					var iframe = document.createElement("iframe");
 					iframe.setAttribute("src", "https://www.facebook.com/plugins/post.php?href=" + url); 
-					//iframe.setAttribute("class", "col-lg-offset-4");
 					iframe.setAttribute("class", "fb-post");
 					iframe.setAttribute("width", "500"); 
 					iframe.setAttribute("style", "border:none; overflow:hidden;"); 
@@ -201,9 +200,11 @@
 					div.appendChild(iframe);
 					
 					var a = document.createElement("a")
-					a.setAttribute("class", "label label-success");
+					a.setAttribute("class", "btn btn-primary");
 					a.setAttribute("href", url);
 					a.setAttribute("target", "_blank");
+					a.setAttribute("role","button");
+					a.innerHTML = url
 					form.appendChild(a);
 					form.appendChild(div);
 					form.innerHTML += "<br/>"
