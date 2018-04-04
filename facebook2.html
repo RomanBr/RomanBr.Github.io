@@ -158,13 +158,12 @@
 				function(response) {
 					if (response.error) { alert ("Error"); return; }
 					loadAllposts (response);
-					status.value = p;
-					loadPosts (response);
+					loadPosts (posts[++j]);
 				});
 				
 				function loadAllposts (response) {
 					p += response.data.length;
-					if(!response.paging) return;
+					if(!response.paging) status.value = p; return;
 					if(response.paging.next){
 						$.getJSON(response.paging.next, function(response){                
 							posts.push(response);
