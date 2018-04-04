@@ -201,10 +201,12 @@
 				}
 
 				form.innerHTML = "";
+				var txt = "";
 				for (i = 0; i < data.length; i++) {
-					addPost (data[i].id);
+					txt += addPost (data[i].id) + "\n<br/>\n";
 				}
 				
+				form.innerHTML = txt;
 				/*var elements = document.getElementsByClassName("fb-post");
 				for (i = 0; i < elements.length; i++) {
 					FB.XFBML.parse(elements[i]);
@@ -216,14 +218,14 @@
 				function(response) {
 					if (response.error) { alert ("Error:" + id); return; }
 					url = response.permalink_url;
-					/*var div = document.createElement("div");
-					div.setAttribute("class", "form-group"); 
+					var div = document.createElement("div");
+					//div.setAttribute("class", "form-group"); 
 
 					var div1 = document.createElement("div");
 					div1.setAttribute("class", "col-lg-offset-4"); */
 
-					var div = document.createElement("div");
-					div.setAttribute("class", "col-lg-offset-4"); 
+					var div1 = document.createElement("div");
+					div1.setAttribute("class", "col-lg-offset-4"); 
 					
 					var iframe = document.createElement("iframe");
 					iframe.setAttribute("src", "https://www.facebook.com/plugins/post.php?href=" + url); 
@@ -247,14 +249,14 @@
 					a.setAttribute("role","button");
 					a.innerHTML = url
 					
-					div.appendChild(a);
-					div.innerHTML += "<br/>"
-					div.appendChild(iframe);
+					div1.appendChild(a);
+					div1.innerHTML += "<br/>"
+					div1.appendChild(iframe);
 					
-					//div.appendChild(div1);
-					form.appendChild(div);
-					form.innerHTML += "<br/>"
-					alert (div.innerHTML);
+					div.appendChild(div1);
+					//form.appendChild(div);
+					//form.innerHTML += "<br/>"
+					return div.innerHTML;
 				});
 			}
 		</script>
