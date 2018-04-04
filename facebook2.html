@@ -178,7 +178,11 @@
 				for (i = 0; i < data.length; i++) {
 					addPost (data[i].id);
 				}
-				FB.XFBML.parse(document.getElementsByClassName("fb-post"));
+				
+				var elements = document.getElementsByClassName("fb-post"));
+				for (i = 0; i < elements.length) {
+					FB.XFBML.parse(elements[i]);
+				}
 			}
 			
 			function addPost (id) {
@@ -214,7 +218,6 @@
 					div.appendChild(div1);
 					form.appendChild(div);
 					form.innerHTML += "<br/>"
-					FB.XFBML.parse (div1);
 				});
 			}
 		</script>
