@@ -212,8 +212,12 @@
 					txt += (new Date(data[i].created_time)) + '\n';
 					//addPost (data[i].id);
 				}
+
+				var div = document.createElement("div");
+				div.setAttribute("class", "col-lg-offset-4"); 
+				div.innerHTML = txt;
+				form.appendChild(div);
 				
-				alert (txt);
 				/*var elements = document.getElementsByClassName("fb-post");
 				for (i = 0; i < elements.length; i++) {
 					FB.XFBML.parse(elements[i]);
