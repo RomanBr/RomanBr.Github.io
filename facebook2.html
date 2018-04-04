@@ -34,9 +34,6 @@
 		  src="https://www.facebook.com/tr?id=365485023933940&ev=PageView&noscript=1"
 		/></noscript>
 		<!-- End Facebook Pixel Code -->
-		<style>
-			iframe { height: 100%; }
-		</style>
 	</head>
 	<body>
 		<div id="fb-root"></div>
@@ -177,6 +174,7 @@
 
 			function loadPosts (response) {
 				var data = response.data;
+				status1.value = data.length;
 				if(response.paging.previous){
 					$.getJSON(response.paging.previous, function(response){                
 						previous = response;
@@ -231,7 +229,7 @@
 					iframe.setAttribute("src", "https://www.facebook.com/plugins/post.php?href=" + url); 
 					iframe.setAttribute("class", "fb-post");
 					iframe.setAttribute("width", "500"); 
-					//iframe.setAttribute("height", "500"); 
+					iframe.setAttribute("height", "500"); 
 					iframe.setAttribute("style", "border:none; overflow:hidden;"); 
 					iframe.setAttribute("scrolling", "no"); 
 					iframe.setAttribute("frameborder", "0"); 
