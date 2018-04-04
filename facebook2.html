@@ -38,7 +38,7 @@
 	<body>
 		<div id="fb-root"></div>
 		<input type = "hidden" id = "myID" name = "myID" />
-		<input type = "hidden" id = "posts" name = "posts" />
+		<input type = "hidden" id = "profs" name = "profs" />
 		<br/>
 		<div class="container-fluid">
 			<form class="form-horizontal">
@@ -201,11 +201,15 @@
 				}
 
 				form.innerHTML = "";
-				posts.value = ""
+				data.sort(function(a,b){
+					var c = new Date(a.date);
+					var d = new Date(b.date);
+					return c-d;
+				});
+				
 				for (i = 0; i < data.length; i++) {
 					addPost (data[i].id);
 				}
-				form.innerHTML = posts.value;
 				
 				/*var elements = document.getElementsByClassName("fb-post");
 				for (i = 0; i < elements.length; i++) {
@@ -254,11 +258,8 @@
 					div.appendChild(iframe);
 					
 					//div.appendChild(div1);
-					//form.appendChild(div);
-					//form.innerHTML += "\n\t\t\t\t\t<br/>\n"
-					var div1 = document.createElement("div");
-					div1.appendChild(div);
-					posts.value += div1.innerHTML + '\n<br/>\n';
+					form.appendChild(div);
+					form.innerHTML += "\n\t\t\t\t\t<br/>\n"
 				});
 			}
 		</script>
