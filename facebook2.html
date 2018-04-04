@@ -202,8 +202,8 @@
 
 				form.innerHTML = "";
 				data.sort(function(a,b){
-					var c = new Date(a.date);
-					var d = new Date(b.date);
+					var c = new Date(a.created_time);
+					var d = new Date(b.created_time);
 					return c-d;
 				});
 				
