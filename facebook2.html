@@ -202,16 +202,18 @@
 
 				form.innerHTML = "";
 				data.sort(function(a,b) {
-					var c = new Date(a.created_time);
-					var d = new Date(b.created_time);
-					alert (c-d);
-					return c-d;
+					var a = new Date(a.created_time);
+					var b = new Date(b.created_time);
+					return (a-b);
 				});
 				
+				txt = "";
 				for (i = 0; i < data.length; i++) {
-					addPost (data[i].id);
+					txt += (new Date(data[i].created_time)) + '\n';
+					//addPost (data[i].id);
 				}
 				
+				alert (txt);
 				/*var elements = document.getElementsByClassName("fb-post");
 				for (i = 0; i < elements.length; i++) {
 					FB.XFBML.parse(elements[i]);
