@@ -201,10 +201,10 @@
 				}
 
 				form.innerHTML = "";
-				data.sort(function(a,b){
+				data.sort(function(a,b) {
 					var c = new Date(a.created_time);
 					var d = new Date(b.created_time);
-					return c-d;
+					return d-c;
 				});
 				
 				for (i = 0; i < data.length; i++) {
