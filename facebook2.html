@@ -162,8 +162,8 @@
 				});
 				
 				function loadAllposts (response) {
-					p += response.data.length;
-					if(!response.paging) status.value = p; return;
+					status.value = (parseInt(status.value) + response.data.length);
+					if(!response.paging) return;
 					if(response.paging.next){
 						$.getJSON(response.paging.next, function(response){                
 							posts.push(response);
