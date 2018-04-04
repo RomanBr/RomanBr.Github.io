@@ -202,13 +202,14 @@
 
 				form.innerHTML = "";
 				data.sort(function(a,b){
-					alert(a.created_time);
+					alert(a);
 					var c = new Date(a.created_time);
 					var d = new Date(b.created_time);
 					return c-d;
 				});
 				
 				for (i = 0; i < data.length; i++) {
+					alert(data[i].created_time)
 					addPost (data[i].id);
 				}
 				
