@@ -215,11 +215,14 @@
 				function(response) {
 					if (response.error) { alert ("Error:" + id); return; }
 					url = response.permalink_url;
-					var div = document.createElement("div");
-					div.setAttribute("class", "form-group row"); 
+					/*var div = document.createElement("div");
+					div.setAttribute("class", "form-group"); 
 
 					var div1 = document.createElement("div");
-					div1.setAttribute("class", "col-lg-offset-4"); 
+					div1.setAttribute("class", "col-lg-offset-4"); */
+
+					var div = document.createElement("div");
+					div.setAttribute("class", "col-lg-offset-4"); 
 					
 					var iframe = document.createElement("iframe");
 					iframe.setAttribute("src", "https://www.facebook.com/plugins/post.php?href=" + url); 
@@ -243,11 +246,11 @@
 					a.setAttribute("role","button");
 					a.innerHTML = url
 					
-					div1.appendChild(a);
-					div1.innerHTML += "<br/>"
-					div1.appendChild(iframe);
+					div.appendChild(a);
+					div.innerHTML += "<br/>"
+					div.appendChild(iframe);
 					
-					div.appendChild(div1);
+					//div.appendChild(div1);
 					form.appendChild(div);
 					form.innerHTML += "<br/>"
 				});
