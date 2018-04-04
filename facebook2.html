@@ -75,7 +75,7 @@
 		<script>
 			var previous, next
 			var posts = []
-			var j = -1;
+			var j = 0;
 			users = ["268108602075"];
 
 			window.fbAsyncInit = function() {
@@ -158,11 +158,11 @@
 				function(response) {
 					if (response.error) { alert ("Error"); return; }
 					loadAllposts (response);
-					loadPosts (posts[++j]);
+					loadPosts (posts[0]);
 				});
 				
 				function loadAllposts (response) {
-					status.value = (parseInt(status.value) + response.data.length);
+					if (response) status.value = (parseInt(status.value) + response.data.length);
 					if(!response.paging) return;
 					if(response.paging.next){
 						$.getJSON(response.paging.next, function(response){                
