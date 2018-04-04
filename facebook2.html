@@ -56,7 +56,7 @@
 					<nav class="col-lg-offset-2">
 						<ul class="pagination" >
 							<li class="page-item text-left disabled" id = "previousLink">
-								<a class="page-link" href="javascript:void(0);" onclick = "loadPosts (previous);" tabindex="-1" aria-label="Previous">
+								<a class="page-link" id = "a1" href="javascript:void(0);" onclick = "loadPosts (previous);" tabindex="-1" aria-label="Previous">
 									<span aria-hidden="true">Previous</span>
 									<span class="sr-only">Previous</span>
 								</a>
@@ -65,7 +65,7 @@
 								<span id="status1" class = "page-link">0</span>
 							</li>
 							<li class="page-item text-right disabled" id = "nextLink">
-								<a class="page-link" href="javascript:void(0);" onclick = "loadPosts (next);" aria-label="Previous">
+								<a class="page-link" id = "a2" href="javascript:void(0);" onclick = "loadPosts (next);" tabindex="1" aria-label="Previous">
 									<span aria-hidden="true">Next</span>
 									<span class="sr-only">Next</span>
 								</a>
@@ -175,21 +175,30 @@
 
 			function loadPosts (response) {
 				var data = response.data;
-				if(response.paging.next){
-					$.getJSON(response.paging.next, function(response){                
-						next = response;
-					});
-					nextLink.setAttribute("class", "page-item");
-				} 
-				else { nextLink.setAttribute("class", "page-item disabled"); }
-				
 				if(response.paging.previous){
 					$.getJSON(response.paging.previous, function(response){                
 						previous = response;
 					});
 					previousLink.setAttribute("class", "page-item");
+					a1.setAttribute ("onclick", "loadPosts (previous);");
 				} 
-				else { previousLink.setAttribute("class", "page-item disabled"); }
+				else {
+					previousLink.setAttribute("class", "page-item disabled"); 
+					a1.setAttribute ("onclick", "");
+				}
+
+
+				if(response.paging.next){
+					$.getJSON(response.paging.next, function(response){                
+						next = response;
+					});
+					nextLink.setAttribute("class", "page-item");
+					a2.setAttribute ("onclick", "loadPosts (next);");
+				} 
+				else { 
+					nextLink.setAttribute("class", "page-item disabled"); 
+					a2.setAttribute ("onclick", "");
+				}
 
 				form.innerHTML = "";
 				for (i = 0; i < data.length; i++) {
