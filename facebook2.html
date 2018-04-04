@@ -153,7 +153,6 @@
 			}
 			
 			function showPosts () {
-				p = 0;
 				FB.api('/268108602075/feed', 'GET', {"fields":"id"}, 
 				function(response) {
 					if (response.error) { alert ("Error"); return; }
@@ -162,8 +161,7 @@
 				});
 				
 				function loadAllposts (response) {
-					if (response) status.value = (parseInt(status.value) + response.data.length);
-					if(!response.paging) return;
+					//if (response) status.value = (parseInt(status.value) + response.data.length);
 					if(response.paging.next){
 						$.getJSON(response.paging.next, function(response){                
 							posts.push(response);
