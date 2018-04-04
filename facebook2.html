@@ -62,7 +62,7 @@
 								<a class="page-link" href="javascript:void(0);" onclick = "loadPosts (posts[++j]);">Next</a>
 							</li>
 							<li class="page-item disabled">
-								<span id="status1" class = "label label-success">0</span>
+								<span id="status1" class = "page-link">0</span>
 							</li>
 						</ul>
 					</nav>					
@@ -154,13 +154,16 @@
 			
 			function showPosts () {
 				FB.api('/268108602075/feed', 'GET', {"fields":"id"}, 
+				p = 0
 				function(response) {
 					if (response.error) { alert ("Error"); return; }
 					loadAllposts (response);
+					status.value = p;
 					loadPosts (response);
 				});
 				
 				function loadAllposts (response) {
+					p += response.data.length;
 					if(!response.paging) return;
 					if(response.paging.next){
 						$.getJSON(response.paging.next, function(response){                
