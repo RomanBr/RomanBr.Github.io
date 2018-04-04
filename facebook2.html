@@ -56,10 +56,13 @@
 					<nav class="col-lg-offset-2">
 						<ul class="pagination col-lg-offset-2" >
 							<li class="page-item text-left disabled" id = "previousLink">
-								<a class="page-link disabled" href="javascript:void(0);" onclick = "loadPosts (previous);">Previous</a>
+								<a class="page-link" href="javascript:void(0);" onclick = "loadPosts (previous);">Previous</a>
 							</li>
-							<li class="page-item text-right" id = "nextLink">
+							<li class="page-item text-right disabled" id = "nextLink">
 								<a class="page-link" href="javascript:void(0);" onclick = "loadPosts (next);">Next</a>
+							</li>
+							<li class="page-item disabled">
+								<span id="status1" class = "label label-success">0</span>
 							</li>
 						</ul>
 					</nav>					
@@ -151,13 +154,24 @@
 				FB.api('/268108602075/feed', 'GET', {"fields":"id"}, 
 				function(response) {
 					if (response.error) { alert ("Error"); return; }
+					loadStatus (response);
 					loadPosts (response);
 				});
 				
+				function loadStatus (response) {
+					status1.value = parseInt(status1.value) + response.data.length; 
+					if(response.paging.next){
+						$.getJSON(response.paging.next, function(response){                
+							loadStatus(response);
+						});
+					}
+					else { status1.value = "You have " + status1.value + " posts"; }
+				}
 			}
 
 			function loadPosts (response) {
 				var data = response.data;
+				status1.value = "There are "
 				if(response.paging.next){
 					$.getJSON(response.paging.next, function(response){                
 						next = response;
