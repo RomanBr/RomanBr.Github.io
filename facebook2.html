@@ -56,10 +56,10 @@
 					<nav class="col-lg-offset-2">
 						<ul class="pagination col-lg-offset-2" >
 							<li class="page-item text-left disabled" id = "previousLink">
-								<a class="page-link" href="javascript:void(0);" onclick = "loadPosts (previous);">Previous</a>
+								<a class="page-link" href="javascript:void(0);" onclick = "loadPosts (posts[--j]);">Previous</a>
 							</li>
 							<li class="page-item text-right disabled" id = "nextLink">
-								<a class="page-link" href="javascript:void(0);" onclick = "loadPosts (next);">Next</a>
+								<a class="page-link" href="javascript:void(0);" onclick = "loadPosts (posts[++j]);">Next</a>
 							</li>
 							<li class="page-item disabled">
 								<span id="status1" class = "label label-success">0</span>
@@ -73,7 +73,9 @@
 		</div>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 		<script>
-			var previous, next;
+			var previous, next
+			var posts = []
+			var j = -1;
 			users = ["268108602075"];
 
 			window.fbAsyncInit = function() {
@@ -154,25 +156,23 @@
 				FB.api('/268108602075/feed', 'GET', {"fields":"id"}, 
 				function(response) {
 					if (response.error) { alert ("Error"); return; }
-					loadStatus (response);
+					loadAllposts (response);
 					loadPosts (response);
 				});
 				
-				function loadStatus (response) {
-					status1.value = parseInt(status1.value) + response.data.length; 
+				function loadAllposts (response) {
+					if(!response.paging) return;
 					if(response.paging.next){
 						$.getJSON(response.paging.next, function(response){                
-							loadStatus(response);
+							posts.push(response);
 						});
 					}
-					else { status1.value = "You have " + status1.value + " posts"; }
 				}
 			}
 
 			function loadPosts (response) {
 				var data = response.data;
-				status1.value = "There are "
-				if(response.paging.next){
+				/*if(response.paging.next){
 					$.getJSON(response.paging.next, function(response){                
 						next = response;
 					});
@@ -186,8 +186,15 @@
 					});
 					previousLink.setAttribute("class", "page-item text-right");
 				} 
-				else { previousLink.setAttribute("class", "page-item text-right disabled"); }
+				else { previousLink.setAttribute("class", "page-item text-right disabled"); }*/
 
+				if ((response.paging.next) || (j < post.length)) { nextLink.setAttribute("class", "page-item text-left"); } 
+				else { nextLink.setAttribute("class", "page-item text-left disabled"); }
+
+				if ((response.paging.previous)  || (j > 0)) { previousLink.setAttribute("class", "page-item text-right"); } 
+				else { previousLink.setAttribute("class", "page-item text-right disabled"); }
+				
+				
 				form.innerHTML = "";
 				for (i = 0; i < data.length; i++) {
 					addPost (data[i].id);
