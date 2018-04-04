@@ -156,7 +156,7 @@
 			}
 			
 			function showPosts () {
-				FB.api('/268108602075/feed', 'GET', {"fields":"id"}, 
+				FB.api('/268108602075/feed', 'GET', {}, 
 				function(response) {
 					if (response.error) { alert ("Error"); return; }
 					loadStatus (response);
@@ -202,7 +202,7 @@
 
 				form.innerHTML = "";
 				data.sort(function(a,b){
-					alert(a);
+					alert(a.created_time);
 					var c = new Date(a.created_time);
 					var d = new Date(b.created_time);
 					return c-d;
