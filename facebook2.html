@@ -153,8 +153,8 @@
 			}
 			
 			function showPosts () {
+				p = 0;
 				FB.api('/268108602075/feed', 'GET', {"fields":"id"}, 
-				p = 0
 				function(response) {
 					if (response.error) { alert ("Error"); return; }
 					loadAllposts (response);
