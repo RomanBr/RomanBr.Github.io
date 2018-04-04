@@ -189,7 +189,7 @@
 					});
 					previousLink.setAttribute("class", "page-item");
 				} 
-				else { previousLink.setAttribute("class", "page-itemdisabled"); }
+				else { previousLink.setAttribute("class", "page-item disabled"); }
 
 				form.innerHTML = "";
 				for (i = 0; i < data.length; i++) {
@@ -211,7 +211,7 @@
 					div.setAttribute("class", "form-group row"); 
 
 					var div1 = document.createElement("div");
-					div1.setAttribute("class", "col-lg-offset-2"); 
+					div1.setAttribute("class", "col-lg-offset-4"); 
 					
 					var iframe = document.createElement("iframe");
 					iframe.setAttribute("src", "https://www.facebook.com/plugins/post.php?href=" + url); 
@@ -239,7 +239,7 @@
 					div1.innerHTML += "<br/>"
 					div1.appendChild(iframe);
 					
-					div.appendChild(iframe);
+					div.appendChild(div1);
 					form.appendChild(div);
 					form.innerHTML += "<br/>"
 				});
