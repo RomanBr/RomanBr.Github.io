@@ -41,47 +41,46 @@
 		<input type = "hidden" id = "profs" name = "profs" />
 		<br/>
 		<div class="container-fluid">
-			<div class="row">
-				<form class="form-horizontal">
-					<div class="form-group row">
-						<div class="col-lg-6 col-lg-offset-2">
-							<fb:login-button id = "loginBtn" scope="public_profile,email,user_birthday,user_friends,publish_actions" onlogin="checkLoginState();"
-							autologoutlink="true"></fb:login-button>
-							<!--<div class="fb-login-button" id = "loginBtn" data-size="small" data-button-type="login_with" 
-							data-show-faces="false" data-auto-logout-link="false" data-use-continue-as="false" 
-							onlogin="checkLoginState();"></div>-->
-							<span id="status" class = "label label-success"></span>
-						</div>
+			<form class="form-horizontal">
+				<div class="form-group row">
+					<div class="col-lg-6 col-lg-offset-2">
+						<fb:login-button id = "loginBtn" scope="public_profile,email,user_birthday,user_friends,publish_actions" onlogin="checkLoginState();"
+						autologoutlink="true"></fb:login-button>
+						<!--<div class="fb-login-button" id = "loginBtn" data-size="small" data-button-type="login_with" 
+						data-show-faces="false" data-auto-logout-link="false" data-use-continue-as="false" 
+						onlogin="checkLoginState();"></div>-->
+						<span id="status" class = "label label-success"></span>
 					</div>
-					<nav class="col-lg-offset-2">
-						<ul class="pagination" >
-							<li class="page-item text-left disabled" id = "previousLink">
-								<a class="page-link" id = "a1" href="javascript:void(0);" onclick = "loadPosts (previous);" tabindex="-1" aria-label="Previous">
-									<span aria-hidden="true">Previous</span>
-									<span class="sr-only">Previous</span>
-								</a>
-							</li>
-							<li class="page-item">
-								<span id="status1" class = "page-link">0</span>
-							</li>
-							<li class="page-item text-right disabled" id = "nextLink">
-								<a class="page-link" id = "a2" href="javascript:void(0);" onclick = "loadPosts (next);" tabindex="1" aria-label="Previous">
-									<span aria-hidden="true">Next</span>
-									<span class="sr-only">Next</span>
-								</a>
-							</li>
-						</ul>
-					</nav>					
-					<div class="form-group row" id = "form" name = "form">
-					</div>
-				</form>
-			</div>
+				</div>
+				<nav class="col-lg-offset-2">
+					<ul class="pagination" >
+						<li class="page-item text-left disabled" id = "previousLink">
+							<a class="page-link" id = "a1" href="javascript:void(0);" onclick = "loadPosts (previous);" tabindex="-1" aria-label="Previous">
+								<span aria-hidden="true">Previous</span>
+								<span class="sr-only">Previous</span>
+							</a>
+						</li>
+						<li class="page-item">
+							<span id="status1" class = "page-link">0</span>
+						</li>
+						<li class="page-item text-right disabled" id = "nextLink">
+							<a class="page-link" id = "a2" href="javascript:void(0);" onclick = "loadPosts (next);" tabindex="1" aria-label="Previous">
+								<span aria-hidden="true">Next</span>
+								<span class="sr-only">Next</span>
+							</a>
+						</li>
+					</ul>
+				</nav>					
+				<div class="form-group row" id = "form" name = "form">
+				</div>
+			</form>
 		</div>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 		<script>
 			var previous, next;
 			users = ["268108602075"];
-
+		</script>
+		<script>
 			window.fbAsyncInit = function() {
 				FB.init({
 					appId            : '1616981855234875',
