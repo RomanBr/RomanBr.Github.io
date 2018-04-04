@@ -174,7 +174,7 @@
 
 			function loadPosts (response) {
 				var data = response.data;
-				status1.value = data.length;
+				status1.innerHTML = data.length;
 				if(response.paging.previous){
 					$.getJSON(response.paging.previous, function(response){                
 						previous = response;
@@ -204,7 +204,7 @@
 				data.sort(function(a,b) {
 					var a = new Date(a.created_time);
 					var b = new Date(b.created_time);
-					return (a-b);
+					return (b-a);
 				});
 				
 				txt = "";
