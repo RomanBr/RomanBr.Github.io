@@ -5,8 +5,14 @@
         <meta http-equiv="content-type" content="text/html; charset=UTF-8"> 
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-		<title>Profile</title>
 		<meta name="robots" content="noindex, nofollow">
+		<title>Facebook app</title>
+
+		<meta property="fb:app_id" content="1616981855234875" /> 
+		<meta property="og:url" content="https://romanbr.github.io/facebook.html/" />
+		<meta property="og:type" content="website" />
+		<meta property="og:title" content="Facebook app" />
+		<meta property="og:image" content="https://scontent.fsdv2-1.fna.fbcdn.net/v/t1.0-1/p50x50/14731097_1073726669392477_98653805612467697_n.jpg?_nc_cat=0&oh=aa249a8e7f2f66a9ecd5cd9a0e805eb2&oe=5B29B8C4" /> 
 		
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 		<link rel="stylesheet" title="Default Style" href="Facebook.css">
@@ -218,7 +224,7 @@
 				var friendsList = document.getElementById('friends');
 				FB.api('/me/friends', "GET", {}, function(response) {
 					console.log(response);
-					if (response.error) { console.log(response.error) }
+					if (response.error) { console.log(response.error): return; }
 					for (i = 0; i < response.data.length; i++) {
 						setUserData (response.data[i].id);
 						var opt = document.createElement("option");
