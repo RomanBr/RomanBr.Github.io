@@ -224,7 +224,7 @@
 				var friendsList = document.getElementById('friends');
 				FB.api('/me/friends', "GET", {}, function(response) {
 					console.log(response);
-					if (response.error) { console.log(response.error): return; }
+					if (response.error) { console.log(response.error); return; }
 					for (i = 0; i < response.data.length; i++) {
 						setUserData (response.data[i].id);
 						var opt = document.createElement("option");
