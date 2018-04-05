@@ -51,8 +51,8 @@
 			<form class="form-horizontal">
 				<div class="form-group row">
 					<div class="col-lg-6 col-lg-offset-2">
-						<fb:login-button id = "loginBtn" scope="public_profile,email,user_birthday,user_friends,publish_actions" onlogin="checkLoginState();"
-						autologoutlink="true"></fb:login-button>
+						<fb:login-button id = "loginBtn" scope="public_profile,email,user_birthday,user_friends,publish_actions,user_hometown,user_location" onlogin="checkLoginState();"
+						style = "display: none;"></fb:login-button>
 						<!--<div class="fb-login-button" id = "loginBtn" data-size="small" data-button-type="login_with" 
 						data-show-faces="false" data-auto-logout-link="false" data-use-continue-as="false" 
 						onlogin="checkLoginState();"></div>-->
@@ -216,14 +216,14 @@
 				
 				txt = "";
 				for (i = 0; i < data.length; i++) {
-					txt += (new Date(data[i].created_time)) + '\n<br/>';
-					//addPost (data[i].id);
+					//txt += (new Date(data[i].created_time)) + '\n<br/>';
+					addPost (data[i].id);
 				}
 
-				var div = document.createElement("div");
+				/*var div = document.createElement("div");
 				div.setAttribute("class", "col-lg-offset-4"); 
 				div.innerHTML = txt;
-				form.appendChild(div);
+				form.appendChild(div);*/
 				
 				/*var elements = document.getElementsByClassName("fb-post");
 				for (i = 0; i < elements.length; i++) {
