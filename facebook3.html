@@ -31,10 +31,13 @@
 	{
 		FB.Event.subscribe('auth.statusChange', onFacebookStatusChange);
 		FB.init({
-			appId  : '169191963114890',
-			status : true, // check login status
-			cookie : true, // enable cookies to allow the server to access the session
-			xfbml  : true  // parse XFBML
+			appId            : '1616981855234875',
+			autoLogAppEvents : true,
+			xfbml            : true,
+			cookie			 : true,
+			status			 : true,
+			oauth			 : true,
+			version          : 'v2.12'
 		});
 
 		FB.getLoginStatus(onFacebookInitialLoginStatus);   
