@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html 
+	xmlns="http://www.w3.org/1999/xhtml" 
+	xmlns:fb="http://www.facebook.com/2008/fbml">
+<head>
+<title>permadi.com | Facebook Graph API Application Example</title>
+</head>
+<body>
+<div id="fb-root"></div>
+<script>
+	function onFriendsListLoaded(response)
+	{
+		//alert("onFriendsListLoaded");	
+		var divTarget=document.getElementById("friends-list-container");
+		var data=response.data;
+		//alert("divTarget="+divTarget+"\ndata="+data);
+		for (var friendIndex=0; friendIndex<data.length; friendIndex++)     
+		{
+			var divContainer = document.createElement("div");
+			divContainer.innerHTML="<hr><img src='http://graph.facebook.com/"+data[friendIndex].id+"/picture'></img><br>"+data[friendIndex].name;
+			divTarget.appendChild(divContainer);
+		}
+	}
+	function showFriendsList()
+	{
+		FB.api('/me/friends', onFriendsListLoaded);  
+	}
+
+	
+	window.fbAsyncInit = function() 
+	{
+		FB.Event.subscribe('auth.statusChange', onFacebookStatusChange);
+		FB.init({
+			appId  : '169191963114890',
+			status : true, // check login status
+			cookie : true, // enable cookies to allow the server to access the session
+			xfbml  : true  // parse XFBML
+		});
+
+		FB.getLoginStatus(onFacebookInitialLoginStatus);   
+	};
+
+	(function() {
+		var e = document.createElement('script');
+		e.src = document.location.protocol + '//connect.facebook.net/en_US/all.js';
+		e.async = true;
+		document.getElementById('fb-root').appendChild(e);
+	}());
+
+	function facebookLogin()
+	{
+		FB.login(onFacebookLoginStatus, {scope:'read_stream,publish_stream'});
+	}
+
+	/*
+	* Callback function for 'auth.statusChange' event.
+	*/
+	function onFacebookInitialLoginStatus(response)
+	{
+		/*alert("onFacebookLoginStatus(), "
+			+ "\nresponse.status="+response.status
+			+" \nresponse.authResponse="+response.authResponse
+			+" \nresponse.perms="+response.perms);*/
+		if (response.status=="connected" && response.authResponse)
+		{
+			//alert("You are all set.");
+			var loginButtonDiv=document.getElementById("fb-login-button-div");
+			loginButtonDiv.style.display="none";
+			showFriendsList();
+		}
+		else
+		{
+			facebookLogin();
+		}
+	}  
+
+	/*
+	* Callback function for 'auth.statusChange' event.
+	*/
+	function onFacebookStatusChange(response)
+	{
+		/*alert("onFacebookStatusChange(), "
+			+ "\nresponse.status="+response.status
+			+" \nresponse.authResponse="+response.authResponse
+			+" \nresponse.perms="+response.perms);*/
+		//onFacebookLoginStatus(response);  
+	}
+
+	/*
+	* Callback function for 'auth.statusChange' event.
+	*/
+	function onFacebookLoginStatus(response)
+	{
+	
+		/*alert("onFacebookLoginStatus(), "
+			+ "\nresponse.status="+response.status
+			+" \nresponse.authResponse="+response.authResponse
+			+" \nresponse.perms="+response.perms);*/
+			
+		if (response.status=="connected" && response.authResponse)
+		{
+			var loginButtonDiv=document.getElementById("fb-login-button-div");
+			loginButtonDiv.style.display="none";
+			showFriendsList();
+		}
+		else
+		{
+			alert("Please login to enjoy this application.");
+		}
+	} 
+	
+	
+</script>
+<p>This is an example of loading and showing a list of your Facebook friends.  The formatting is very plain here but this is intentional so that you can format it any way you want.
+<p>See <a href="http://www.permadi.com/blog/2010/11/facebook-graph-api-showing-list-of-friends/">http://www.permadi.com/blog/2010/11/facebook-graph-api-showing-list-of-friends/</a> for explanation about this example.
+<p>When running this example, please ensure that popup is not blocked (reload this page after unblocking if it is).
+<p>
+Please login to enjoy all the features of this application: 
+<fb:login-button id = "loginBtn" scope="read_stream,publish_stream" onlogin="checkLoginState();">
+</fb:login-button>
+
+</div>
+<div id="friends-list-container">
+</div>
+
+<script type="text/javascript"><!--
+google_ad_client = "ca-pub-2969475232836602";
+/* Blog Rect 300x250, created 4/20/11 */
+google_ad_slot = "5993438347";
+google_ad_width = 300;
+google_ad_height = 250;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</html>
