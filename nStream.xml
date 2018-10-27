@@ -1,0 +1,1358 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<items>
+<playlist_name>Standart Playlist</playlist_name>
+<category>
+<category_id>01</category_id>
+<category_title>OTTCLUB</category_title>
+</category>
+<channel>
+<title>Первый канал HD</title>
+<description/>
+<stream_url><![CDATA[http://spacetv.in/stream/BH66L34X13/131.m3u8]]></stream_url>
+<category_id>01</category_id>
+</channel>
+<channel>
+<title>Россия HD</title>
+<description/>
+<stream_url><![CDATA[http://spacetv.in/stream/BH66L34X13/137.m3u8]]></stream_url>
+<category_id>01</category_id>
+</channel>
+<channel>
+<title>НТВ HD</title>
+<description/>
+<stream_url><![CDATA[http://spacetv.in/stream/BH66L34X13/134.m3u8]]></stream_url>
+<category_id>01</category_id>
+</channel>
+<channel>
+<title>НТВ Мир</title>
+<description/>
+<stream_url><![CDATA[http://spacetv.in/stream/BH66L34X13/223.m3u8]]></stream_url>
+<category_id>01</category_id>
+</channel>
+<channel>
+<title>ТНТ HD</title>
+<description/>
+<stream_url><![CDATA[http://spacetv.in/stream/BH66L34X13/135.m3u8]]></stream_url>
+<category_id>01</category_id>
+</channel>
+<channel>
+<title>5 канал (Россия)</title>
+<description/>
+<stream_url><![CDATA[http://spacetv.in/stream/BH66L34X13/103.m3u8]]></stream_url>
+<category_id>01</category_id>
+</channel>
+<channel>
+<title>СТС</title>
+<description/>
+<stream_url><![CDATA[http://spacetv.in/stream/BH66L34X13/138.m3u8]]></stream_url>
+<category_id>01</category_id>
+</channel>
+<channel>
+<title>СТС Love</title>
+<description/>
+<stream_url><![CDATA[http://spacetv.in/stream/BH66L34X13/183.m3u8]]></stream_url>
+<category_id>01</category_id>
+</channel>
+<channel>
+<title>РЕН ТВ</title>
+<description/>
+<stream_url><![CDATA[http://spacetv.in/stream/BH66L34X13/132.m3u8]]></stream_url>
+<category_id>01</category_id>
+</channel>
+<channel>
+<title>МирТВ</title>
+<description/>
+<stream_url><![CDATA[http://spacetv.in/stream/BH66L34X13/77.m3u8]]></stream_url>
+<category_id>01</category_id>
+</channel>
+<channel>
+<title>Мир HD</title>
+<description/>
+<stream_url><![CDATA[http://spacetv.in/stream/BH66L34X13/66.m3u8]]></stream_url>
+<category_id>01</category_id>
+</channel>
+<channel>
+<title>ОТР</title>
+<description/>
+<stream_url><![CDATA[http://spacetv.in/stream/BH66L34X13/61.m3u8]]></stream_url>
+<category_id>01</category_id>
+</channel>
+<channel>
+<title>Звезда</title>
+<description/>
+<stream_url><![CDATA[http://spacetv.in/stream/BH66L34X13/140.m3u8]]></stream_url>
+<category_id>01</category_id>
+</channel>
+<channel>
+<title>Че</title>
+<description/>
+<stream_url><![CDATA[http://spacetv.in/stream/BH66L34X13/121.m3u8]]></stream_url>
+<category_id>01</category_id>
+</channel>
+<channel>
+<title>ТВ3 Россия</title>
+<description/>
+<stream_url><![CDATA[http://spacetv.in/stream/BH66L34X13/136.m3u8]]></stream_url>
+<category_id>01</category_id>
+</channel>
+<channel>
+<title>Пятница</title>
+<description/>
+<stream_url><![CDATA[http://spacetv.in/stream/BH66L34X13/181.m3u8]]></stream_url>
+<category_id>01</category_id>
+</channel>
+<channel>
+<title>RTVi</title>
+<description/>
+<stream_url><![CDATA[http://spacetv.in/stream/BH66L34X13/91.m3u8]]></stream_url>
+<category_id>01</category_id>
+</channel>
+<channel>
+<title>Домашний</title>
+<description/>
+<stream_url><![CDATA[http://spacetv.in/stream/BH66L34X13/227.m3u8]]></stream_url>
+<category_id>01</category_id>
+</channel>
+<channel>
+<title>Культура</title>
+<description/>
+<stream_url><![CDATA[http://spacetv.in/stream/BH66L34X13/229.m3u8]]></stream_url>
+<category_id>01</category_id>
+</channel>
+<channel>
+<title>РТР-Планета</title>
+<description/>
+<stream_url><![CDATA[http://spacetv.in/stream/BH66L34X13/224.m3u8]]></stream_url>
+<category_id>01</category_id>
+</channel>
+<channel>
+<title>Время</title>
+<description/>
+<stream_url><![CDATA[http://spacetv.in/stream/BH66L34X13/237.m3u8]]></stream_url>
+<category_id>01</category_id>
+</channel>
+<channel>
+<title>Ностальгия</title>
+<description/>
+<stream_url><![CDATA[http://spacetv.in/stream/BH66L34X13/94.m3u8]]></stream_url>
+<category_id>01</category_id>
+</channel>
+<channel>
+<title>Ю</title>
+<description/>
+<stream_url><![CDATA[http://spacetv.in/stream/BH66L34X13/230.m3u8]]></stream_url>
+<category_id>01</category_id>
+</channel>
+<channel>
+<title>2х2</title>
+<description/>
+<stream_url><![CDATA[http://spacetv.in/stream/BH66L34X13/187.m3u8]]></stream_url>
+<category_id>01</category_id>
+</channel>
+<channel>
+<title>Fashion TV</title>
+<description/>
+<stream_url><![CDATA[http://spacetv.in/stream/BH66L34X13/119.m3u8]]></stream_url>
+<category_id>01</category_id>
+</channel>
+<channel>
+<title>ТНТ4</title>
+<description/>
+<stream_url><![CDATA[http://spacetv.in/stream/BH66L34X13/106.m3u8]]></stream_url>
+<category_id>01</category_id>
+</channel>
+<channel>
+<title>КВН ТВ</title>
+<description/>
+<stream_url><![CDATA[http://spacetv.in/stream/BH66L34X13/222.m3u8]]></stream_url>
+<category_id>01</category_id>
+</channel>
+<channel>
+<title>Сарафан</title>
+<description/>
+<stream_url><![CDATA[http://spacetv.in/stream/BH66L34X13/81.m3u8]]></stream_url>
+<category_id>01</category_id>
+</channel>
+<channel>
+<title>Вопросы и ответы</title>
+<description/>
+<stream_url><![CDATA[http://spacetv.in/stream/BH66L34X13/76.m3u8]]></stream_url>
+<category_id>01</category_id>
+</channel>
+<channel>
+<title>Первый канал (+2)</title>
+<description/>
+<stream_url><![CDATA[http://spacetv.in/stream/BH66L34X13/99.m3u8]]></stream_url>
+<category_id>01</category_id>
+</channel>
+<channel>
+<title>НТВ (+2)</title>
+<description/>
+<stream_url><![CDATA[http://spacetv.in/stream/BH66L34X13/98.m3u8]]></stream_url>
+<category_id>01</category_id>
+</channel>
+<channel>
+<title>ТНТ (+2)</title>
+<description/>
+<stream_url><![CDATA[http://spacetv.in/stream/BH66L34X13/97.m3u8]]></stream_url>
+<category_id>01</category_id>
+</channel>
+<channel>
+<title>Россия 1 (+2)</title>
+<description/>
+<stream_url><![CDATA[http://spacetv.in/stream/BH66L34X13/96.m3u8]]></stream_url>
+<category_id>01</category_id>
+</channel>
+<channel>
+<title>Первый канал HD (+4)</title>
+<description/>
+<stream_url><![CDATA[http://spacetv.in/stream/BH66L34X13/233.m3u8]]></stream_url>
+<category_id>01</category_id>
+</channel>
+<channel>
+<title>Украина</title>
+<description/>
+<stream_url><![CDATA[http://spacetv.in/stream/BH66L34X13/167.m3u8]]></stream_url>
+<category_id>01</category_id>
+</channel>
+<channel>
+<title>ICTV</title>
+<description/>
+<stream_url><![CDATA[http://spacetv.in/stream/BH66L34X13/158.m3u8]]></stream_url>
+<category_id>01</category_id>
+</channel>
+<channel>
+<title>Новый канал</title>
+<description/>
+<stream_url><![CDATA[http://spacetv.in/stream/BH66L34X13/157.m3u8]]></stream_url>
+<category_id>01</category_id>
+</channel>
+<channel>
+<title>СТБ</title>
+<description/>
+<stream_url><![CDATA[http://spacetv.in/stream/BH66L34X13/156.m3u8]]></stream_url>
+<category_id>01</category_id>
+</channel>
+<channel>
+<title>Интер</title>
+<description/>
+<stream_url><![CDATA[http://spacetv.in/stream/BH66L34X13/174.m3u8]]></stream_url>
+<category_id>01</category_id>
+</channel>
+<channel>
+<title>1+1</title>
+<description/>
+<stream_url><![CDATA[http://spacetv.in/stream/BH66L34X13/172.m3u8]]></stream_url>
+<category_id>01</category_id>
+</channel>
+<channel>
+<title>2+2</title>
+<description/>
+<stream_url><![CDATA[http://spacetv.in/stream/BH66L34X13/173.m3u8]]></stream_url>
+<category_id>01</category_id>
+</channel>
+<channel>
+<title>Квартал ТВ</title>
+<description/>
+<stream_url><![CDATA[http://spacetv.in/stream/BH66L34X13/269.m3u8]]></stream_url>
+<category_id>01</category_id>
+</channel>
+<channel>
+<title>К1</title>
+<description/>
+<stream_url><![CDATA[http://spacetv.in/stream/BH66L34X13/270.m3u8]]></stream_url>
+<category_id>01</category_id>
+</channel>
+<channel>
+<title>9 канал (Израиль)</title>
+<description/>
+<stream_url><![CDATA[http://spacetv.in/stream/BH66L34X13/20.m3u8]]></stream_url>
+<category_id>01</category_id>
+</channel>
+<channel>
+<title>ОНТ Беларусь</title>
+<description/>
+<stream_url><![CDATA[http://spacetv.in/stream/BH66L34X13/21.m3u8]]></stream_url>
+<category_id>01</category_id>
+</channel>
+<channel>
+<title>БелРос</title>
+<description/>
+<stream_url><![CDATA[http://spacetv.in/stream/BH66L34X13/63.m3u8]]></stream_url>
+<category_id>01</category_id>
+</channel>
+<channel>
+<title>Беларусь 1</title>
+<description/>
+<stream_url><![CDATA[http://spacetv.in/stream/BH66L34X13/22.m3u8]]></stream_url>
+<category_id>01</category_id>
+</channel>
+<channel>
+<title>РТР-Беларусь</title>
+<description/>
+<stream_url><![CDATA[http://spacetv.in/stream/BH66L34X13/23.m3u8]]></stream_url>
+<category_id>01</category_id>
+</channel>
+<channel>
+<title>Беларусь 2</title>
+<description/>
+<stream_url><![CDATA[http://spacetv.in/stream/BH66L34X13/24.m3u8]]></stream_url>
+<category_id>01</category_id>
+</channel>
+<channel>
+<title>Беларусь 3</title>
+<description/>
+<stream_url><![CDATA[http://spacetv.in/stream/BH66L34X13/25.m3u8]]></stream_url>
+<category_id>01</category_id>
+</channel>
+<channel>
+<title>Хабар</title>
+<description/>
+<stream_url><![CDATA[http://spacetv.in/stream/BH66L34X13/73.m3u8]]></stream_url>
+<category_id>01</category_id>
+</channel>
+<channel>
+<title>Казахстан</title>
+<description/>
+<stream_url><![CDATA[http://spacetv.in/stream/BH66L34X13/71.m3u8]]></stream_url>
+<category_id>01</category_id>
+</channel>
+<channel>
+<title>КТК</title>
+<description/>
+<stream_url><![CDATA[http://spacetv.in/stream/BH66L34X13/26.m3u8]]></stream_url>
+<category_id>01</category_id>
+</channel>
+<channel>
+<title>7 канал (Казахстан)</title>
+<description/>
+<stream_url><![CDATA[http://spacetv.in/stream/BH66L34X13/27.m3u8]]></stream_url>
+<category_id>01</category_id>
+</channel>
+<channel>
+<title>Астана ТВ</title>
+<description/>
+<stream_url><![CDATA[http://spacetv.in/stream/BH66L34X13/28.m3u8]]></stream_url>
+<category_id>01</category_id>
+</channel>
+<channel>
+<title>Armenia TV</title>
+<description/>
+<stream_url><![CDATA[http://spacetv.in/stream/BH66L34X13/175.m3u8]]></stream_url>
+<category_id>01</category_id>
+</channel>
+<channel>
+<title>Shant HD</title>
+<description/>
+<stream_url><![CDATA[http://spacetv.in/stream/BH66L34X13/37.m3u8]]></stream_url>
+<category_id>01</category_id>
+</channel>
+<channel>
+<title>ATV HD</title>
+<description/>
+<stream_url><![CDATA[http://spacetv.in/stream/BH66L34X13/36.m3u8]]></stream_url>
+<category_id>01</category_id>
+</channel>
+<channel>
+<title>Armenia 1 TV</title>
+<description/>
+<stream_url><![CDATA[http://spacetv.in/stream/BH66L34X13/38.m3u8]]></stream_url>
+<category_id>01</category_id>
+</channel>
+<channel>
+<title>Kentron</title>
+<description/>
+<stream_url><![CDATA[http://spacetv.in/stream/BH66L34X13/39.m3u8]]></stream_url>
+<category_id>01</category_id>
+</channel>
+<channel>
+<title>TV3</title>
+<description/>
+<stream_url><![CDATA[http://spacetv.in/stream/BH66L34X13/29.m3u8]]></stream_url>
+<category_id>01</category_id>
+</channel>
+<channel>
+<title>LNK</title>
+<description/>
+<stream_url><![CDATA[http://spacetv.in/stream/BH66L34X13/30.m3u8]]></stream_url>
+<category_id>01</category_id>
+</channel>
+<channel>
+<title>BTV</title>
+<description/>
+<stream_url><![CDATA[http://spacetv.in/stream/BH66L34X13/35.m3u8]]></stream_url>
+<category_id>01</category_id>
+</channel>
+<channel>
+<title>3+</title>
+<description/>
+<stream_url><![CDATA[http://spacetv.in/stream/BH66L34X13/32.m3u8]]></stream_url>
+<category_id>01</category_id>
+</channel>
+<channel>
+<title>LRT</title>
+<description/>
+<stream_url><![CDATA[http://spacetv.in/stream/BH66L34X13/31.m3u8]]></stream_url>
+<category_id>01</category_id>
+</channel>
+<channel>
+<title>LTV1</title>
+<description/>
+<stream_url><![CDATA[http://spacetv.in/stream/BH66L34X13/34.m3u8]]></stream_url>
+<category_id>01</category_id>
+</channel>
+<channel>
+<title>Jurnal TV</title>
+<description/>
+<stream_url><![CDATA[http://spacetv.in/stream/BH66L34X13/277.m3u8]]></stream_url>
+<category_id>01</category_id>
+</channel>
+<channel>
+<title>РТР-Молдова</title>
+<description/>
+<stream_url><![CDATA[http://spacetv.in/stream/BH66L34X13/278.m3u8]]></stream_url>
+<category_id>01</category_id>
+</channel>
+<channel>
+<title>Discovery Россия HD</title>
+<description/>
+<stream_url><![CDATA[http://spacetv.in/stream/BH66L34X13/177.m3u8]]></stream_url>
+<category_id>01</category_id>
+</channel>
+<channel>
+<title>Discovery Science HD</title>
+<description/>
+<stream_url><![CDATA[http://spacetv.in/stream/BH66L34X13/146.m3u8]]></stream_url>
+<category_id>01</category_id>
+</channel>
+<channel>
+<title>DTX</title>
+<description/>
+<stream_url><![CDATA[http://spacetv.in/stream/BH66L34X13/145.m3u8]]></stream_url>
+<category_id>01</category_id>
+</channel>
+<channel>
+<title>History Россия HD</title>
+<description/>
+<stream_url><![CDATA[http://spacetv.in/stream/BH66L34X13/113.m3u8]]></stream_url>
+<category_id>01</category_id>
+</channel>
+<channel>
+<title>History2 HD</title>
+<description/>
+<stream_url><![CDATA[http://spacetv.in/stream/BH66L34X13/65.m3u8]]></stream_url>
+<category_id>01</category_id>
+</channel>
+<channel>
+<title>ID Xtra Россия</title>
+<description/>
+<stream_url><![CDATA[http://spacetv.in/stream/BH66L34X13/205.m3u8]]></stream_url>
+<category_id>01</category_id>
+</channel>
+<channel>
+<title>TLC Россия</title>
+<description/>
+<stream_url><![CDATA[http://spacetv.in/stream/BH66L34X13/168.m3u8]]></stream_url>
+<category_id>01</category_id>
+</channel>
+<channel>
+<title>Планета HD</title>
+<description/>
+<stream_url><![CDATA[http://spacetv.in/stream/BH66L34X13/115.m3u8]]></stream_url>
+<category_id>01</category_id>
+</channel>
+<channel>
+<title>ЭВРИКА HD</title>
+<description/>
+<stream_url><![CDATA[http://spacetv.in/stream/BH66L34X13/212.m3u8]]></stream_url>
+<category_id>01</category_id>
+</channel>
+<channel>
+<title>National Geographic</title>
+<description/>
+<stream_url><![CDATA[http://spacetv.in/stream/BH66L34X13/90.m3u8]]></stream_url>
+<category_id>01</category_id>
+</channel>
+<channel>
+<title>National Geographic HD</title>
+<description/>
+<stream_url><![CDATA[http://spacetv.in/stream/BH66L34X13/116.m3u8]]></stream_url>
+<category_id>01</category_id>
+</channel>
+<channel>
+<title>Наука 2.0</title>
+<description/>
+<stream_url><![CDATA[http://spacetv.in/stream/BH66L34X13/125.m3u8]]></stream_url>
+<category_id>01</category_id>
+</channel>
+<channel>
+<title>24Техно</title>
+<description/>
+<stream_url><![CDATA[http://spacetv.in/stream/BH66L34X13/209.m3u8]]></stream_url>
+<category_id>01</category_id>
+</channel>
+<channel>
+<title>Оружие</title>
+<description/>
+<stream_url><![CDATA[http://spacetv.in/stream/BH66L34X13/203.m3u8]]></stream_url>
+<category_id>01</category_id>
+</channel>
+<channel>
+<title>Nat Geo Wild HD</title>
+<description/>
+<stream_url><![CDATA[http://spacetv.in/stream/BH66L34X13/149.m3u8]]></stream_url>
+<category_id>01</category_id>
+</channel>
+<channel>
+<title>Animal Planet HD</title>
+<description/>
+<stream_url><![CDATA[http://spacetv.in/stream/BH66L34X13/114.m3u8]]></stream_url>
+<category_id>01</category_id>
+</channel>
+<channel>
+<title>В мире животных HD</title>
+<description/>
+<stream_url><![CDATA[http://spacetv.in/stream/BH66L34X13/241.m3u8]]></stream_url>
+<category_id>01</category_id>
+</channel>
+<channel>
+<title>RT Д HD</title>
+<description/>
+<stream_url><![CDATA[http://spacetv.in/stream/BH66L34X13/197.m3u8]]></stream_url>
+<category_id>01</category_id>
+</channel>
+<channel>
+<title>Мама</title>
+<description/>
+<stream_url><![CDATA[http://spacetv.in/stream/BH66L34X13/79.m3u8]]></stream_url>
+<category_id>01</category_id>
+</channel>
+<channel>
+<title>Доктор</title>
+<description/>
+<stream_url><![CDATA[http://spacetv.in/stream/BH66L34X13/80.m3u8]]></stream_url>
+<category_id>01</category_id>
+</channel>
+<channel>
+<title>Da Vinci</title>
+<description/>
+<stream_url><![CDATA[http://spacetv.in/stream/BH66L34X13/238.m3u8]]></stream_url>
+<category_id>01</category_id>
+</channel>
+<channel>
+<title>Viasat Explorer</title>
+<description/>
+<stream_url><![CDATA[http://spacetv.in/stream/BH66L34X13/239.m3u8]]></stream_url>
+<category_id>01</category_id>
+</channel>
+<channel>
+<title>Viasat Nature/History HD</title>
+<description/>
+<stream_url><![CDATA[http://spacetv.in/stream/BH66L34X13/240.m3u8]]></stream_url>
+<category_id>01</category_id>
+</channel>
+<channel>
+<title>Viasat History</title>
+<description/>
+<stream_url><![CDATA[http://spacetv.in/stream/BH66L34X13/101.m3u8]]></stream_url>
+<category_id>01</category_id>
+</channel>
+<channel>
+<title>История</title>
+<description/>
+<stream_url><![CDATA[http://spacetv.in/stream/BH66L34X13/228.m3u8]]></stream_url>
+<category_id>01</category_id>
+</channel>
+<channel>
+<title>365 дней ТВ</title>
+<description/>
+<stream_url><![CDATA[http://spacetv.in/stream/BH66L34X13/70.m3u8]]></stream_url>
+<category_id>01</category_id>
+</channel>
+<channel>
+<title>Моя планета</title>
+<description/>
+<stream_url><![CDATA[http://spacetv.in/stream/BH66L34X13/124.m3u8]]></stream_url>
+<category_id>01</category_id>
+</channel>
+<channel>
+<title>Russian Travel Guide</title>
+<description/>
+<stream_url><![CDATA[http://spacetv.in/stream/BH66L34X13/164.m3u8]]></stream_url>
+<category_id>01</category_id>
+</channel>
+<channel>
+<title>Приключения HD</title>
+<description/>
+<stream_url><![CDATA[http://spacetv.in/stream/BH66L34X13/198.m3u8]]></stream_url>
+<category_id>01</category_id>
+</channel>
+<channel>
+<title>Travel channel HD</title>
+<description/>
+<stream_url><![CDATA[http://spacetv.in/stream/BH66L34X13/231.m3u8]]></stream_url>
+<category_id>01</category_id>
+</channel>
+<channel>
+<title>Travel+Adventure HD</title>
+<description/>
+<stream_url><![CDATA[http://spacetv.in/stream/BH66L34X13/206.m3u8]]></stream_url>
+<category_id>01</category_id>
+</channel>
+<channel>
+<title>Fine Living HD</title>
+<description/>
+<stream_url><![CDATA[http://spacetv.in/stream/BH66L34X13/273.m3u8]]></stream_url>
+<category_id>01</category_id>
+</channel>
+<channel>
+<title>Охота и рыбалка</title>
+<description/>
+<stream_url><![CDATA[http://spacetv.in/stream/BH66L34X13/155.m3u8]]></stream_url>
+<category_id>01</category_id>
+</channel>
+<channel>
+<title>Охотник и рыболов HD</title>
+<description/>
+<stream_url><![CDATA[http://spacetv.in/stream/BH66L34X13/194.m3u8]]></stream_url>
+<category_id>01</category_id>
+</channel>
+<channel>
+<title>Диалоги о рыбалке</title>
+<description/>
+<stream_url><![CDATA[http://spacetv.in/stream/BH66L34X13/264.m3u8]]></stream_url>
+<category_id>01</category_id>
+</channel>
+<channel>
+<title>Outdoor channel HD</title>
+<description/>
+<stream_url><![CDATA[http://spacetv.in/stream/BH66L34X13/211.m3u8]]></stream_url>
+<category_id>01</category_id>
+</channel>
+<channel>
+<title>Дикая Охота HD</title>
+<description/>
+<stream_url><![CDATA[http://spacetv.in/stream/BH66L34X13/274.m3u8]]></stream_url>
+<category_id>01</category_id>
+</channel>
+<channel>
+<title>Дикая Рыбалка HD</title>
+<description/>
+<stream_url><![CDATA[http://spacetv.in/stream/BH66L34X13/275.m3u8]]></stream_url>
+<category_id>01</category_id>
+</channel>
+<channel>
+<title>Живая природа HD</title>
+<description/>
+<stream_url><![CDATA[http://spacetv.in/stream/BH66L34X13/225.m3u8]]></stream_url>
+<category_id>01</category_id>
+</channel>
+<channel>
+<title>Живая планета</title>
+<description/>
+<stream_url><![CDATA[http://spacetv.in/stream/BH66L34X13/83.m3u8]]></stream_url>
+<category_id>01</category_id>
+</channel>
+<channel>
+<title>Кухня ТВ</title>
+<description/>
+<stream_url><![CDATA[http://spacetv.in/stream/BH66L34X13/179.m3u8]]></stream_url>
+<category_id>01</category_id>
+</channel>
+<channel>
+<title>Еда HD</title>
+<description/>
+<stream_url><![CDATA[http://spacetv.in/stream/BH66L34X13/216.m3u8]]></stream_url>
+<category_id>01</category_id>
+</channel>
+<channel>
+<title>Авто Плюс</title>
+<description/>
+<stream_url><![CDATA[http://spacetv.in/stream/BH66L34X13/186.m3u8]]></stream_url>
+<category_id>01</category_id>
+</channel>
+<channel>
+<title>Авто24</title>
+<description/>
+<stream_url><![CDATA[http://spacetv.in/stream/BH66L34X13/78.m3u8]]></stream_url>
+<category_id>01</category_id>
+</channel>
+<channel>
+<title>HD-Life</title>
+<description/>
+<stream_url><![CDATA[http://spacetv.in/stream/BH66L34X13/161.m3u8]]></stream_url>
+<category_id>01</category_id>
+</channel>
+<channel>
+<title>Кинопремьера HD</title>
+<description/>
+<stream_url><![CDATA[http://spacetv.in/stream/BH66L34X13/160.m3u8]]></stream_url>
+<category_id>01</category_id>
+</channel>
+<channel>
+<title>Остросюжетное HD</title>
+<description/>
+<stream_url><![CDATA[http://spacetv.in/stream/BH66L34X13/214.m3u8]]></stream_url>
+<category_id>01</category_id>
+</channel>
+<channel>
+<title>КиноПремиум HD</title>
+<description/>
+<stream_url><![CDATA[http://spacetv.in/stream/BH66L34X13/215.m3u8]]></stream_url>
+<category_id>01</category_id>
+</channel>
+<channel>
+<title>Наш Детектив HD</title>
+<description/>
+<stream_url><![CDATA[http://spacetv.in/stream/BH66L34X13/217.m3u8]]></stream_url>
+<category_id>01</category_id>
+</channel>
+<channel>
+<title>Наш Кинороман HD</title>
+<description/>
+<stream_url><![CDATA[http://spacetv.in/stream/BH66L34X13/213.m3u8]]></stream_url>
+<category_id>01</category_id>
+</channel>
+<channel>
+<title>Кинокомедия</title>
+<description/>
+<stream_url><![CDATA[http://spacetv.in/stream/BH66L34X13/265.m3u8]]></stream_url>
+<category_id>01</category_id>
+</channel>
+<channel>
+<title>Киносемья</title>
+<description/>
+<stream_url><![CDATA[http://spacetv.in/stream/BH66L34X13/170.m3u8]]></stream_url>
+<category_id>01</category_id>
+</channel>
+<channel>
+<title>Киносвидание</title>
+<description/>
+<stream_url><![CDATA[http://spacetv.in/stream/BH66L34X13/171.m3u8]]></stream_url>
+<category_id>01</category_id>
+</channel>
+<channel>
+<title>Кинохит</title>
+<description/>
+<stream_url><![CDATA[http://spacetv.in/stream/BH66L34X13/126.m3u8]]></stream_url>
+<category_id>01</category_id>
+</channel>
+<channel>
+<title>Киномикс</title>
+<description/>
+<stream_url><![CDATA[http://spacetv.in/stream/BH66L34X13/133.m3u8]]></stream_url>
+<category_id>01</category_id>
+</channel>
+<channel>
+<title>Наше новое кино</title>
+<description/>
+<stream_url><![CDATA[http://spacetv.in/stream/BH66L34X13/128.m3u8]]></stream_url>
+<category_id>01</category_id>
+</channel>
+<channel>
+<title>Родное кино</title>
+<description/>
+<stream_url><![CDATA[http://spacetv.in/stream/BH66L34X13/242.m3u8]]></stream_url>
+<category_id>01</category_id>
+</channel>
+<channel>
+<title>Индийское кино</title>
+<description/>
+<stream_url><![CDATA[http://spacetv.in/stream/BH66L34X13/104.m3u8]]></stream_url>
+<category_id>01</category_id>
+</channel>
+<channel>
+<title>TV1000 East</title>
+<description/>
+<stream_url><![CDATA[http://spacetv.in/stream/BH66L34X13/110.m3u8]]></stream_url>
+<category_id>01</category_id>
+</channel>
+<channel>
+<title>TV1000 Action East</title>
+<description/>
+<stream_url><![CDATA[http://spacetv.in/stream/BH66L34X13/100.m3u8]]></stream_url>
+<category_id>01</category_id>
+</channel>
+<channel>
+<title>TV1000 Русское кино</title>
+<description/>
+<stream_url><![CDATA[http://spacetv.in/stream/BH66L34X13/123.m3u8]]></stream_url>
+<category_id>01</category_id>
+</channel>
+<channel>
+<title>ViP Premiere HD</title>
+<description/>
+<stream_url><![CDATA[http://spacetv.in/stream/BH66L34X13/202.m3u8]]></stream_url>
+<category_id>01</category_id>
+</channel>
+<channel>
+<title>ViP Megahit HD</title>
+<description/>
+<stream_url><![CDATA[http://spacetv.in/stream/BH66L34X13/200.m3u8]]></stream_url>
+<category_id>01</category_id>
+</channel>
+<channel>
+<title>ViP Comedy HD</title>
+<description/>
+<stream_url><![CDATA[http://spacetv.in/stream/BH66L34X13/201.m3u8]]></stream_url>
+<category_id>01</category_id>
+</channel>
+<channel>
+<title>Кинопоказ HD1</title>
+<description/>
+<stream_url><![CDATA[http://spacetv.in/stream/BH66L34X13/75.m3u8]]></stream_url>
+<category_id>01</category_id>
+</channel>
+<channel>
+<title>Кинопоказ HD2</title>
+<description/>
+<stream_url><![CDATA[http://spacetv.in/stream/BH66L34X13/74.m3u8]]></stream_url>
+<category_id>01</category_id>
+</channel>
+<channel>
+<title>Amedia Premium</title>
+<description/>
+<stream_url><![CDATA[http://spacetv.in/stream/BH66L34X13/151.m3u8]]></stream_url>
+<category_id>01</category_id>
+</channel>
+<channel>
+<title>Amedia 1</title>
+<description/>
+<stream_url><![CDATA[http://spacetv.in/stream/BH66L34X13/117.m3u8]]></stream_url>
+<category_id>01</category_id>
+</channel>
+<channel>
+<title>Amedia Hit HD</title>
+<description/>
+<stream_url><![CDATA[http://spacetv.in/stream/BH66L34X13/162.m3u8]]></stream_url>
+<category_id>01</category_id>
+</channel>
+<channel>
+<title>Русский роман</title>
+<description/>
+<stream_url><![CDATA[http://spacetv.in/stream/BH66L34X13/266.m3u8]]></stream_url>
+<category_id>01</category_id>
+</channel>
+<channel>
+<title>Русский иллюзион</title>
+<description/>
+<stream_url><![CDATA[http://spacetv.in/stream/BH66L34X13/122.m3u8]]></stream_url>
+<category_id>01</category_id>
+</channel>
+<channel>
+<title>Русский детектив</title>
+<description/>
+<stream_url><![CDATA[http://spacetv.in/stream/BH66L34X13/204.m3u8]]></stream_url>
+<category_id>01</category_id>
+</channel>
+<channel>
+<title>Русский бестселлер</title>
+<description/>
+<stream_url><![CDATA[http://spacetv.in/stream/BH66L34X13/208.m3u8]]></stream_url>
+<category_id>01</category_id>
+</channel>
+<channel>
+<title>Русская комедия</title>
+<description/>
+<stream_url><![CDATA[http://spacetv.in/stream/BH66L34X13/68.m3u8]]></stream_url>
+<category_id>01</category_id>
+</channel>
+<channel>
+<title>Fox Life Россия</title>
+<description/>
+<stream_url><![CDATA[http://spacetv.in/stream/BH66L34X13/129.m3u8]]></stream_url>
+<category_id>01</category_id>
+</channel>
+<channel>
+<title>Fox Россия</title>
+<description/>
+<stream_url><![CDATA[http://spacetv.in/stream/BH66L34X13/182.m3u8]]></stream_url>
+<category_id>01</category_id>
+</channel>
+<channel>
+<title>Sony Channel</title>
+<description/>
+<stream_url><![CDATA[http://spacetv.in/stream/BH66L34X13/69.m3u8]]></stream_url>
+<category_id>01</category_id>
+</channel>
+<channel>
+<title>Sony Turbo</title>
+<description/>
+<stream_url><![CDATA[http://spacetv.in/stream/BH66L34X13/263.m3u8]]></stream_url>
+<category_id>01</category_id>
+</channel>
+<channel>
+<title>AXN Sci-Fi</title>
+<description/>
+<stream_url><![CDATA[http://spacetv.in/stream/BH66L34X13/180.m3u8]]></stream_url>
+<category_id>01</category_id>
+</channel>
+<channel>
+<title>КиноТВ HD</title>
+<description/>
+<stream_url><![CDATA[http://spacetv.in/stream/BH66L34X13/221.m3u8]]></stream_url>
+<category_id>01</category_id>
+</channel>
+<channel>
+<title>Кинопоказ</title>
+<description/>
+<stream_url><![CDATA[http://spacetv.in/stream/BH66L34X13/64.m3u8]]></stream_url>
+<category_id>01</category_id>
+</channel>
+<channel>
+<title>Cinema</title>
+<description/>
+<stream_url><![CDATA[http://spacetv.in/stream/BH66L34X13/62.m3u8]]></stream_url>
+<category_id>01</category_id>
+</channel>
+<channel>
+<title>НСТ (Страшное)</title>
+<description/>
+<stream_url><![CDATA[http://spacetv.in/stream/BH66L34X13/207.m3u8]]></stream_url>
+<category_id>01</category_id>
+</channel>
+<channel>
+<title>Страшное HD</title>
+<description/>
+<stream_url><![CDATA[http://spacetv.in/stream/BH66L34X13/226.m3u8]]></stream_url>
+<category_id>01</category_id>
+</channel>
+<channel>
+<title>ТВ XXI</title>
+<description/>
+<stream_url><![CDATA[http://spacetv.in/stream/BH66L34X13/152.m3u8]]></stream_url>
+<category_id>01</category_id>
+</channel>
+<channel>
+<title>Paramount Comedy Россия</title>
+<description/>
+<stream_url><![CDATA[http://spacetv.in/stream/BH66L34X13/196.m3u8]]></stream_url>
+<category_id>01</category_id>
+</channel>
+<channel>
+<title>Paramount Сhannel HD</title>
+<description/>
+<stream_url><![CDATA[http://spacetv.in/stream/BH66L34X13/219.m3u8]]></stream_url>
+<category_id>01</category_id>
+</channel>
+<channel>
+<title>Мужское кино</title>
+<description/>
+<stream_url><![CDATA[http://spacetv.in/stream/BH66L34X13/107.m3u8]]></stream_url>
+<category_id>01</category_id>
+</channel>
+<channel>
+<title>Дом кино</title>
+<description/>
+<stream_url><![CDATA[http://spacetv.in/stream/BH66L34X13/236.m3u8]]></stream_url>
+<category_id>01</category_id>
+</channel>
+<channel>
+<title>Дом кино Премиум HD</title>
+<description/>
+<stream_url><![CDATA[http://spacetv.in/stream/BH66L34X13/108.m3u8]]></stream_url>
+<category_id>01</category_id>
+</channel>
+<channel>
+<title>MGM HD</title>
+<description/>
+<stream_url><![CDATA[http://spacetv.in/stream/BH66L34X13/268.m3u8]]></stream_url>
+<category_id>01</category_id>
+</channel>
+<channel>
+<title>Матч! Игра HD</title>
+<description/>
+<stream_url><![CDATA[http://spacetv.in/stream/BH66L34X13/188.m3u8]]></stream_url>
+<category_id>01</category_id>
+</channel>
+<channel>
+<title>Eurosport HD</title>
+<description/>
+<stream_url><![CDATA[http://spacetv.in/stream/BH66L34X13/176.m3u8]]></stream_url>
+<category_id>01</category_id>
+</channel>
+<channel>
+<title>Eurosport 2 HD</title>
+<description/>
+<stream_url><![CDATA[http://spacetv.in/stream/BH66L34X13/192.m3u8]]></stream_url>
+<category_id>01</category_id>
+</channel>
+<channel>
+<title>Матч! Наш спорт</title>
+<description/>
+<stream_url><![CDATA[http://spacetv.in/stream/BH66L34X13/143.m3u8]]></stream_url>
+<category_id>01</category_id>
+</channel>
+<channel>
+<title>Матч! Арена HD</title>
+<description/>
+<stream_url><![CDATA[http://spacetv.in/stream/BH66L34X13/163.m3u8]]></stream_url>
+<category_id>01</category_id>
+</channel>
+<channel>
+<title>Матч ТВ HD</title>
+<description/>
+<stream_url><![CDATA[http://spacetv.in/stream/BH66L34X13/169.m3u8]]></stream_url>
+<category_id>01</category_id>
+</channel>
+<channel>
+<title>Матч! Футбол 1 HD</title>
+<description/>
+<stream_url><![CDATA[http://spacetv.in/stream/BH66L34X13/130.m3u8]]></stream_url>
+<category_id>01</category_id>
+</channel>
+<channel>
+<title>Матч! Футбол 2 HD</title>
+<description/>
+<stream_url><![CDATA[http://spacetv.in/stream/BH66L34X13/142.m3u8]]></stream_url>
+<category_id>01</category_id>
+</channel>
+<channel>
+<title>Матч! Футбол 3 HD</title>
+<description/>
+<stream_url><![CDATA[http://spacetv.in/stream/BH66L34X13/185.m3u8]]></stream_url>
+<category_id>01</category_id>
+</channel>
+<channel>
+<title>Матч! Премьер HD</title>
+<description/>
+<stream_url><![CDATA[http://spacetv.in/stream/BH66L34X13/193.m3u8]]></stream_url>
+<category_id>01</category_id>
+</channel>
+<channel>
+<title>Футбол 1 HD Украина</title>
+<description/>
+<stream_url><![CDATA[http://spacetv.in/stream/BH66L34X13/159.m3u8]]></stream_url>
+<category_id>01</category_id>
+</channel>
+<channel>
+<title>Футбол 2 HD Украина</title>
+<description/>
+<stream_url><![CDATA[http://spacetv.in/stream/BH66L34X13/191.m3u8]]></stream_url>
+<category_id>01</category_id>
+</channel>
+<channel>
+<title>Беларусь 5</title>
+<description/>
+<stream_url><![CDATA[http://spacetv.in/stream/BH66L34X13/33.m3u8]]></stream_url>
+<category_id>01</category_id>
+</channel>
+<channel>
+<title>Kazsport</title>
+<description/>
+<stream_url><![CDATA[http://spacetv.in/stream/BH66L34X13/72.m3u8]]></stream_url>
+<category_id>01</category_id>
+</channel>
+<channel>
+<title>Viasat Sport HD Россия</title>
+<description/>
+<stream_url><![CDATA[http://spacetv.in/stream/BH66L34X13/102.m3u8]]></stream_url>
+<category_id>01</category_id>
+</channel>
+<channel>
+<title>Extreme Sports</title>
+<description/>
+<stream_url><![CDATA[http://spacetv.in/stream/BH66L34X13/148.m3u8]]></stream_url>
+<category_id>01</category_id>
+</channel>
+<channel>
+<title>Морской</title>
+<description/>
+<stream_url><![CDATA[http://spacetv.in/stream/BH66L34X13/141.m3u8]]></stream_url>
+<category_id>01</category_id>
+</channel>
+<channel>
+<title>Сетанта Спорт HD</title>
+<description/>
+<stream_url><![CDATA[http://spacetv.in/stream/BH66L34X13/234.m3u8]]></stream_url>
+<category_id>01</category_id>
+</channel>
+<channel>
+<title>Сетанта Спорт + HD</title>
+<description/>
+<stream_url><![CDATA[http://spacetv.in/stream/BH66L34X13/235.m3u8]]></stream_url>
+<category_id>01</category_id>
+</channel>
+<channel>
+<title>Матч! Боец</title>
+<description/>
+<stream_url><![CDATA[http://spacetv.in/stream/BH66L34X13/112.m3u8]]></stream_url>
+<category_id>01</category_id>
+</channel>
+<channel>
+<title>Бокс ТВ</title>
+<description/>
+<stream_url><![CDATA[http://spacetv.in/stream/BH66L34X13/154.m3u8]]></stream_url>
+<category_id>01</category_id>
+</channel>
+<channel>
+<title>КХЛ ТВ</title>
+<description/>
+<stream_url><![CDATA[http://spacetv.in/stream/BH66L34X13/166.m3u8]]></stream_url>
+<category_id>01</category_id>
+</channel>
+<channel>
+<title>КХЛ HD</title>
+<description/>
+<stream_url><![CDATA[http://spacetv.in/stream/BH66L34X13/178.m3u8]]></stream_url>
+<category_id>01</category_id>
+</channel>
+<channel>
+<title>Детский</title>
+<description/>
+<stream_url><![CDATA[http://spacetv.in/stream/BH66L34X13/195.m3u8]]></stream_url>
+<category_id>01</category_id>
+</channel>
+<channel>
+<title>Nickelodeon HD</title>
+<description/>
+<stream_url><![CDATA[http://spacetv.in/stream/BH66L34X13/127.m3u8]]></stream_url>
+<category_id>01</category_id>
+</channel>
+<channel>
+<title>Тлум HD</title>
+<description/>
+<stream_url><![CDATA[http://spacetv.in/stream/BH66L34X13/232.m3u8]]></stream_url>
+<category_id>01</category_id>
+</channel>
+<channel>
+<title>Канал Disney</title>
+<description/>
+<stream_url><![CDATA[http://spacetv.in/stream/BH66L34X13/118.m3u8]]></stream_url>
+<category_id>01</category_id>
+</channel>
+<channel>
+<title>Карусель</title>
+<description/>
+<stream_url><![CDATA[http://spacetv.in/stream/BH66L34X13/120.m3u8]]></stream_url>
+<category_id>01</category_id>
+</channel>
+<channel>
+<title>TiJi Россия</title>
+<description/>
+<stream_url><![CDATA[http://spacetv.in/stream/BH66L34X13/111.m3u8]]></stream_url>
+<category_id>01</category_id>
+</channel>
+<channel>
+<title>Мульт</title>
+<description/>
+<stream_url><![CDATA[http://spacetv.in/stream/BH66L34X13/199.m3u8]]></stream_url>
+<category_id>01</category_id>
+</channel>
+<channel>
+<title>JimJam</title>
+<description/>
+<stream_url><![CDATA[http://spacetv.in/stream/BH66L34X13/150.m3u8]]></stream_url>
+<category_id>01</category_id>
+</channel>
+<channel>
+<title>Cartoon network</title>
+<description/>
+<stream_url><![CDATA[http://spacetv.in/stream/BH66L34X13/144.m3u8]]></stream_url>
+<category_id>01</category_id>
+</channel>
+<channel>
+<title>Nick Jr</title>
+<description/>
+<stream_url><![CDATA[http://spacetv.in/stream/BH66L34X13/220.m3u8]]></stream_url>
+<category_id>01</category_id>
+</channel>
+<channel>
+<title>В гостях у сказки</title>
+<description/>
+<stream_url><![CDATA[http://spacetv.in/stream/BH66L34X13/93.m3u8]]></stream_url>
+<category_id>01</category_id>
+</channel>
+<channel>
+<title>Канал О!</title>
+<description/>
+<stream_url><![CDATA[http://spacetv.in/stream/BH66L34X13/60.m3u8]]></stream_url>
+<category_id>01</category_id>
+</channel>
+<channel>
+<title>Мульт и музыка</title>
+<description/>
+<stream_url><![CDATA[http://spacetv.in/stream/BH66L34X13/82.m3u8]]></stream_url>
+<category_id>01</category_id>
+</channel>
+<channel>
+<title>M1</title>
+<description/>
+<stream_url><![CDATA[http://spacetv.in/stream/BH66L34X13/218.m3u8]]></stream_url>
+<category_id>01</category_id>
+</channel>
+<channel>
+<title>Bridge HD</title>
+<description/>
+<stream_url><![CDATA[http://spacetv.in/stream/BH66L34X13/92.m3u8]]></stream_url>
+<category_id>01</category_id>
+</channel>
+<channel>
+<title>Bridge TV Classic</title>
+<description/>
+<stream_url><![CDATA[http://spacetv.in/stream/BH66L34X13/272.m3u8]]></stream_url>
+<category_id>01</category_id>
+</channel>
+<channel>
+<title>Europa Plus TV</title>
+<description/>
+<stream_url><![CDATA[http://spacetv.in/stream/BH66L34X13/184.m3u8]]></stream_url>
+<category_id>01</category_id>
+</channel>
+<channel>
+<title>MTV Dance</title>
+<description/>
+<stream_url><![CDATA[http://spacetv.in/stream/BH66L34X13/147.m3u8]]></stream_url>
+<category_id>01</category_id>
+</channel>
+<channel>
+<title>MTV Россия</title>
+<description/>
+<stream_url><![CDATA[http://spacetv.in/stream/BH66L34X13/89.m3u8]]></stream_url>
+<category_id>01</category_id>
+</channel>
+<channel>
+<title>MTV Rocks</title>
+<description/>
+<stream_url><![CDATA[http://spacetv.in/stream/BH66L34X13/88.m3u8]]></stream_url>
+<category_id>01</category_id>
+</channel>
+<channel>
+<title>Музыка Первого</title>
+<description/>
+<stream_url><![CDATA[http://spacetv.in/stream/BH66L34X13/153.m3u8]]></stream_url>
+<category_id>01</category_id>
+</channel>
+<channel>
+<title>VH1 Europe</title>
+<description/>
+<stream_url><![CDATA[http://spacetv.in/stream/BH66L34X13/165.m3u8]]></stream_url>
+<category_id>01</category_id>
+</channel>
+<channel>
+<title>VH1 Classic</title>
+<description/>
+<stream_url><![CDATA[http://spacetv.in/stream/BH66L34X13/87.m3u8]]></stream_url>
+<category_id>01</category_id>
+</channel>
+<channel>
+<title>Муз-ТВ</title>
+<description/>
+<stream_url><![CDATA[http://spacetv.in/stream/BH66L34X13/86.m3u8]]></stream_url>
+<category_id>01</category_id>
+</channel>
+<channel>
+<title>RU.TV</title>
+<description/>
+<stream_url><![CDATA[http://spacetv.in/stream/BH66L34X13/109.m3u8]]></stream_url>
+<category_id>01</category_id>
+</channel>
+<channel>
+<title>Mezzo HD</title>
+<description/>
+<stream_url><![CDATA[http://spacetv.in/stream/BH66L34X13/276.m3u8]]></stream_url>
+<category_id>01</category_id>
+</channel>
+<channel>
+<title>Шансон ТВ</title>
+<description/>
+<stream_url><![CDATA[http://spacetv.in/stream/BH66L34X13/95.m3u8]]></stream_url>
+<category_id>01</category_id>
+</channel>
+<channel>
+<title>1HD.ru</title>
+<description/>
+<stream_url><![CDATA[http://spacetv.in/stream/BH66L34X13/267.m3u8]]></stream_url>
+<category_id>01</category_id>
+</channel>
+<channel>
+<title>РБК ТВ</title>
+<description/>
+<stream_url><![CDATA[http://spacetv.in/stream/BH66L34X13/105.m3u8]]></stream_url>
+<category_id>01</category_id>
+</channel>
+<channel>
+<title>Россия 24</title>
+<description/>
+<stream_url><![CDATA[http://spacetv.in/stream/BH66L34X13/139.m3u8]]></stream_url>
+<category_id>01</category_id>
+</channel>
+<channel>
+<title>EuroNews</title>
+<description/>
+<stream_url><![CDATA[http://spacetv.in/stream/BH66L34X13/189.m3u8]]></stream_url>
+<category_id>01</category_id>
+</channel>
+<channel>
+<title>BBC World News Europe</title>
+<description/>
+<stream_url><![CDATA[http://spacetv.in/stream/BH66L34X13/85.m3u8]]></stream_url>
+<category_id>01</category_id>
+</channel>
+<channel>
+<title>CNN</title>
+<description/>
+<stream_url><![CDATA[http://spacetv.in/stream/BH66L34X13/84.m3u8]]></stream_url>
+<category_id>01</category_id>
+</channel>
+<channel>
+<title>Москва-24</title>
+<description/>
+<stream_url><![CDATA[http://spacetv.in/stream/BH66L34X13/67.m3u8]]></stream_url>
+<category_id>01</category_id>
+</channel>
+<channel>
+<title>112 Украина HD</title>
+<description/>
+<stream_url><![CDATA[http://spacetv.in/stream/BH66L34X13/271.m3u8]]></stream_url>
+<category_id>01</category_id>
+</channel>
+<channel>
+<title>Dorcel HD</title>
+<description/>
+<stream_url><![CDATA[http://spacetv.in/stream/BH66L34X13/50.m3u8]]></stream_url>
+<category_id>01</category_id>
+</channel>
+<channel>
+<title>Redlight HD</title>
+<description/>
+<stream_url><![CDATA[http://spacetv.in/stream/BH66L34X13/51.m3u8]]></stream_url>
+<category_id>01</category_id>
+</channel>
+<channel>
+<title>Hustler HD Europe</title>
+<description/>
+<stream_url><![CDATA[http://spacetv.in/stream/BH66L34X13/52.m3u8]]></stream_url>
+<category_id>01</category_id>
+</channel>
+<channel>
+<title>Brazzers TV</title>
+<description/>
+<stream_url><![CDATA[http://spacetv.in/stream/BH66L34X13/53.m3u8]]></stream_url>
+<category_id>01</category_id>
+</channel>
+<channel>
+<title>Русская ночь</title>
+<description/>
+<stream_url><![CDATA[http://spacetv.in/stream/BH66L34X13/54.m3u8]]></stream_url>
+<category_id>01</category_id>
+</channel>
+<channel>
+<title>НЮ АРТ</title>
+<description/>
+<stream_url><![CDATA[http://spacetv.in/stream/BH66L34X13/55.m3u8]]></stream_url>
+<category_id>01</category_id>
+</channel>
+<channel>
+<title>Playboy TV</title>
+<description/>
+<stream_url><![CDATA[http://spacetv.in/stream/BH66L34X13/56.m3u8]]></stream_url>
+<category_id>01</category_id>
+</channel>
+<channel>
+<title>Candy HD</title>
+<description/>
+<stream_url><![CDATA[http://spacetv.in/stream/BH66L34X13/57.m3u8]]></stream_url>
+<category_id>01</category_id>
+</channel>
+</items>
