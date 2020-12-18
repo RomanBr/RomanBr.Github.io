@@ -73,7 +73,7 @@ const sudokuBoards = [mat1, mat2, mat3, mat4];
 			document.getElementsByTagName('h1')[0].innerHTML = "Lets Do It. Level " + level;
 			
 			seconds = 0;
-			
+			startTimer = false;
 			document.getElementById ("minutes").innerText = "00";
 			document.getElementById ("seconds").innerText = "00";
 			document.getElementById ("timerButton").innerText = "Start game";
