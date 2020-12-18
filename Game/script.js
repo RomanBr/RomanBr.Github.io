@@ -76,7 +76,7 @@ const sudokuBoards = [mat1, mat2, mat3, mat4];
 			
 			document.getElementById ("minutes").innerText = "00";
 			document.getElementById ("seconds").innerText = "00";
-			//document.getElementById ("timerButton").style.backgroundImage = "url('./Imgs/Start-icon.png')";
+			document.getElementById ("timerButton").innerText = "Start game";
 			clearInterval (timer);
 		}
 	}
