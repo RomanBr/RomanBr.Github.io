@@ -104,29 +104,18 @@ button{
 #checkButton{ background-color: #00ff008a; }
 #restartButton{ background-color: #e720207a; }
 
-#timerDiv {
+#timerButton {
+	min-width: 33%;
+	max-width: 100%;
+}	
 
-}
-
-#timerButton { 
-	float: left; 
-	top: 0;
-	margin: 0;
-	padding: 0;
-}
-
-#spanDiv {
-	float: right;
-	top: 0;
-	margin: 0;
-	padding: 0;
-}
 
 #spanDiv > span {
 	font-weight: bold;
 	font-size: 40px;
 	color: green;
 	vertical-align: center;
+	text-align: right;
 }
 
 
